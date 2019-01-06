@@ -4,6 +4,7 @@ import Home from "../components/home"
 import Travel from "../components/travel"
 import Scart from "../components/scart"
 import My from "../components/my"
+import Login from "../components/login"
 import Error from "../components/error/error.vue"
 Vue.use(Router)
 
@@ -19,7 +20,7 @@ const router =  new Router({
       component: Home,
       meta : {
         //table栏的显示
-        flag : true 
+        flag : true
       }
     },
     {
@@ -28,7 +29,7 @@ const router =  new Router({
       component: Travel,
       meta : {
         //table栏的显示
-        flag : true 
+        flag : true
       }
     },
     {
@@ -37,7 +38,7 @@ const router =  new Router({
       component: My,
       meta : {
         //table栏的显示
-        flag : true 
+        flag : true
       }
     },
     {
@@ -50,6 +51,15 @@ const router =  new Router({
         //登录验证
         requireAuth : false
       }
+    },
+    {
+      path:'/login',
+      name:'login',
+      component:Login,
+      meta:{
+        //table栏的显示
+        flag:false,
+       }
     },
     {
       path: '**',
