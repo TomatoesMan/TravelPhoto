@@ -7,7 +7,7 @@ import My from "../components/my"
 import Error from "../components/error/error.vue"
 Vue.use(Router)
 
-const route =  new Router({
+const router =  new Router({
   routes: [
     {
       path: '/',

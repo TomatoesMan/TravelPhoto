@@ -7,6 +7,7 @@ import store from "./store"
 import "./common/css/reset.css"
 import "./common/js/flexble"
 import "../node_modules/swiper/dist/css/swiper.min.css"
+import "../src/common/css/iconfont/iconfont.css"
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
