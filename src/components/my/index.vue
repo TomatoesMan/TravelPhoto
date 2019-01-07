@@ -1,18 +1,23 @@
 <template>
-<div id="myTable">
-  <nickName-com/>
-</div>
+	<div id="myTable">
+	    <nickName-com/>
+			<statusBar-com/>
+	</div>
 </template>
 
+
 <script>
- import nickName from "./components/nickName"
+import nickName from "./components/nickName";
+import statusBar from "./components/statusBar";
 export default {
-  components:{
-     "nickName-com":nickName
-  }
+    components:{
+    	"nickName-com":nickName,
+			"statusBar-com":statusBar
+	}
 
 }
 </script>
+
 
 <style>
 #myTable{
