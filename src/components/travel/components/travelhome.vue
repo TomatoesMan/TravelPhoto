@@ -1,7 +1,7 @@
 <template>
     <div class="travelhome">
         <div class="head">
-            <p>游记</p>
+            <p>游记哈哈哈</p>
             <img src="../../../../static/add.png" alt="">
         </div>
         <div class="banner">
