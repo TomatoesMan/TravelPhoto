@@ -6,8 +6,12 @@ import Scart from "../components/scart"
 import My from "../components/my"
 import Login from "../components/login"
 import Error from "../components/error/error.vue"
+import travelHome from "../components/travel/components/travelhome"
+import travelNotes from "../components/travel/components/travelnotes"
+import travelDetails from "../components/travel/components/traveldetails"
+import travelForward from "../components/travel/components/travelForward"
+import travelSend from "../components/travel/components/travelsend"
 Vue.use(Router)
-
 const router =  new Router({
   routes: [
     {
@@ -30,7 +34,53 @@ const router =  new Router({
       meta : {
         //table栏的显示
         flag : true
+      },
+      children:[{
+        path: '/travel/components/travelhome',
+        name: 'travelhome',
+        component: travelHome,
+        meta : {
+          //table栏的显示
+          flag : true
+        },
+      },
+      {
+        path: '/travel/components/travelnotes',
+        name: 'travelnotes',
+        component: travelNotes,
+        meta : {
+          //table栏的显示
+          flag : true
+        },
+      },
+      {
+        path: '/travel/components/traveldetails',
+        name: 'traveldetails',
+        component: travelDetails,
+        meta : {
+          //table栏的显示
+          flag : true
+        },
+      },
+      {
+        path: '/travel/components/travelForward',
+        name: 'travelforward',
+        component: travelForward,
+        meta : {
+          //table栏的显示
+          flag : true
+        },
+      },
+      {
+        path: '/travel/components/travelsend',
+        name: 'travelsend',
+        component: travelSend,
+        meta : {
+          //table栏的显示
+          flag : true
+        },
       }
+    ]
     },
     {
       path: '/my',
