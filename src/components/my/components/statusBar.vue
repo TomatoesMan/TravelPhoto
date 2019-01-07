@@ -1,6 +1,6 @@
 <template>
 	 <div id="collect">
-		 1111
+		 2222222
 	 </div>
 </template>
 
