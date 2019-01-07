@@ -1,6 +1,6 @@
 <template>
   <div id="registerTabel">
-    <p id="registerTop">注册</p>
+    <p id="registerTop">2222222</p>
     <div id="reginsterCenter">
       <div id="registerImg">
        <img src="../../../../static/image/dl_logo.png">
