@@ -6,6 +6,7 @@ import Scart from "../components/scart"
 import My from "../components/my"
 import Login from "../components/login"
 import Error from "../components/error/error.vue"
+import Detail from "../components/detail"
 Vue.use(Router)
 
 const router =  new Router({
@@ -21,6 +22,15 @@ const router =  new Router({
       meta : {
         //table栏的显示
         flag : true
+      }
+    },
+    {
+      path:'/home/detail',
+      name:'detail',
+      component:Detail,
+      meta : {
+        //table栏的显示
+        flag : false
       }
     },
     {

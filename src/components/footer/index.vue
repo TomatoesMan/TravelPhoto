@@ -1,6 +1,6 @@
 <template>
-    <div id="footer">
-        <ul>
+    <div id="footer" v-show="flag">
+        <ul >
             <li v-for="( item, index ) in list" :key="index">
                 <router-link :to="{ name : item.name }">
                     <i class="iconfont" v-html="item.icon"></i>
@@ -19,13 +19,22 @@
                     { name : "travel", title : "游记", icon : "&#xe8ac;" },
                     { name : "scart", title : "购物车", icon : "&#xe620;" },
                     { name : "my", title : "我的", icon : "&#xe606;" },
-                ]
+                ],
+                flag:true
             }
+        },
+        beforeRouteEnter(to,from,next){
+            console.log(to);
+        //     let flag = to.meta.flag;
+        //     this.flag = flag;
+        //     next();
+        //     console.log(this);
         }
     }
 </script>
 <style scope>
     #footer {
+        background: #fff;
         width : 100%;
         height: 0.98rem;
         position : fixed;
