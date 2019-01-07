@@ -3,7 +3,7 @@
         <h2>热门推荐</h2>
         <ul>
             <li>
-                <router-link></router-link>
+                <router-link>11</router-link>
             </li>
         </ul>
     </div>
