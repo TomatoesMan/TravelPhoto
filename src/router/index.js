@@ -14,6 +14,8 @@ import travelDetails from "../components/travel/components/traveldetails"
 import travelForward from "../components/travel/components/travelForward"
 import travelSend from "../components/travel/components/travelsend"
 import Detail from "../components/detail"
+import PayList from "@/components/scart/components/payList"
+import PayPage from "@/components/scart/components/payPage"
 Vue.use(Router)
 const router =  new Router({
   routes: [
@@ -114,6 +116,28 @@ const router =  new Router({
         requireAuth : false
       }
     },
+		{
+			path:'/paylist',
+			name:'paylist',
+			component:PayList,
+			meta : {
+				//table栏的显示
+				flag : false,
+				//登录验证
+				requireAuth : false
+			}
+		},
+		{
+			path:'/payPage',
+			name:'pagePage',
+			component:PayPage,
+			meta : {
+				//table栏的显示
+				flag : false,
+				//登录验证
+				requireAuth : false
+			}
+		},
     {
       path:'/login',
       name:'login',
