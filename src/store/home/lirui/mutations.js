@@ -8,6 +8,9 @@ export default {
         state.cities = params.cities;
         state.Hotels = params.Hotels;
         state.photo = params.photo;
-        console.log(state);
+        // console.log(state);
+    },
+    handleShare(state){
+        state.shareFlag = !state.shareFlag;
     }
 }
