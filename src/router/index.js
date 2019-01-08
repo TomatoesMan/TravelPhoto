@@ -5,6 +5,7 @@ import Travel from "../components/travel"
 import Scart from "../components/scart"
 import My from "../components/my"
 import Login from "../components/login"
+import SelectCity from "../components/selectCity"
 import Error from "../components/error/error.vue"
 import travelHome from "../components/travel/components/travelhome"
 import travelNotes from "../components/travel/components/travelnotes"
@@ -122,10 +123,23 @@ const router =  new Router({
        }
     },
     {
+      path:'/selectCity',
+      name:'selectCity',
+      component:SelectCity,
+      meta:{
+        //table栏的显示
+        flag:false,
+       },
+    },
+    {
       path: '**',
       name: 'error',
       component: Error
     }
   ]
 })
+// import Vuex from "vuex"
+// router.beforeEach((to,  from, next) => {
+
+// })
 export default router;
