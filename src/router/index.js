@@ -5,11 +5,8 @@ import Travel from "../components/travel"
 import Scart from "../components/scart"
 import My from "../components/my"
 import Login from "../components/login"
-<<<<<<< HEAD
  import Register from  "../components/login/components/register.vue"
-=======
 import SelectCity from "../components/selectCity"
->>>>>>> f436dc04d3c08d4a17e03029d65d215fd753e8bd
 import Error from "../components/error/error.vue"
 import travelHome from "../components/travel/components/travelhome"
 import travelNotes from "../components/travel/components/travelnotes"
@@ -127,15 +124,13 @@ const router =  new Router({
        }
     },
     {
-<<<<<<< HEAD
       path:'/register',
       name:'register',
       component:Register,
       meta:{
         //table栏的显示
         flag:false,
-       }
-=======
+       },
       path:'/selectCity',
       name:'selectCity',
       component:SelectCity,
@@ -143,7 +138,6 @@ const router =  new Router({
         //table栏的显示
         flag:false,
        },
->>>>>>> f436dc04d3c08d4a17e03029d65d215fd753e8bd
     },
     {
       path: '**',
