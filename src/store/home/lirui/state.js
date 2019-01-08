@@ -4,5 +4,6 @@ export default {
     more:[],
     cities:[],
     Hotels:[],
-    photo:[]
+    photo:[],
+    shareFlag:false
 }
