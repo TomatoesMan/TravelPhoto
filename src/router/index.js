@@ -4,6 +4,9 @@ import Home from "../components/home"
 import Travel from "../components/travel"
 import Scart from "../components/scart"
 import My from "../components/my"
+import coupleBack from "../components/my/coupleBack"
+import setting from "../components/my/setting"
+import collect from "../components/my/collect"
 import Login from "../components/login"
 import Error from "../components/error/error.vue"
 import travelHome from "../components/travel/components/travelhome"
@@ -12,6 +15,7 @@ import travelDetails from "../components/travel/components/traveldetails"
 import travelForward from "../components/travel/components/travelForward"
 import travelSend from "../components/travel/components/travelsend"
 import Detail from "../components/detail"
+
 Vue.use(Router)
 const router =  new Router({
   routes: [
@@ -99,7 +103,37 @@ const router =  new Router({
       meta : {
         //table栏的显示
         flag : true
-      }
+      },
+        children:[
+            
+        ]
+    },
+    {
+      path: '/my/coupleBack',
+      name: 'coupleBack',
+      component: coupleBack,
+      meta : {
+        //table栏的显示
+        flag : false
+      },
+    },
+    {
+      path: '/my/setting',
+      name: 'setting',
+      component: setting,
+      meta : {
+        //table栏的显示
+        flag : false
+      },
+    },
+    {
+      path: '/my/collect',
+      name: 'collect',
+      component: collect,
+      meta : {
+        //table栏的显示
+        flag : false
+      },
     },
     {
       path: '/scart',
