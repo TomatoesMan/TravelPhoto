@@ -3,101 +3,146 @@
     <p id="registerTop">注册</p>
     <div id="reginsterCenter">
       <div id="registerImg">
-       <img src="../../../../static/image/dl_logo.png">
+        <img src="../../../../static/image/dl_logo.png">
       </div>
       <div id="registerName">
         <p>手机号</p>
-        <input id="userName" v-model="massage" type="text"  class="invalid" :placeholder="spanname">
-         <!-- <span id="spanname" v-show="isShow">{{spanname}}</span> -->
-        </div>
+        <input id="userName" v-model="massage" type="text" class="invalid" :placeholder="spanname">
+        <!-- <span id="spanname" v-show="isShow">{{spanname}}</span> -->
+      </div>
       <div id="registerPwd">
         <p>设置密码</p>
-        <input id="registerPassword" v-model="pwd" type="password" placeholder="请输入密码">
-        <span id="spanpwd" v-if="isShow">{{spanpwd}}</span>
+        <input id="registerPassword" v-model="pwd" type="password" :placeholder="spanpwd">
       </div>
       <div id="registerQpwd">
         <p>重输密码</p>
-        <input id="registerPasswords" v-model="qpwd" type="password" placeholder="请再次输入密码">
+        <input id="registerPasswords" v-model="qpwd" type="password" :placeholder="spanqpwd">
       </div>
       <div id="authCode">
-        <div><input  id="verificationCode" v-model="code" type="text"  placeholder="输入验证码"></div>
+        <div>
+          <input id="verificationCode" v-model="code" type="text" placeholder="输入验证码">
+        </div>
         <button id="gainCode">获取验证码</button>
       </div>
-       <button id="registerIng" @click="hendle()">确定</button>
+      <button id="registerIng" @click="hendle()">注册</button>
     </div>
   </div>
 </template>
 
 <script>
+import axios from "axios";
 export default {
-  data(){
-    return{
-      massage:"",
-      pwd:"",
-      qpwd:"",
-      code:"",
-      isShow:true,
-      spanpwd:"",
-     spanname:"请输入手机号",
-      // spanname:"",
-
-    }
+  data() {
+    return {
+      massage: "",
+      pwd: "",
+      qpwd: "",
+      code: "",
+      isShow: true,
+      spanpwd: "请输入密码",
+      spanname: "请输入手机号",
+      spanqpwd: "请再次输入密码"
+    };
   },
-  methods:{
- hendle(){
-   // let reg = /^1(3|5|6|7|8)\d{9}$/;
-   let flag = null;
-    let reg = /^((1[3,5,8][0-9])|(14[5,7])|(17[0,6,7,8])|(19[7]))\d{8}$/;
-     if(this.massage===""){
-            this.spanname="号码不能为空"
-            this.isShow=true;
-            flag=false;
-            console.log(flag);
-             }else if(!reg.test(this.massage)){
-         this. spanname ="手机号输入错误";
-          this.isShow=true;
-          this.massage="";
-         flag=false;
-            console.log(flag);
-     }else{
-       console.log(this.massage);
-          flag=true;
-        console.log(flag);
-      flag=true? "" : "colorTel"
-     }
-
+  created() {
+    //调用hendle方法 把数据传递到data中
+    //  this.hendle();
+  },
+  methods: {
+    hendle() {
+      //验证手机号
+      let flag = null;
+      let reg = /^((1[3,5,8][0-9])|(14[5,7])|(17[0,6,7,8])|(19[7]))\d{8}$/;
+      if (this.massage === "") {
+        this.spanname = "号码不能为空";
+        this.isShow = true;
+        flag = false;
+      } else if (!reg.test(this.massage)) {
+        this.spanname = "手机号输入错误";
+        this.isShow = true;
+        this.massage = "";
+        flag = false;
+      } else {
+        flag = true;
+        //  console.log(flag);
+        // flag = true ? "" : "colorTel";
+      }
 
       //验证密码
-        let word = /^\w{6,}$/;
-        if(this.pwd===""){
-            this.isShow=false;
-           this.spanpwd="密码不能为空"
-        }else if(!word.test(this.pwd)){
-             this.pwd="no"
-              this.isShow=false;
-               this.spanpwd="密码不能少于六位"
-        }else{
-            this.pwd="密码不能少于六位"
-        }
-            console.log(this.pwd)
-        // //验证确认密码
-        // let
+      let flagpwd = null;
+      let reg1 = /^\w{6,}$/;
+      if (this.pwd === "") {
+        this.spanpwd = "密码不能为空";
+        flagpwd = false;
+      } else if (!reg1.test(this.pwd)) {
+        this.spanpwd = "密码不能少于六位";
+        this.pwd = "";
+        flagpwd = false;
+        console.log(this.spanpwd);
+      } else {
+        console.log(this.pwd);
+        flagpwd = true;
+        console.log(flagpwd);
+      }
+
+      //验证确认密码
+      let flagmm = null;
+      if (this.pwd != this.qpwd) {
+        this.qpwd = "";
+        this.spanqpwd = "两次密码输入不正确";
+        flagmm = false;
+      } else {
+        flagmm = true;
+        console.log(flagmm);
+      }
+
+      //验证是否提交
+      if (flag && flagpwd && flagmm === true) {
+        //表示验证成功   开始传递数据
+        alert("ok");
+        //存入数据
+
+        //jsonserver 模拟
+        axios({
+          method: "get",
+          //判断用户名是否存在 先查寻
+          url: "http://localhost:3000/data?username=" + this.massage
+        }).then(data => {
+          //长度为0 说明改用户不存在    直接添加数据
+          if (data.length == 0) {
+            alert(1);
+           axios({
+              method: "post",
+              url: "http://localhost:3000/data",
+              data: {
+                username: this.massage,
+                password: this.pwd
+              }
+            }).then(data => {
+             });
+          } else {
+            alert("该用户已存在");
+          }
+        });
+
+        //ajax
+
+      } else {
+        alert("no");
+       }
     }
-  },
-
+  }
 };
-
-
 </script>
 
-<style lang="scss">
-input.invalid::-webkit-input-placeholder {
-            color: red;
-        }
+<style lang="scss" scoped>
+// input.invalid::-webkit-input-placeholder {
+//             color: red;
+//         }
 #registerTabel {
   width: 100%;
   height: 100%;
- #registerTop{
+  #registerTop {
     width: 100%;
     height: 0.88rem;
     background: #fff;
@@ -109,57 +154,60 @@ input.invalid::-webkit-input-placeholder {
     margin: 0.24rem 0 0 0.32rem;
   }
 }
-  #reginsterCenter {
-    width: 100%;
-    height: 100%;
-    background: #f3f3f3;
-  }
-  #registerImg {
+#reginsterCenter {
+  width: 100%;
+  height: 100%;
+  background: #f3f3f3;
+}
+#registerImg {
   padding: 0.8rem 0 0 2.6rem;
-  img{
-          width: 2.3rem;
-          height: 2.3rem;
+  img {
+    width: 2.3rem;
+    height: 2.3rem;
   }
-  }
-  #registerName{
+}
+#registerName {
   width: 6rem;
   height: 0.88rem;
   background: #fff;
   margin: 1.23rem 0 0.15rem 0.75rem;
   border-radius: 0.12rem;
   padding: 0 0.1rem;
-  p{
-     width: 1.5rem;
-  height: 0.88rem;
-  line-height: 0.88rem;
-  font-size: 0.34rem;
-  font-family: PingFang-SC-Regular;
-  font-weight: 400;
-  color: rgba(51, 51, 51, 1);
-  float: left;
+  p {
+    width: 1.5rem;
+    height: 0.88rem;
+    line-height: 0.88rem;
+    font-size: 0.34rem;
+    font-family: PingFang-SC-Regular;
+    font-weight: 400;
+    color: rgba(51, 51, 51, 1);
+    float: left;
   }
 }
 
-#registerPwd ,#registerQpwd{
+#registerPwd,
+#registerQpwd {
   width: 6rem;
   height: 0.88rem;
   background: #fff;
   border-radius: 0.12rem;
   padding: 0 0.1rem;
-  margin-bottom: .15rem;
+  margin-bottom: 0.15rem;
   margin-left: 0.75rem;
-  p{
-     width: 1.5rem;
-  height: 0.88rem;
-  line-height: 0.88rem;
-  font-size: 0.34rem;
-  font-family: PingFang-SC-Regular;
-  font-weight: 400;
-  color: rgba(51, 51, 51, 1);
-  float: left;
+  p {
+    width: 1.5rem;
+    height: 0.88rem;
+    line-height: 0.88rem;
+    font-size: 0.34rem;
+    font-family: PingFang-SC-Regular;
+    font-weight: 400;
+    color: rgba(51, 51, 51, 1);
+    float: left;
   }
 }
-#userName ,#registerPassword , #registerPasswords{
+#userName,
+#registerPassword,
+#registerPasswords {
   border: none;
   width: 60%;
   height: 100%;
@@ -170,7 +218,7 @@ input.invalid::-webkit-input-placeholder {
 }
 #registerIng {
   width: 6rem;
-  height: .88rem;
+  height: 0.88rem;
   background: rgba(65, 116, 242, 1);
   border-radius: 12px;
   margin: 0.55rem 0 0 0.75rem;
@@ -181,41 +229,41 @@ input.invalid::-webkit-input-placeholder {
   outline: medium;
   border: none;
 }
-#authCode{
+#authCode {
   width: 100%;
   height: 0.88rem;
   margin-left: 0.75rem;
 }
-#verificationCode{
+#verificationCode {
   width: 3rem;
-   border: none;
-  height: .88rem;
+  border: none;
+  height: 0.88rem;
   font-size: 0.26rem;
   border-radius: 0.12rem;
   padding: 0 0.6rem;
   font-weight: 400;
   outline: medium;
   float: left;
-  margin-right: .2rem;
+  margin-right: 0.2rem;
 }
-#gainCode{
-width: 2.76rem;
-  height: .88rem;
+#gainCode {
+  width: 2.76rem;
+  height: 0.88rem;
   background: rgba(65, 116, 242, 1);
   border-radius: 12px;
-  font-size: 0.30rem;
+  font-size: 0.3rem;
   font-family: PingFang-SC-Regular;
   font-weight: 400;
   color: #fff;
   outline: medium;
   border: none;
-   float: left;
+  float: left;
 }
-.spanname{
+.spanname {
   position: absolute;
   left: 3.1rem;
   top: 5.7rem;
-  font-size: .3rem;
+  font-size: 0.3rem;
   color: #f00;
   font-family: PingFang-SC-Regular;
   font-weight: 400;
