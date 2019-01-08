@@ -51,24 +51,7 @@ const router =  new Router({
         //table栏的显示
         flag : true
       },
-      children:[{
-        path: '/travel/components/travelhome',
-        name: 'travelhome',
-        component: travelHome,
-        meta : {
-          //table栏的显示
-          flag : true
-        },
-      },
-      {
-        path: '/travel/components/travelnotes',
-        name: 'travelnotes',
-        component: travelNotes,
-        meta : {
-          //table栏的显示
-          flag : true
-        },
-      },
+      children:[
       {
         path: '/travel/components/traveldetails',
         name: 'traveldetails',
@@ -97,6 +80,14 @@ const router =  new Router({
         },
       }
     ]
+    },
+    {
+      path:'/travelnotes',
+      name:'travelnotes',
+      component:travelNotes,
+      meta:{
+        flag:true
+      },
     },
     {
       path: '/my',

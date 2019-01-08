@@ -1,11 +1,11 @@
 <template>
     <div class="travelhome">
         <div class="head">
-            <p>游记哈哈哈</p>
-            <img src="../../../../static/add.png" alt="">
+            <p>游记</p>
+            <img src="../../../../static/travel-img/add.png" alt="">
         </div>
         <div class="banner">
-
+            
         </div>
     </div>
 </template>
@@ -32,16 +32,21 @@ export default {
                     color:rgba(0,0,0,1);
                     float: left;
                     margin-left:0.33rem;
-                    margin-top:0.67rem;
+                    margin-top:0.4rem;
                     display: inline-block; 
                 }
                 img{
                     width: 0.44rem;
                     height: 0.44rem;
                     float:right;
-                    margin-right: 32px;
-                    margin-top: 67px;
+                    margin-right: 0.32rem;
+                    margin-top: 0.4rem;
                 }
+           }
+           .banner{
+               width: 100%;
+               height: 6rem;
+               background: skyblue;
            }
            
        } 
