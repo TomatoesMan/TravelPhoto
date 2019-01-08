@@ -5,7 +5,12 @@ import Travel from "../components/travel"
 import Scart from "../components/scart"
 import My from "../components/my"
 import Login from "../components/login"
+<<<<<<< HEAD
  import Register from  "../components/login/components/register.vue"
+=======
+import Register from  "../components/login/components/register.vue"
+import Forget from "../components/login/components/forgetPwd.vue"
+>>>>>>> zhangjie
 import SelectCity from "../components/selectCity"
 import Error from "../components/error/error.vue"
 import travelHome from "../components/travel/components/travelhome"
@@ -130,7 +135,22 @@ const router =  new Router({
       meta:{
         //table栏的显示
         flag:false,
+<<<<<<< HEAD
        },
+=======
+       }
+    },
+    {
+      path:'/forget',
+      name:'forget',
+      component:Forget,
+      meta:{
+        //table栏的显示
+        flag:false,
+       }
+    },
+    {
+>>>>>>> zhangjie
       path:'/selectCity',
       name:'selectCity',
       component:SelectCity,
