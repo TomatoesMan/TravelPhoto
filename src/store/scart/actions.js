@@ -1,4 +1,4 @@
-import axios from "axios"
+import axios from "../../lib"
 
 export default{
 	getData({commit}){
@@ -7,8 +7,7 @@ export default{
 			url:"http://localhost:3000/list"
 		})
 		.then((data)=>{
-			commit("getData",data.data)
-			console.log(data.data)
+			commit("getData",data)
 		})
 	},
 	handleDel({commit},params){

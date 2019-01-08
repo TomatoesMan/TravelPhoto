@@ -1,6 +1,6 @@
 <template>
     <div class="top">
-        <a class="back"><img :src="top.length>0?top[1].src:''" alt=""></a>
+        <a class="back" href="#/home"><img :src="top.length>0?top[1].src:''" alt=""></a>
         <div class="collec">收藏数：<span>{{top.length>0?top[2].collection:''}}</span></div>
         <img :src="top.length>0?top[0]['src']:''" alt="">
     </div>
@@ -13,6 +13,11 @@ export default {
         ...Vuex.mapState({
             top:state=>state.Lirui.top
         })
+    },
+    methods:{
+        handle(){
+            console.log(1);
+        }
     }
 }
 </script>
