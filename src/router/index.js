@@ -5,6 +5,7 @@ import Travel from "../components/travel"
 import Scart from "../components/scart"
 import My from "../components/my"
 import Login from "../components/login"
+ import Register from  "../components/login/components/register.vue"
 import Error from "../components/error/error.vue"
 import travelHome from "../components/travel/components/travelhome"
 import travelNotes from "../components/travel/components/travelnotes"
@@ -106,6 +107,15 @@ const router =  new Router({
       path:'/login',
       name:'login',
       component:Login,
+      meta:{
+        //table栏的显示
+        flag:false,
+       }
+    },
+    {
+      path:'/register',
+      name:'register',
+      component:Register,
       meta:{
         //table栏的显示
         flag:false,
