@@ -11,6 +11,7 @@ import travelNotes from "../components/travel/components/travelnotes"
 import travelDetails from "../components/travel/components/traveldetails"
 import travelForward from "../components/travel/components/travelForward"
 import travelSend from "../components/travel/components/travelsend"
+import Detail from "../components/detail"
 Vue.use(Router)
 const router =  new Router({
   routes: [
@@ -25,6 +26,15 @@ const router =  new Router({
       meta : {
         //table栏的显示
         flag : true
+      }
+    },
+    {
+      path:'/home/detail',
+      name:'detail',
+      component:Detail,
+      meta : {
+        //table栏的显示
+        flag : false
       }
     },
     {
