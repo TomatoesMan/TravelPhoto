@@ -1,4 +1,10 @@
 export default {
     city : "北京",
-    cities : []
+    cities : [],
+    hotTitle : "",
+    hotList : [],
+    personalTitle : "",
+    personalList : [],
+    travelCityTitle : "",
+    travelCityList : []
 }
