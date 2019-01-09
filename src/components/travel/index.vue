@@ -1,8 +1,6 @@
 <template>
     <div>
-       <router-view>
-
-       </router-view>
+      <travelHome-com></travelHome-com>
     </div>
 </template>
 

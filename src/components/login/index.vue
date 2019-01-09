@@ -8,15 +8,15 @@
         <img src="../../../static/image/dl_logo.png">
       </div>
       <div class="loginName">
-        <div class="loginNumber">账号</div>
-        <input id="userName" type="text" placeholder="请输入手机号">
+        <div class="loginNumber"  >账号</div>
+        <input id="userName" v-model="myTel" type="text" :placeholder="spanTel">
       </div>
       <div class="loginPwd">
         <div class="loginCode">密码</div>
-        <input id="loginPassword" type="password" placeholder=" 请输入密码">
+        <input id="loginPassword" v-model="myPwd" type="password" :placeholder="spanPwd">
       </div>
-      <button id="loginIng">登录</button>
-      <div class="forget">忘记密码</div>
+      <button id="loginIng" @click="hendleSuccess()">登录</button>
+      <div class="forget"><router-link to="/forget">忘记密码</router-link></div>
       <div class="register"><router-link to="/register">注册</router-link></div>
     </div>
     <!-- <router-view/> -->
@@ -24,14 +24,49 @@
 </template>
 
 <script>
-//import Register from "/components/reginster"
+import axios from "axios";
 export default {
+  data(){
+      return{
+          myTel:"",
+          myPwd:"",
+          spanTel:"请输入手机号",
+          spanPwd:"请输入密码"
+      }
+  },
+methods:{
+  hendleSuccess(){
+      //验证手机号
+      let flag =null;
+      axios({
+        method:"get",
+        url:"http://localhost:3000/data?username="+this.myTel,
+      }).then((data)=>{
+        if(data.length == 0){
+          //说明该用户不存在   登录失败
+          this.spanTel="该用户不存在"
+          this.myTel=""
+          flag=false;
+          //判断密码是否正确
+        }else if(this.myPwd!=data[0].password){
+          this.spanPwd = "密码输入有误"
+          this.myPwd = ""
 
- // "Register-com":Register
+        }else{
+          //登录成功
+          alert("登录成功");
+          flag=true;
+          //跳转到首页
+        }
+        console.log(data);
+      })
+  }
+}
+
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .pageTable {
   width: 100%;
   height: 100%;

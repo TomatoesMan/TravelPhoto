@@ -1,16 +1,25 @@
 <template>
     <div class="content">
         <div class="con_1">
-            <a href="#" class="share"><img src="static/image-detail/setMeal/icon_02_tc@2x.png"></a>
-            <h2>{{message.length>0?message[0].name:''}}</h2>
-            <h3>{{message.length>0?message[0].title:'' | title }}</h3>
+            <a class="share" @click="handleShare()"><img src="static/image-detail/setMeal/icon_02_tc@2x.png"></a>
+            <h2><span>{{message.length>0?message[0].name:''}}</span></h2>
+            <h3><span>{{message.length>0?message[0].title:'' | title }}</span></h3>
             <p class="imgRecommend">推荐指数<img :src="message.length>0?message[0].imgRecommend:''"/></p>
-            <p class="price">价格<span>{{message.length>0?message[0].price:'' | price }}</span></p>
+            <p class="price">价格：<span>{{message.length>0?message[0].price:'' | price }}</span></p>
             <p class="SoldOut">已售：<span>{{message.length>0?message[0].SoldOut:'' }}</span></p>
             <a class="btn" href="#"><p>立即预定</p></a>
         </div>
-        <div>
-
+        <div class="con_2">
+            <h2><span>{{message.length>0?message[0].storename:''}}</span>官方旗舰店</h2>
+            <p>综合评分：<img :src="message.length>0?message[0].score:''"/><span>{{message.length>0?message[0].storegrade:''}}</span></p>
+            <div><img :src="message.length>0?message[0].imgLogo:''" alt=""></div>
+        </div>
+        <div class="con_3">
+            <i class="iconfont">&#xe611;</i>
+            <p>拍摄基地：<span>{{message.length>0?message[0].place:''}}</span></p>
+        </div>
+        <div class="con_4">
+            <a href="">套餐评价（<span>{{message.length>0?message[0].evaluate:''}}</span>）</a>
         </div>
     </div>
 </template>
@@ -21,6 +30,11 @@ export default {
     computed:{
         ...Vuex.mapState({
             message:state=>state.Lirui.message
+        })
+    },
+    methods:{
+        ...Vuex.mapMutations({
+            handleShare:"Lirui/handleShare"
         })
     },
     filters:{
@@ -44,6 +58,7 @@ export default {
     .con_1{
         width:7.50rem;
         height:3.75rem;
+        margin-bottom: .06rem;
         background:rgba(255,255,255,1);
         position: relative;
         h2{
@@ -94,7 +109,6 @@ export default {
                 font-family: PingFang-SC-Bold;
                 font-size: .36rem;
                 color:#FC2323;
-                margin-left: .1rem;
             }
         }
         .SoldOut{
@@ -136,6 +150,95 @@ export default {
             position: absolute;
             right: .17rem;
             top: .17rem;
+            img{
+                width: 100%;
+                height: 100%;
+            }
         }
     }
+    .con_2{
+        width:7.50rem;
+        height:1.45rem;
+        background:rgba(255,255,255,1);
+        position: relative;
+        h2{
+            margin-left: .34rem;
+            line-height: .86rem;
+            width:1.84rem;
+            height:.86rem;
+            font-size:.28rem;
+            font-family:SC-Bold;
+            color:#000000;
+            span{
+                color:rgba(32,11,193,1);
+                font-size:.30rem;
+                font-family:DokChampa;
+            }
+        }
+        p{
+            margin-left: .35rem;
+            width:1.03rem;
+            height:.23rem;
+            font-size:.24rem;
+            font-family:PingFang-SC-Regular;
+            color:rgba(153,153,153,1);
+            display: inline;
+            img{
+                display: inline;
+                margin: 0 .05rem;
+            }
+            span{
+              font-size:.18rem;
+            }
+        }
+        div{
+            width: .84rem;
+            height: .84rem;
+            position: absolute;
+            right: .62rem;
+            top:.3rem;
+            img{
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+    .con_3{
+        width:7.50rem;
+        height:.74rem;
+        background:rgba(255,255,255,1);
+        margin: .06rem 0;
+        i{
+            font-size: .2rem;
+            width: .16rem;
+            height: .2rem;
+            display: inline-block;
+            margin-left: .33rem;
+            margin-right: .02rem;
+        }
+        p{
+            line-height: .74rem;
+            display: inline-block;
+            font-size:.24rem;
+            font-family:PingFang-SC-Regular;
+            color:rgba(153,153,153,1);
+            span{
+                color: #333333;
+            }
+        }
+    }
+    .con_4{
+        width:7.50rem;
+        height:.74rem;
+        background:rgba(255,255,255,1);
+        a{
+            margin-left: .31rem;
+            line-height: .74rem;
+            font-size:.24rem;
+            font-family:PingFang-SC-Medium;
+            font-weight:500;
+            color:rgba(0,0,0,1);
+        }
+    }
+    
 </style>

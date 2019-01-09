@@ -6,6 +6,8 @@ import Scart from "../components/scart"
 import My from "../components/my"
 import Login from "../components/login"
  import Register from  "../components/login/components/register.vue"
+import Register from  "../components/login/components/register.vue"
+import Forget from "../components/login/components/forgetPwd.vue"
 import SelectCity from "../components/selectCity"
 import Error from "../components/error/error.vue"
 import travelHome from "../components/travel/components/travelhome"
@@ -49,24 +51,7 @@ const router =  new Router({
         //table栏的显示
         flag : true
       },
-      children:[{
-        path: '/travel/components/travelhome',
-        name: 'travelhome',
-        component: travelHome,
-        meta : {
-          //table栏的显示
-          flag : true
-        },
-      },
-      {
-        path: '/travel/components/travelnotes',
-        name: 'travelnotes',
-        component: travelNotes,
-        meta : {
-          //table栏的显示
-          flag : true
-        },
-      },
+      children:[
       {
         path: '/travel/components/traveldetails',
         name: 'traveldetails',
@@ -95,6 +80,14 @@ const router =  new Router({
         },
       }
     ]
+    },
+    {
+      path:'/travelnotes',
+      name:'travelnotes',
+      component:travelNotes,
+      meta:{
+        flag:true
+      },
     },
     {
       path: '/my',
@@ -155,6 +148,18 @@ const router =  new Router({
         //table栏的显示
         flag:false,
        },
+
+    },
+    {
+      path:'/forget',
+      name:'forget',
+      component:Forget,
+      meta:{
+        //table栏的显示
+        flag:false,
+       }
+    },
+    {
       path:'/selectCity',
       name:'selectCity',
       component:SelectCity,
