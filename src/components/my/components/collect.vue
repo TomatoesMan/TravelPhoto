@@ -2,7 +2,7 @@
 	<div class="collect">
 		<router-link :to="{name:'collect'}">
 			<div class="collecta">
-				<img src="../../../../static/my-img/icon_sc.png" alt="">
+				<img src="../../../../static/my-img/icon_sc.png">
 				<p>收藏</p>
 			</div>
 		</router-link>
@@ -40,7 +40,7 @@
 		.collect .collecta>p{
 			margin-left: .44rem;
 			margin-top: .5rem;
-			font-size: .3rem;
+			font-size: .32rem;
 		}
 	
 	

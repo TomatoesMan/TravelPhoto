@@ -1,7 +1,7 @@
 <template>
 	<div class="top">
 		<router-link :to="{name:'my'}"><img src="../../../../../static/my-img/icon_fhj.png"></router-link>
-		<p>设置</p>
+		<p>待支付</p>
 	</div>
 </template>
 
@@ -29,7 +29,7 @@
 	
 	}
 	.top p{
-		margin-left: 2.82rem;
+		margin-left: 2.8rem;
 		float: left;
 		text-align: center;
 		font-size: .38rem;

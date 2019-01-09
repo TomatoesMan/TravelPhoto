@@ -39,6 +39,6 @@
 .coupleBack .coupleBacka p{
 	margin-left: .44rem;
 	padding-top: .5rem;
-	font-size: .3rem;
+	font-size: .32rem;
 }
 </style>

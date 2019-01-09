@@ -1,9 +1,10 @@
 <template>
 	<div class="tab">
 		<div class="taba">
-			<img src="../../../../../static/my-img/tupian_shoucang.png" alt="">
+			<img src="../../../../../static/my-img/tupian_daixhuxing.png" alt="">
 		</div>
-		<p>还没有收藏呢</p>
+		<p>和我一起去旅行吧，么么哒</p><br>
+		<p>我出钱，行不行</p>
 	</div>
 </template>
 
@@ -29,10 +30,10 @@
 		justify-content: center;
 	}
 	.tab .taba img{
-		width:4.4rem;
-		hright:3.3rem;
+		width:4.1rem;
+		height:3.3rem;
 	}
-	.tab p{
+	.tab>p{
 		width: 100%;
 		margin-top: .1rem;
 		text-align: center;

@@ -39,6 +39,6 @@
 	#setting .setting>p{
 		margin-left: .44rem;
 		margin-top: .5rem;
-		font-size: .3rem;
+		font-size: .32rem;
 	}
 </style>

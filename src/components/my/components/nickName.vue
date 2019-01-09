@@ -1,7 +1,8 @@
 <template>
     <div id="petName">
+
         <div id="headPortrait">
-          <p>头像</p>
+          <p><img src="../../../../static/my-img/icon_tp.png"></p>
         </div>
         <p id="youName">昵称</p>
         <div class="img"><img src="../../../../static/my-img/icon_xx.png"></div>
@@ -10,6 +11,7 @@
 					<li>粉丝(<span>40</span>)</li>
 					<li>个人主页</li>
 				</ul>
+
 		</div>
 </template>
 
@@ -30,10 +32,12 @@ export default {
   padding-top: 0.33rem;
 	position: relative;
 }
+#petName>.img img{
+  width:100%;
+}
 #headPortrait {
   width: 1.12rem;
   height: 1.12rem;
-  background: #ccc;
   border-radius: 50%;
   margin-left: 0.51rem;
   float: left;
@@ -43,6 +47,9 @@ export default {
     text-align: center;
     color:#fff;
     font-size:.30rem;
+    img{
+      width:100%;
+    }
   }
 }
 #youName{
