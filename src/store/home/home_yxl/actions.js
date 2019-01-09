@@ -3,21 +3,21 @@ export default {
     handleCity : function( {commit} ){
         axios({
             method : "get",
-            url : "http://localhost:3000/selectCity"
+            url : "/api/mock/5c354c55b554ff01c7996daa/example/selectCity"
         })
         .then(data=>{
-            commit( "handleSendCity", data.data )
+            commit( "handleSendCity", data.selectCity )
         })
     },
     handleHomeData : function( {commit} ){
         axios({
             method : "get",
-            url : "http://localhost:3000/home"
+            url : "/api/mock/5c354c55b554ff01c7996daa/example/home"
         })
         .then( data=>{
-            commit( "handleHot",data[0].hot );
-            commit( "handlePersonal",data[0].personal );
-            commit( "handleTravelCity",data[0].travelCity );
+            commit( "handleHot",data.home[0].hot );
+            commit( "handlePersonal",data.home[0].personal );
+            commit( "handleTravelCity",data.home[0].travelCity );
         } )
     }
 }
