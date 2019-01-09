@@ -6,22 +6,22 @@ const path = require('path')
 
 module.exports = {
   dev: {
-
+    //https://www.easy-mock.com/mock/5c35e6db17c96e7d2a33f892/example/data#!method=get
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
-      "/api":{
-        target:"",
-        changeOrigin:true,
-        pathRewrite:{
-          "^/api":""
+      "/api" : {
+        target : "https://www.easy-mock.com",
+        changeOrigin : true,
+        pathRewrite : {
+          "^/api" : ""
         }
       }
     },
 
     // Various Dev Server settings
-    host: 'localhost', // can be overwritten by process.env.HOST
+    host: '10.9.26.232', // can be overwritten by process.env.HOST
     port: 8080, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
     autoOpenBrowser: false,
     errorOverlay: true,

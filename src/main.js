@@ -8,8 +8,10 @@ import "./common/css/reset.css"
 import "./common/js/flexble"
 import "../node_modules/swiper/dist/css/swiper.min.css"
 import "../src/common/css/iconfont/iconfont.css"
+import "../src/common/css/iconfont/city_iconfont/iconfont.css"
 import "../src/common/css/iconfont/iconfont-home/iconfont.css"
 import "../src/common/css/iconfont/iconfont-details/iconfont.css"
+import "../src/common/css/iconfont-font/iconfont.css"
 Vue.config.productionTip = false
 /* eslint-disable no-new */
 new Vue({

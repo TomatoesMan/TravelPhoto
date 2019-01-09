@@ -4,11 +4,17 @@ import Home from "../components/home"
 import Travel from "../components/travel"
 import Scart from "../components/scart"
 import My from "../components/my"
+import coupleBack from "../components/my/coupleBack"
+import setting from "../components/my/setting"
+import collect from "../components/my/collect"
 import Login from "../components/login"
 import Register from  "../components/login/components/register.vue"
+ import Register from  "../components/login/components/register.vue"
 import Forget from "../components/login/components/forgetPwd.vue"
 import SelectCity from "../components/selectCity"
 import Error from "../components/error/error.vue"
+import City from "../components/city"
+Vue.use(Router)
 import travelHome from "../components/travel/components/travelhome"
 import travelNotes from "../components/travel/components/travelnotes"
 import travelDetails from "../components/travel/components/traveldetails"
@@ -17,6 +23,7 @@ import travelSend from "../components/travel/components/travelsend"
 import Detail from "../components/detail"
 import PayList from "@/components/scart/components/payList"
 import PayPage from "@/components/scart/components/payPage"
+
 Vue.use(Router)
 const router =  new Router({
   routes: [
@@ -50,24 +57,7 @@ const router =  new Router({
         //table栏的显示
         flag : true
       },
-      children:[{
-        path: '/travel/components/travelhome',
-        name: 'travelhome',
-        component: travelHome,
-        meta : {
-          //table栏的显示
-          flag : true
-        },
-      },
-      {
-        path: '/travel/components/travelnotes',
-        name: 'travelnotes',
-        component: travelNotes,
-        meta : {
-          //table栏的显示
-          flag : true
-        },
-      },
+      children:[
       {
         path: '/travel/components/traveldetails',
         name: 'traveldetails',
@@ -98,13 +88,51 @@ const router =  new Router({
     ]
     },
     {
+      path:'/travelnotes',
+      name:'travelnotes',
+      component:travelNotes,
+      meta:{
+        flag:true
+      },
+    },
+    {
       path: '/my',
       name: 'my',
       component: My,
       meta : {
         //table栏的显示
         flag : true
-      }
+      },
+        children:[
+
+        ]
+    },
+    {
+      path: '/my/coupleBack',
+      name: 'coupleBack',
+      component: coupleBack,
+      meta : {
+        //table栏的显示
+        flag : false
+      },
+    },
+    {
+      path: '/my/setting',
+      name: 'setting',
+      component: setting,
+      meta : {
+        //table栏的显示
+        flag : false
+      },
+    },
+    {
+      path: '/my/collect',
+      name: 'collect',
+      component: collect,
+      meta : {
+        //table栏的显示
+        flag : false
+      },
     },
     {
       path: '/scart',
@@ -139,6 +167,14 @@ const router =  new Router({
 				requireAuth : false
 			}
 		},
+    {
+      path: '/city',
+      name: 'city',
+      component: City,
+      meta : {
+        flag : false,
+      }
+    },
     {
       path:'/login',
       name:'login',

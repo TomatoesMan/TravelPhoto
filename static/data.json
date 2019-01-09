@@ -1,0 +1,31 @@
+{
+    "data":[
+        {
+            "id":0,
+            "goodsName":"三只松鼠",
+            "price":88.00,
+            "num":1,
+            "img":"static/img/1.jpg"
+        },
+        {
+            "id":1,
+            "goodsName":"旺仔牛奶",
+            "price":66.60,
+            "num":1,
+            "img":"static/img/2.jpg"
+        },
+        {
+            "id":2,
+            "goodsName":"哇哈哈",
+            "price":45,
+            "num":1,
+            "img":"static/img/3.jpg"
+        }, {
+            "id":3,
+            "goodsName":"营养快线",
+            "price":33,
+            "num":1,
+            "img":"static/img/4.jpg"
+        }
+    ]
+}
