@@ -55,13 +55,23 @@ export default {
         font-weight:bold;
         color:rgba(0,0,0,1);
     }
-    .details>.im{
-        height: auto;
+    .details{
         display: flex;
+        flex-direction: column;
         justify-content: center;
     }
+    .details>.im{
+        align-content: center;
+        width: 90%;
+        margin-left: 5%;
+        height: auto;
+        img{
+            width: 100%;
+        }
+    }
     .details>.im_2{
-        margin: .54rem 0;
+        margin-top: .54rem;
+        margin-bottom: .54rem;
     }
     .im_3,.im_4,.im_5,.im_6,.im_7,.im_8{
         margin-bottom: .38rem;
