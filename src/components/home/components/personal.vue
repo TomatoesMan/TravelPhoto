@@ -2,7 +2,7 @@
     <div id="personal">
         <h2>{{personalTitle}}</h2>
         <dl v-for="(item, index) in personalList" :key="index">
-            <router-link to="{ name : 'personal' }">
+            <router-link to="/home/personaltailor">
                 <dt><img :src="item.src" alt=""></dt>
                 <dd>
                     <p>{{item.title}}</p>

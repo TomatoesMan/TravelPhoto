@@ -4,20 +4,26 @@ import Home from "../components/home"
 import Travel from "../components/travel"
 import Scart from "../components/scart"
 import My from "../components/my"
+import Error from "../components/error/error.vue"
+
+
 import coupleBack from "../components/my/coupleBack"
 import setting from "../components/my/setting"
 import collect from "../components/my/collect"
 import Login from "../components/login"
  import Register from  "../components/login/components/register.vue"
 import Forget from "../components/login/components/forgetPwd.vue"
+
 import SelectCity from "../components/selectCity"
-import Error from "../components/error/error.vue"
+
+import Detail from "../components/detail"
+import PersonalTailor from "../components/personalTailor"
+
 import travelHome from "../components/travel/components/travelhome"
 import travelNotes from "../components/travel/components/travelnotes"
 import travelDetails from "../components/travel/components/traveldetails"
 import travelForward from "../components/travel/components/travelForward"
 import travelSend from "../components/travel/components/travelsend"
-import Detail from "../components/detail"
 import PayList from "@/components/scart/components/payList"
 import PayPage from "@/components/scart/components/payPage"
 
@@ -43,6 +49,14 @@ const router =  new Router({
       component:Detail,
       meta : {
         //table栏的显示
+        flag : false
+      }
+    },
+    {
+      path: '/home/personaltailor',
+      name:'PersonalTailor',
+      component:PersonalTailor,
+      meta : {
         flag : false
       }
     },

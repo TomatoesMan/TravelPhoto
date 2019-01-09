@@ -57,19 +57,26 @@ export default {
         .top{
             display: flex;
             justify-content: space-around;
-            a{
-                font-size: .28rem;
-                p{
-                    text-align: center;
-                    margin-top: .3rem;
-                    font-family:PingFang-SC-Reguler;
+            div{
+                width: 12%;
+                a{
+                    font-size: .28rem;
+                    p{
+                        text-align: center;
+                        margin-top: .3rem;
+                        font-family:PingFang-SC-Reguler;
+                    }
+                    img{
+                        width: 100%;
+                    }
                 }
             }
+            
         }
         .s_2{
             height: .99rem;
             border-top:.01rem solid #f48e21;
-            margin-top: .7rem;
+            margin-top: .5rem;
         }
     }
 </style>
