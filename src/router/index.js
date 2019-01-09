@@ -32,6 +32,7 @@ import travelSend from "../components/travel/components/travelsend"
 import PayList from "@/components/scart/components/payList"
 import PayPage from "@/components/scart/components/payPage"
 
+import PaySuccess from "@/components/scart/components/paySuccess"
 Vue.use(Router)
 const router =  new Router({
   routes: [
@@ -176,6 +177,17 @@ const router =  new Router({
 			path:'/payPage',
 			name:'pagePage',
 			component:PayPage,
+			meta : {
+				//table栏的显示
+				flag : false,
+				//登录验证
+				requireAuth : false
+			}
+		},
+		{
+			path:'/paySuccess',
+			name:'paySuccess',
+			component:PaySuccess,
 			meta : {
 				//table栏的显示
 				flag : false,

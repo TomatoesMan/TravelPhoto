@@ -3,7 +3,7 @@
 // see http://vuejs-templates.github.io/webpack for documentation.
 
 const path = require('path')
-
+//https://www.easy-mock.com/mock/5c35b8d660b79a776b6df058/example/shop/order
 module.exports = {
   dev: {
     //https://www.easy-mock.com/mock/5c35e6db17c96e7d2a33f892/example/data#!method=get
@@ -16,7 +16,14 @@ module.exports = {
         changeOrigin : true,
         pathRewrite : {
           "^/api" : ""
-        }
+        },
+      
+			"/apid":{
+				target:"https://www.easy-mock.com",
+				changeOrigin:true,
+				pathRewrite:{
+					"^/apid":""
+				}
       }
     },
 
