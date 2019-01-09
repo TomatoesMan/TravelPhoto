@@ -1,5 +1,6 @@
 <template>
   <div class="pageTable">
+    <!-- <div id="bj"><img src="../../../static/image/bj.jpg"></div> -->
     <div class="loginTop">
       <h5>登录</h5>
     </div>
@@ -8,68 +9,82 @@
         <img src="../../../static/image/dl_logo.png">
       </div>
       <div class="loginName">
-        <div class="loginNumber"  >账号</div>
-        <input id="userName" v-model="myTel" type="text" :placeholder="spanTel">
+        <div class="loginNumber">账号</div>
+        <input id="userName" v-model="userName" type="text" :placeholder="spanTel">
       </div>
       <div class="loginPwd">
         <div class="loginCode">密码</div>
-        <input id="loginPassword" v-model="myPwd" type="password" :placeholder="spanPwd">
+        <input id="loginPassword" v-model="userPassword" type="password" :placeholder="spanPwd">
       </div>
       <button id="loginIng" @click="hendleSuccess()">登录</button>
-      <div class="forget"><router-link to="/forget">忘记密码</router-link></div>
-      <div class="register"><router-link to="/register">注册</router-link></div>
+      <div class="forget">
+        <router-link to="/forget">忘记密码</router-link>
+      </div>
+      <div class="register">
+        <router-link to="/register">注册</router-link>
+      </div>
     </div>
     <!-- <router-view/> -->
   </div>
 </template>
 
 <script>
+import Vue from "vue";
 import axios from "axios";
+import { Toast } from "mint-ui";
 export default {
-  data(){
-      return{
-          myTel:"",
-          myPwd:"",
-          spanTel:"请输入手机号",
-          spanPwd:"请输入密码"
-      }
+  data() {
+    return {
+      userName: "",
+      userPassword: "",
+      spanTel: "请输入手机号",
+      spanPwd: "请输入密码"
+    };
   },
-methods:{
-  hendleSuccess(){
+  methods: {
+    hendleSuccess() {
       //验证手机号
-      let flag =null;
+      let flag = null;
       axios({
-        method:"get",
-        url:"http://localhost:3000/data?username="+this.myTel,
-      }).then((data)=>{
-        if(data.length == 0){
+        method: "get",
+        url: "http://localhost:3000/data?username=" + this.userName
+      }).then(data => {
+        if (data.length == 0) {
           //说明该用户不存在   登录失败
-          this.spanTel="该用户不存在"
-          this.myTel=""
-          flag=false;
+          this.spanTel = "该用户不存在";
+          this.userName = "";
+          flag = false;
           //判断密码是否正确
-        }else if(this.myPwd!=data[0].password){
-          this.spanPwd = "密码输入有误"
-          this.myPwd = ""
-
-        }else{
+        } else if (this.userPassword != data[0].password) {
+          this.spanPwd = "密码输入有误";
+          this.userPassword = "";
+        } else if (data.length != 0 && this.userPassword == data[0].password) {
           //登录成功
           alert("登录成功");
-          flag=true;
+          Toast({
+            message: "登录成功",
+            duration: 500
+          });
+          flag = true;
           //跳转到首页
+          this.$router.push("home");
         }
-        console.log(data);
-      })
+      });
+    }
   }
-}
-
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss" >
 .pageTable {
   width: 100%;
   height: 100%;
+}
+#bj {
+  img {
+    width: 100%;
+    height: 100%;
+  }
 }
 .loginTop {
   width: 100%;
@@ -86,9 +101,9 @@ methods:{
 }
 .loginImg {
   padding: 0.8rem 0 0 2.6rem;
-  img{
-          width: 2.3rem;
-          height: 2.3rem;
+  img {
+    width: 2.3rem;
+    height: 2.3rem;
   }
 }
 .loginName {
@@ -131,9 +146,9 @@ methods:{
 }
 #loginIng {
   width: 6rem;
-  height: .88rem;
+  height: 0.88rem;
   background: rgba(65, 116, 242, 1);
-  border-radius: 12px;
+  border-radius: 0.12rem;
   margin: 0.55rem 0 0 0.75rem;
   font-size: 0.36rem;
   font-family: PingFang-SC-Regular;
@@ -142,20 +157,29 @@ methods:{
   outline: medium;
   border: none;
 }
-.forget{
+.forget {
   width: 3rem;
-  height: .5rem;
+  height: 0.5rem;
   float: left;
-  margin: .2rem 0 0 .75rem;
-  color: #5B5B5B;
-  font-size: .28rem;
+  margin: 0.2rem 0 0 0.75rem;
+  color: #5b5b5b;
+  font-size: 0.28rem;
 }
-.register{
-  width: .8rem;
-  height: .5rem;
+.register {
+  width: 0.8rem;
+  height: 0.5rem;
   float: right;
-  margin: .2rem .75rem 0 0;
-  color: #5B5B5B;
-  font-size: .28rem;
+  margin: 0.2rem 0.75rem 0 0;
+  color: #5b5b5b;
+  font-size: 0.28rem;
+}
+.mint-toast {
+  width: 2rem;
+  height: 0.6rem;
+  span {
+    font-size: 0.3rem;
+    line-height: 0.38rem;
+    font-family: PingFang-SC-Bold;
+  }
 }
 </style>
