@@ -16,6 +16,7 @@ import Register from  "../components/login/components/register.vue"
 import Forget from "../components/login/components/forgetPwd.vue"
 
 import SelectCity from "../components/selectCity"
+import Seek from "../components/seek"
 import Error from "../components/error/error.vue"
 import City from "../components/city"
 Vue.use(Router)
@@ -222,6 +223,15 @@ const router =  new Router({
       path:'/selectCity',
       name:'selectCity',
       component:SelectCity,
+      meta:{
+        //table栏的显示
+        flag:false,
+       },
+    },
+    {
+      path:'/seek',
+      name:'seek',
+      component:Seek,
       meta:{
         //table栏的显示
         flag:false,

@@ -17,9 +17,6 @@
     import Vuex from "vuex"
     import BScroll from "better-scroll";
     export default {
-        created () {
-            this.handleHomeData();
-        },
         data () {
             return {
                 
@@ -29,11 +26,6 @@
             ...Vuex.mapState({
                 hotTitle : state=>state.home_yxl.hotTitle,
                 hotList : state=>state.home_yxl.hotList
-            })
-        },
-        methods: {
-            ...Vuex.mapActions({
-                handleHomeData : "home_yxl/handleHomeData"
             })
         },
         mounted () {
