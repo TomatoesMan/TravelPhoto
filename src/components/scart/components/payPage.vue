@@ -33,5 +33,22 @@
 </script>
 
 <style>
-
+.head_payPage{
+	width: 100%;
+	height: .4rem;
+	margin-top: .65rem;
+}
+.head_payPage>img{
+	width: .26rem;
+	height: .46rem;
+	float: left;
+	margin-left: .39rem;
+}
+.head_payPage>h2{
+	width: 1.8rem;
+	height: .4rem;
+	font-size: .4rem;
+	float: left;
+	margin-left: 2.3rem;
+}
 </style>

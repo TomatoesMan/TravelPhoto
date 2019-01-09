@@ -1,9 +1,7 @@
 <template>
 	<div class="pay_main">
 		<div class="top_pay">
-		    <router-link to="/scart">
-				<div class="back_scart"><img src="../../../../static/fh.png"></div>
-			</router-link>
+			<div class="back_scart" @click="go(back)"><img src="../../../../static/fh.png"></div>
 	        <h3>付款页</h3>
 		</div>
 		<div class="conetent_pay">
