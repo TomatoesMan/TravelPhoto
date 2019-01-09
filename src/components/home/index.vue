@@ -17,7 +17,11 @@
 	import Personal from "./components/personal.vue"
 	import TravelCity from "./components/travelCity.vue"
 	import BScroll from "better-scroll";
+	import Vuex from "vuex"
 	export default {
+		created () {
+            this.handleHomeData()
+        },
 		components : {
 			"Search-com" : Search,
 			"Hot-com" : Hot,
@@ -31,7 +35,12 @@
 				click:true,
 				probeType:2,
 			});
-		}
+		},
+		  methods: {
+            ...Vuex.mapActions({
+                handleHomeData : "home_yxl/handleHomeData"
+            })
+        }
 	}
 </script>
 <style scoped lang="scss">
@@ -40,6 +49,7 @@
 		width: 100%;
 		height: 100%;
 		padding-bottom : 1.98rem;
+		padding-top: 0.6rem;
 		.scrollHome {
 			width: 100%;
 			height: 100%;

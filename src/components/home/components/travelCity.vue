@@ -4,7 +4,7 @@
     <div class="wrapper scrollTravelCity" ref="travelCityWrapper">
       <ul class="content">
         <li v-for="( item, index ) in travelCityList" :key="index">
-          <router-link :to="{name : 'hot'}">
+          <router-link :to="{name : 'city'}">
             <p>
               <img :src="item.src" alt>
             </p>
@@ -23,18 +23,10 @@
 import Vuex from "vuex";
 import BScroll from "better-scroll";
 export default {
-  created() {
-    this.handleHomeData();
-  },
   computed: {
     ...Vuex.mapState({
       travelCityTitle: state => state.home_yxl.travelCityTitle,
       travelCityList: state => state.home_yxl.travelCityList
-    })
-  },
-  methods: {
-    ...Vuex.mapActions({
-      handleHomeData: "home_yxl/handleHomeData"
     })
   },
   mounted() {
@@ -70,6 +62,14 @@ export default {
         box-shadow: 0px 0px 8px 0px rgba(174, 174, 174, 0.31);
         flex-shrink: 0;
         margin-right: 0.33rem;
+        p:first-child {
+          width: 1.85rem;
+          height: 1.92rem;
+          img {
+            width: 100%;
+            height: 100%;
+          }
+        }
         p:nth-child(2) {
           font-size: 0.32rem;
           font-family: PingFang-SC-Bold;

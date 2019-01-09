@@ -5,7 +5,11 @@
                 <router-link :to="{ name : 'home'}">{{item.cityName}}</router-link>
             </li>
         </ul>
-        <div class="cancel"><img src="../../../static/image_yxl/icon_1_csxz@2x.png" alt=""></div>
+        <div class="cancel">
+            <router-link :to="{ name : 'home'}">
+                <img src="../../../static/image_yxl/icon_1_csxz@2x.png" alt="">
+                </router-link>
+            </div>
     </div>
 </template>
 <script>
