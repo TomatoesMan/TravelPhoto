@@ -1,7 +1,7 @@
 <template>
 	<div class="pay_main">
 		<div class="top_pay">
-			<div class="back_scart" @click="go(back)"><img src="../../../../static/fh.png"></div>
+			<div class="back_scart" @click="handleBack()"><img src="../../../../static/fh.png"></div>
 	        <h3>付款页</h3>
 		</div>
 		<div class="conetent_pay">
@@ -17,7 +17,7 @@
 		<div class="main_pay">
 			<p>日期:2018年12月7日至12月14日</p>
 			<span>留言:</span>
-			<textarea cols="30" rows="10" placeholder="选填:填写内容">
+			<textarea placeholder="选填:填写内容">
 			</textarea>
 		</div>
 		<div class="foot_pay">
@@ -33,7 +33,12 @@
 			return {
 				
 			};
-		}
+		},
+		methods: {
+			handleBack() {
+				this.$router.back()
+			}
+		},
 	}
 </script>
 
@@ -70,7 +75,7 @@
 		justify-content: space-around;
 		align-items: center;
 		border: 1px solid #f7f7f7;
-		box-shadow: 0px 0px 15px 0px rgba(100,100,100,0.1);
+		box-shadow:0px 0px 30px 0px rgba(100,100,100,0.1);
 		margin-bottom: .3rem;
 		margin:.5rem auto;
 	}
@@ -102,7 +107,23 @@
 	}
 	.main_pay{
 		margin-left: .3rem;
-		
+		margin-top: .2rem;
+	}
+	.main_pay p{
+		font-size: .32rem;
+		margin-bottom: .62rem;
+	}
+	.main_pay span{
+		font-size: .32rem;
+	}
+	.main_pay textarea{
+		font-size: .28rem;
+		border: none;
+		width: 6rem;
+		height:6rem;
+		margin-left: 1rem;
+		margin-top: -.4rem;
+		color: #AAAAAA;
 	}
 	.foot_pay{
 		width: 100%;
