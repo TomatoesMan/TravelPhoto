@@ -6,6 +6,7 @@ import Scart from "../components/scart"
 import My from "../components/my"
 import Login from "../components/login"
 import Error from "../components/error/error.vue"
+import City from "../components/city"
 Vue.use(Router)
 
 const router =  new Router({
@@ -50,6 +51,14 @@ const router =  new Router({
         flag : true,
         //登录验证
         requireAuth : false
+      }
+    },
+    {
+      path: '/city',
+      name: 'city',
+      component: City,
+      meta : {
+        flag : false,
       }
     },
     {
