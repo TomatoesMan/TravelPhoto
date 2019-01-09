@@ -66,7 +66,6 @@ export default {
 #my li{
 	width: 1.20rem;
 	height: .31rem;
-	background: #CCCCCC;
 	float: left;
 	margin-right: .37rem;
 	font-size: .3rem;

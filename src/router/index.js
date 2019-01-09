@@ -4,8 +4,10 @@ import Home from "../components/home"
 import Travel from "../components/travel"
 import Scart from "../components/scart"
 import My from "../components/my"
+import coupleBack from "../components/my/coupleBack"
+import setting from "../components/my/setting"
+import collect from "../components/my/collect"
 import Login from "../components/login"
- import Register from  "../components/login/components/register.vue"
 import Register from  "../components/login/components/register.vue"
 import Forget from "../components/login/components/forgetPwd.vue"
 import SelectCity from "../components/selectCity"
@@ -18,6 +20,7 @@ import travelSend from "../components/travel/components/travelsend"
 import Detail from "../components/detail"
 import PayList from "@/components/scart/components/payList"
 import PayPage from "@/components/scart/components/payPage"
+
 Vue.use(Router)
 const router =  new Router({
   routes: [
@@ -96,7 +99,37 @@ const router =  new Router({
       meta : {
         //table栏的显示
         flag : true
-      }
+      },
+        children:[
+            
+        ]
+    },
+    {
+      path: '/my/coupleBack',
+      name: 'coupleBack',
+      component: coupleBack,
+      meta : {
+        //table栏的显示
+        flag : false
+      },
+    },
+    {
+      path: '/my/setting',
+      name: 'setting',
+      component: setting,
+      meta : {
+        //table栏的显示
+        flag : false
+      },
+    },
+    {
+      path: '/my/collect',
+      name: 'collect',
+      component: collect,
+      meta : {
+        //table栏的显示
+        flag : false
+      },
     },
     {
       path: '/scart',
