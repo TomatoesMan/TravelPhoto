@@ -30,7 +30,7 @@ import travelForward from "../components/travel/components/travelForward"
 import travelSend from "../components/travel/components/travelsend"
 import PayList from "@/components/scart/components/payList"
 import PayPage from "@/components/scart/components/payPage"
-
+import Kong from "@/components/scart/components/Kong"
 import PaySuccess from "@/components/scart/components/paySuccess"
 Vue.use(Router)
 const router =  new Router({
@@ -190,6 +190,17 @@ const router =  new Router({
 			meta : {
 				//table栏的显示
 				flag : false,
+				//登录验证
+				requireAuth : false
+			}
+    },
+    {
+			path:'/kong',
+			name:'kong',
+			component:Kong,
+			meta : {
+				//table栏的显示
+				flag : true,
 				//登录验证
 				requireAuth : false
 			}
