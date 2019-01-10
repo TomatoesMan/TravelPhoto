@@ -5,6 +5,7 @@ import home_fq from "./home/home_fq"
 import scart from "./scart"
 import Lirui from "./home/lirui"
 import home_yxl from "./home/home_yxl"
+import parson_zj from "./parson/parson_zj"
 Vue.use( Vuex );
 //创建仓库
 const store  = new Vuex.Store({
@@ -13,7 +14,8 @@ const store  = new Vuex.Store({
         home_fq,
         scart,
         Lirui,
-        home_yxl
+        home_yxl,
+        parson_zj
     }
 })
 export default store;

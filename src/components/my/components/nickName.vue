@@ -9,7 +9,7 @@
 				<ul id="my">
 					<li>关注(<span>12</span>)</li>
 					<li>粉丝(<span>40</span>)</li>
-					<li>个人主页</li>
+					<li><router-link to="/my/parsonalpage">个人主页</router-link></li>
 				</ul>
 
 		</div>
@@ -18,7 +18,7 @@
 
 <script>
 export default {
-		
+
 };
 </script>
 

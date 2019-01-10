@@ -10,10 +10,14 @@ import Error from "../components/error/error.vue"
 import coupleBack from "../components/my/coupleBack"
 import setting from "../components/my/setting"
 import collect from "../components/my/collect"
+<<<<<<< HEAD
 import wait from "../components/my/wait"
 import waiting from "../components/my/waiting"
 import payed from "../components/my/payed"
 import review from "../components/my/review"
+=======
+import parsonalpage from "../components/my/nickName/parsonPage/parsonalPage"
+>>>>>>> zhangjie
 import Login from "../components/login"
 import Register from  "../components/login/components/register.vue"
 
@@ -155,6 +159,7 @@ const router =  new Router({
       },
     },
     {
+<<<<<<< HEAD
       path: '/my/wait',
       name: 'wait',
       component: wait,
@@ -185,6 +190,11 @@ const router =  new Router({
       path: '/my/review',
       name: 'review',
       component: review,
+=======
+      path: '/my/parsonalpage',
+      name: 'parsonalpage',
+      component: parsonalpage,
+>>>>>>> zhangjie
       meta : {
         //table栏的显示
         flag : false
