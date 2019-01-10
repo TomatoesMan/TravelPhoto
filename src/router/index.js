@@ -12,12 +12,11 @@ import setting from "../components/my/setting"
 import collect from "../components/my/collect"
 import Login from "../components/login"
 import Register from  "../components/login/components/register.vue"
- import Register from  "../components/login/components/register.vue"
+
 import Forget from "../components/login/components/forgetPwd.vue"
 
 import SelectCity from "../components/selectCity"
 import Seek from "../components/seek"
-import Error from "../components/error/error.vue"
 import City from "../components/city"
 Vue.use(Router)
 
