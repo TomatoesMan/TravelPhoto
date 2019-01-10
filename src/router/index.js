@@ -10,6 +10,7 @@ import Error from "../components/error/error.vue"
 import coupleBack from "../components/my/coupleBack"
 import setting from "../components/my/setting"
 import collect from "../components/my/collect"
+import parsonalpage from "../components/my/nickName/parsonPage/parsonalPage"
 import Login from "../components/login"
 import Register from  "../components/login/components/register.vue"
 
@@ -145,6 +146,15 @@ const router =  new Router({
       path: '/my/collect',
       name: 'collect',
       component: collect,
+      meta : {
+        //table栏的显示
+        flag : false
+      },
+    },
+    {
+      path: '/my/parsonalpage',
+      name: 'parsonalpage',
+      component: parsonalpage,
       meta : {
         //table栏的显示
         flag : false
