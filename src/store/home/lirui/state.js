@@ -6,5 +6,9 @@ export default {
     Hotels:[],
     photo:[],
     shareFlag:false,
-    personaltailor:{}
+    p_photographer:[],
+    p_ScenicSpot:[],
+    p_hotel:[],
+    p_diet:[],
+    p_traffic:[]
 }
