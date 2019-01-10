@@ -5,83 +5,85 @@
 			<span v-show="flag" @click="handleChange()">编辑</span>
 			<span v-show="!flag" @click="handleChange()">完成</span>
 		</div>
+		<!-- 列表 -->
 		<div class="content_D">
 			<div class="content_d" v-for="(item,index) in scartList" v-bind:key="index">
-				<div><input type="checkbox" ></div>
-				<div><img :src="item.comboImg"></div>
+				<div class="scartCheckbox">
+					<input type="checkbox" :checked="item.flag" @click="handleFla(item.comboId)">
+				</div>
+				<div class="scartPic"><img :src="item.comboImg"></div>
 				<div>
-					<h4>{{item.comboName}}</h4>
-					<p>{{item.comboTagname}}</p>
-					<span>{{item.comboPrice}}</span>
+					<h4 class="scartName">{{item.comboName}}</h4>
+					<p class="scartTagname">{{item.comboTagname}}</p>
+					<span class="scartPrice">{{item.comboPrice | money}}</span>
 				</div>
 			</div>
 		</div>
+		<!-- 底部 -->
+		       <!-- 支付底部 -->
 		<div class="footer_d" v-show="flag">
-			<p>合计：<span>￥0.00</span></p>
-			<router-link to="/paylist"><div>立即支付</div></router-link>
+			<p>合计：<span class="scartSumPrice">{{result.scartPrice | sum(result.scartNum)}}</span></p>
+			<router-link to="/paylist"><div :style="{background:result.ary.length>0?'#0A91E5':'#CFCFCF'}">立即支付</div></router-link>
 		</div>
+		       <!-- 删除底部 -->
 		<div class="footer_d footer_d2" v-show="!flag">
-			<input type="checkbox"><span>全选</span>
-			<div @click="handleDel(index)">删除</div>
+			<input type="checkbox" :checked="checkAll" @click="handCheckAll()"><span>全选</span>
+			<div class="scartDel" @click="handleDel(result.ary)">删除</div>
 		</div>
-		<div class="null_d"><img src="../../../static/guc_ch@2x.png"></div>
+		      
 	
 	</div>
 </template>
 
 <script>
-	
-    import Vuex from "vuex"
+	import Vuex from "vuex";
 	export default{
-		
+	    filters:{
+			money:(n)=>{
+				return "￥"+n
+			},
+			sum:(n,p)=>{
+				return "￥"+p*n
+			}
+		},	
 		data(){
 			return{
-				flag:true,
-				id:[]
-				/* checked:false,
-				choose:true,
-				val:"" */
+				flag:true
 			}
 		},
 		created(){
 			//页面跳转过来自动执行这个函数
-			this.scartShow(),
-			this.handleDels()
+			this.scartShow()
 		},
 		computed:{
 			...Vuex.mapState({
-				scartList:state=>state.scart.scartList
+				scartList:state=>state.scart.scartList,
+				checkAll:state=>state.scart.checkAll
 			}),
-			...Vuex.mapState({
-				scartList:state=>state.scart.scartList
+			...Vuex.mapGetters({
+				result:"scart/result"
 			})
 		},
 		methods:{
 			//获取数据
 			...Vuex.mapActions({
-				scartShow:"scart/getData"
+				scartShow:"scart/getData",
+				handleDel:"scart/handleDel"
 			}),
 			handleChange(){
 				this.flag = !this.flag
 			},
-			...Vuex.mapActions({
-				handleDel:"scart/handleDel"
-			}),
-			handleDelete(index){
-				this.$on("handleDels",index)
-				//this.id.push(params)
-			},
-			handleDels(index){
-				this.$emit("handleDels",index)
-			}
-			/* handleChecked(e){
-				if(e.target=""){
-					this.choose = true
-				}else if(e.target==this.val){
-					this.choose = true
+			...Vuex.mapMutations({
+				handleFla:"scart/handleFla",
+				handCheckAll:"scart/handCheckAll"
+			})
+		},
+		watch:{
+           scartList(n){
+		    	if(n.length==0){
+				    this.$router.push("/kong")
 				}
-				this.val = e.target.value;
-			} */
+		   } 
 		}
 	}
 </script>
@@ -170,8 +172,11 @@
 	
 	.footer_d{
 		width: 100%;
-		height: .82rem;
-		margin-bottom: 1rem;
+		height: 1.78rem;
+		position: fixed;
+		left: 0;bottom: 1rem;
+		padding: 0.18rem;
+		background: #fff; 
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
@@ -180,7 +185,7 @@
 		width: 1.96rem;
 		height: .32rem;
 		font-size: .28rem;
-		margin-top: .23rem;
+		margin-left: .2rem;
 	}
 	.footer_d>p>span{
 		color: #ff6417;
@@ -188,23 +193,21 @@
 	.footer_d div{
 		width: 2rem;
 		height: .82rem;
-		background: #CFCFCF;
+		 background: #CFCFCF; 
 		border-radius: .12rem;
 		text-align: center;
 		line-height: .82rem;
 		font-size: .3rem;
 		color: #fff;
-		margin-top: .3rem;
 	}
-	.footer_d2>input{
+	.footer_d2 input{
 		display: inline-block;
 		width: .3rem;
 		height: .3rem;
-		margin-top: .3rem;
 	}
-	.footer_d2>span{
-		margin-left: -3.5rem;
-		margin-top: .3rem;
+	.footer_d2 span{
+		margin-left: -4rem;
+		margin-top: .2.8rem;
 		font-size: .3rem;
 	}
 	.footer_d2 div{
