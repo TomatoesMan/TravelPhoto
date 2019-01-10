@@ -2,11 +2,9 @@
 // Template version: 1.3.1
 // see http://vuejs-templates.github.io/webpack for documentation.
 
-const path = require('path')
-//https://www.easy-mock.com/mock/5c35b8d660b79a776b6df058/example/shop/order
+const path = require('path');
 module.exports = {
   dev: {
-    //https://www.easy-mock.com/mock/5c35e6db17c96e7d2a33f892/example/data#!method=get
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
@@ -17,14 +15,14 @@ module.exports = {
         pathRewrite : {
           "^/api" : ""
         }
+      },
+      "/apid" : {
+        target : "http://www.tuling123.com",
+        changeOrigin : true,
+        pathRewrite : {
+          "^/apid" : ""
+        }
       }
-			// "/apid":{
-			// 	target:"https://www.easy-mock.com",
-			// 	changeOrigin:true,
-			// 	pathRewrite:{
-			// 		"^/apid":""
-			// 	}
-      // }
     },
 
     // Various Dev Server settings
@@ -34,7 +32,6 @@ module.exports = {
     errorOverlay: true,
     notifyOnErrors: true,
     poll: false, // https://webpack.js.org/configuration/dev-server/#devserver-watchoptions-
-
 
     /**
      * Source Maps

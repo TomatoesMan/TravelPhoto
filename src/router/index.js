@@ -22,6 +22,7 @@ import Forget from "../components/login/components/forgetPwd.vue"
 import SelectCity from "../components/selectCity"
 import Seek from "../components/seek"
 import City from "../components/city"
+import Cusservice from "../components/cusservice"
 Vue.use(Router)
 
 import Detail from "../components/detail"
@@ -283,6 +284,15 @@ const router =  new Router({
       path:'/seek',
       name:'seek',
       component:Seek,
+      meta:{
+        //table栏的显示
+        flag:false,
+       },
+    },
+    {
+      path:'/cusservice',
+      name:'cusservice',
+      component:Cusservice,
       meta:{
         //table栏的显示
         flag:false,
