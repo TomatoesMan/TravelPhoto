@@ -16,9 +16,15 @@ export default {
 <style scoped lang="">
     .top{
         width: 100%;
-        height:.46rem ;
+        height:.9rem ;
         display: flex;
         align-items: center;
+        position: fixed;
+        top: 0rem;
+        left: 0;
+        z-index: 5;
+        background: #fff;
+        padding-top: 0.65rem;
     }
     .top .top_j{
         width:.26rem;

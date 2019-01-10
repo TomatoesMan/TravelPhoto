@@ -13,7 +13,7 @@
                     <p>{{item.city_strate_det}}</p>
             </div>
             <div class="city_btn">
-                    <span>情侣旅拍套餐详情</span>
+                    <router-link :to="{ name : 'detail' }"><span>情侣旅拍套餐详情</span></router-link>
             </div>
     </div>
 </template>

@@ -45,7 +45,6 @@
 </script>
 <style scoped lang="scss">
 	#home {
-		padding-left : 0.3rem;
 		width: 100%;
 		height: 100%;
 		padding-bottom : 1.98rem;
