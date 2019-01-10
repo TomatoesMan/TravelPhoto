@@ -17,14 +17,14 @@ module.exports = {
         pathRewrite : {
           "^/api" : ""
         }
-      },
-			"/apid":{
-				target:"https://www.easy-mock.com",
-				changeOrigin:true,
-				pathRewrite:{
-					"^/apid":""
-				}
       }
+			// "/apid":{
+			// 	target:"https://www.easy-mock.com",
+			// 	changeOrigin:true,
+			// 	pathRewrite:{
+			// 		"^/apid":""
+			// 	}
+      // }
     },
 
     // Various Dev Server settings
