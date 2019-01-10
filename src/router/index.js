@@ -10,6 +10,10 @@ import Error from "../components/error/error.vue"
 import coupleBack from "../components/my/coupleBack"
 import setting from "../components/my/setting"
 import collect from "../components/my/collect"
+import wait from "../components/my/wait"
+import waiting from "../components/my/waiting"
+import payed from "../components/my/payed"
+import review from "../components/my/review"
 import Login from "../components/login"
 import Register from  "../components/login/components/register.vue"
 
@@ -145,6 +149,42 @@ const router =  new Router({
       path: '/my/collect',
       name: 'collect',
       component: collect,
+      meta : {
+        //table栏的显示
+        flag : false
+      },
+    },
+    {
+      path: '/my/wait',
+      name: 'wait',
+      component: wait,
+      meta : {
+        //table栏的显示
+        flag : false
+      },
+    },
+    {
+      path: '/my/waiting',
+      name: 'waiting',
+      component: waiting,
+      meta : {
+        //table栏的显示
+        flag : false
+      },
+    },
+    {
+      path: '/my/payed',
+      name: 'payed',
+      component: payed,
+      meta : {
+        //table栏的显示
+        flag : false
+      },
+    },
+    {
+      path: '/my/review',
+      name: 'review',
+      component: review,
       meta : {
         //table栏的显示
         flag : false

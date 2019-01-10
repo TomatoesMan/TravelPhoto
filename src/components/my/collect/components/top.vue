@@ -29,7 +29,7 @@
 	
 	}
 	.top p{
-		margin-left: 2.88rem;
+		margin-left: 2.67rem;
 		float: left;
 		text-align: center;
 		font-size: .38rem;
