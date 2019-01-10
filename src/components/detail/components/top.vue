@@ -53,7 +53,7 @@ export default {
             }
         }
         img{
-            width: 7.5rem;
+            width: 100%;
             height: 5.3rem;
         }
     }

@@ -7,12 +7,12 @@
       </div>
       <div id="registerName">
         <p>手机号</p>
-        <input id="userName" v-model="massage" type="text" class="invalid" :placeholder="spanname">
+        <input id="userName" v-model="userName" type="text" class="invalid" :placeholder="spanname">
         <!-- <span id="spanname" v-show="isShow">{{spanname}}</span> -->
       </div>
       <div id="registerPwd">
         <p>设置密码</p>
-        <input id="registerPassword" v-model="pwd" type="password" :placeholder="spanpwd">
+        <input id="registerPassword" v-model="userPassword" type="password" :placeholder="spanpwd">
       </div>
       <div id="registerQpwd">
         <p>重输密码</p>
@@ -30,12 +30,14 @@
 </template>
 
 <script>
+import Vue from "vue";
 import axios from "axios";
+import { Toast } from "mint-ui";
 export default {
   data() {
     return {
-      massage: "",
-      pwd: "",
+      userName: "",
+      userPassword: "",
       qpwd: "",
       code: "",
       isShow: true,
@@ -52,15 +54,15 @@ export default {
     hendle() {
       //验证手机号
       let flag = null;
-      let reg = /^((1[3,5,8][0-9])|(14[5,7])|(17[0,6,7,8])|(19[7]))\d{8}$/;
-      if (this.massage === "") {
+      let reg = /^((1[3,5,6,8][0-9])|(14[5,7])|(17[0,6,7,8])|(19[7]))\d{8}$/;
+      if (this.userName === "") {
         this.spanname = "号码不能为空";
         this.isShow = true;
         flag = false;
-      } else if (!reg.test(this.massage)) {
+      } else if (!reg.test(this.userName)) {
         this.spanname = "手机号输入错误";
         this.isShow = true;
-        this.massage = "";
+        this.userName = "";
         flag = false;
       } else {
         flag = true;
@@ -71,23 +73,23 @@ export default {
       //验证密码
       let flagpwd = null;
       let reg1 = /^\w{6,}$/;
-      if (this.pwd === "") {
+      if (this.userPassword === "") {
         this.spanpwd = "密码不能为空";
         flagpwd = false;
-      } else if (!reg1.test(this.pwd)) {
+      } else if (!reg1.test(this.userPassword)) {
         this.spanpwd = "密码不能少于六位";
-        this.pwd = "";
+        this.userPassword = "";
         flagpwd = false;
         console.log(this.spanpwd);
       } else {
-        console.log(this.pwd);
+        console.log(this.userPassword);
         flagpwd = true;
         console.log(flagpwd);
       }
 
       //验证确认密码
       let flagmm = null;
-      if (this.pwd != this.qpwd) {
+      if (this.userPassword != this.qpwd) {
         this.qpwd = "";
         this.spanqpwd = "两次密码输入不正确";
         flagmm = false;
@@ -100,42 +102,46 @@ export default {
       if (flag && flagpwd && flagmm === true) {
         //表示验证成功   开始传递数据
         alert("ok");
+        Toast({
+          message: "登录成功",
+          duration: 500
+        });
         //存入数据
 
         //jsonserver 模拟
         axios({
           method: "get",
           //判断用户名是否存在 先查寻
-          url: "http://localhost:3000/data?username=" + this.massage
+          url: "http://localhost:3000/data?username=" + this.userName
         }).then(data => {
           //长度为0 说明改用户不存在    直接添加数据
           if (data.length == 0) {
-            alert(1);
-           axios({
+            axios({
               method: "post",
               url: "http://localhost:3000/data",
               data: {
-                username: this.massage,
-                password: this.pwd
+                username: this.userName,
+                password: this.userPassword
               }
             }).then(data => {
-             });
+              //跳转到登录页面
+              this.$router.push("login");
+            });
           } else {
             alert("该用户已存在");
           }
         });
 
         //ajax
-
       } else {
         alert("no");
-       }
+      }
     }
   }
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss" >
 // input.invalid::-webkit-input-placeholder {
 //             color: red;
 //         }
@@ -268,5 +274,14 @@ export default {
   font-family: PingFang-SC-Regular;
   font-weight: 400;
   background: #fff;
+}
+.mint-toast {
+  width: 2rem;
+  height: 0.6rem;
+  span {
+    font-size: 0.3rem;
+    line-height: 0.38rem;
+    font-family: PingFang-SC-Bold;
+  }
 }
 </style>

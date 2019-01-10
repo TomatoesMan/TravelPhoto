@@ -56,7 +56,7 @@ export default {
 </script>
 <style lang="scss" scoped>
     .con_1{
-        width:7.50rem;
+        width:100%;
         height:3.75rem;
         margin-bottom: .06rem;
         background:rgba(255,255,255,1);
@@ -157,7 +157,6 @@ export default {
         }
     }
     .con_2{
-        width:7.50rem;
         height:1.45rem;
         background:rgba(255,255,255,1);
         position: relative;
@@ -204,7 +203,6 @@ export default {
         }
     }
     .con_3{
-        width:7.50rem;
         height:.74rem;
         background:rgba(255,255,255,1);
         margin: .06rem 0;
@@ -228,7 +226,6 @@ export default {
         }
     }
     .con_4{
-        width:7.50rem;
         height:.74rem;
         background:rgba(255,255,255,1);
         a{

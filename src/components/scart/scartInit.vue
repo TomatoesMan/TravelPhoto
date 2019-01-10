@@ -12,7 +12,7 @@
 				<div>
 					<h4>{{item.comboName}}</h4>
 					<p>{{item.comboTagname}}</p>
-					<span>{{item.price}}</span>
+					<span>{{item.comboPrice}}</span>
 				</div>
 			</div>
 		</div>
@@ -171,7 +171,7 @@
 	.footer_d{
 		width: 100%;
 		height: .82rem;
-		margin-bottom: .45rem;
+		margin-bottom: 1rem;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;

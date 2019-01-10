@@ -5,5 +5,6 @@ export default {
     cities:[],
     Hotels:[],
     photo:[],
-    shareFlag:false
+    shareFlag:false,
+    personaltailor:{}
 }

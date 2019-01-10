@@ -2,7 +2,7 @@
     <div id="personal">
         <h2>{{personalTitle}}</h2>
         <dl v-for="(item, index) in personalList" :key="index">
-            <router-link to="{ name : 'personal' }">
+            <router-link to="/home/personaltailor">
                 <dt><img :src="item.src" alt=""></dt>
                 <dd>
                     <p>{{item.title}}</p>
@@ -15,19 +15,10 @@
 <script>
     import Vuex from "vuex"
     export default {
-        created () {
-            this.handleHomeData()
-        },
         computed : {
             ...Vuex.mapState({
                 personalTitle : state=>state.home_yxl.personalTitle,
                 personalList : state=>state.home_yxl.personalList,
-            })
-            
-        },
-        methods: {
-            ...Vuex.mapActions({
-                handleHomeData : "home_yxl/handleHomeData"
             })
         }
     }
@@ -43,16 +34,16 @@
             margin-bottom: 0.32rem;
         }
         dl {
-            width:6.86rem;
+            width:97.6%;
             height:4.34rem;
             box-shadow:0px 0.02rem 0.16rem 0px rgba(174,174,174,0.31);
             font-family:PingFang-SC-Regular;
             font-weight:400;
             text-align: center;
             dt {
-                width: 6.86rem;
+                width: 100%;
                 height: 2.51rem;
-                image {
+                img {
                     width: 100%;
                     height: 100%;
                 }

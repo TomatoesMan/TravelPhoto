@@ -12,5 +12,8 @@ export default {
     },
     handleShare(state){
         state.shareFlag = !state.shareFlag;
+    },
+    handlePersonalTailor(state,params){
+        state.personaltailor = params;
     }
 }

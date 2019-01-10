@@ -10,7 +10,7 @@
       <div id="forgetCenter">
         <div id="forgetName">
           <p>手机号</p>
-          <input id="userName" type="text" v-model="message" :placeholder="spanTel">
+          <input id="userName" type="text" v-model="userName" :placeholder="spanTel">
         </div>
         <div id="forgetCode">
           <div>
@@ -21,11 +21,11 @@
 
         <div id="forgetPwd">
           <p>设置密码</p>
-          <input id="forgetPassword" type="password"  v-model="pwds" :placeholder="spanPass">
+          <input id="forgetPassword" type="password" v-model="userPassword" :placeholder="spanPass">
         </div>
         <div id="forgetQpwd">
           <p>重输密码</p>
-          <input id="forgetPasswords" type="password"  v-model="qpwd" :placeholder="twoPass">
+          <input id="forgetPasswords" type="password" v-model="qpwds" :placeholder="twoPass">
         </div>
 
         <button id="forgetIng" @click="hendleSure()">确定</button>
@@ -35,20 +35,91 @@
 </template>
 
 <script>
+import Vue from "vue";
+import axios from "axios";
+import { Toast } from "mint-ui";
 export default {
-  data(){
-    return{
-      message:"",
-      pwds:"",
-      qpwd:"",
-      spanTel : "请输入您的手机号",
-      spanPass : "请输入新密码",
-      twoPass : "请再次输入新密码"
-    }
+  data() {
+    return {
+      userName: "",
+      userPassword: "",
+      qpwds: "",
+      spanTel: "请输入您的手机号",
+      spanPass: "请输入新密码",
+      twoPass: "请再次输入新密码"
+    };
   },
-  methods:{
-    hendleSure(){
+  methods: {
+    hendleSure() {
+      alert()
+      //先查询是否有该用户
+      axios({
+        method: "get",
+        url: "http://localhost:3000/data?username=" + this.userName
+      }).then(data => {
+        //查询完成后  判断
 
+            var flag=null;
+        if (data.length == 0) {
+          //用户不存在
+          this.spanTel = "该用户不存在";
+            flag=false;
+        } else {
+          //用户存在的情况    正则验证手机号
+            alert("id")
+          console.log(data[0].id);
+           flag = true;
+        }
+          //验证密码
+          let flagpwds = null;
+          let reg1 = /^\w{6,}$/;
+          if (this.userPassword === "") {
+            this.spanPass = "密码不能为空";
+            flagpwds = false;
+          } else if (!reg1.test(this.pwds)) {
+            this.spanPass = "密码不能少于六位";
+            this.userPassword = "";
+            flagpwds = false;
+            console.log(this.spanPass);
+          } else {
+            console.log(this.userPassword);
+            flagpwds = true;
+           // flag = true;
+            console.log(flagpwds);
+          }
+
+          //验证确认密码
+          let flagqpwds = null;
+          if (this.userPassword != this.qpwds) {
+            this.qpwds = "";
+            this.twoPass = "两次密码输入不正确";
+            flagqpwds = false;
+          } else if(this.qpwds==this.userPassword){
+            flagqpwds = true;
+           // flag = true;
+            console.log(flagqpwds);
+          }
+            //判断
+            if(flag&&flagpwds&&flagqpwds){
+              alert("修改成功");
+                Toast({
+                          message: "修改成功",
+                          duration: 1000
+                });
+              //修改成功  改数据  需要id
+              axios({
+                method:"patch",
+                url:"http://localhost:3000/data/"+data[0].id,
+                data:{
+                      password:this.userPassword
+                }
+              }).then((data)=>{
+                  //跳转到登录页面
+                  this.$router.push('home')
+              })
+
+            }
+      });
     }
   }
 };
