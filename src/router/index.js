@@ -207,7 +207,7 @@ const router =  new Router({
       }
     },
 		{
-			path:'/paylist',
+			path:'/paylist/:array',
 			name:'paylist',
 			component:PayList,
 			meta : {
@@ -215,7 +215,8 @@ const router =  new Router({
 				flag : false,
 				//登录验证
 				requireAuth : false
-			}
+      },
+      props:true
 		},
 		{
 			path:'/payPage',

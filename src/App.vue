@@ -10,9 +10,6 @@ import Footer from "./components/footer";
 export default {
   components : {
     "Footer-com" : Footer
-  },
-  created(){
-    document.body.removeChild(document.getElementById('Loading'))
   }
 }
 </script>
