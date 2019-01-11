@@ -110,7 +110,6 @@ console.log(this.scroll);
 #parsonalPage {
   width: 100%;
   height: 100%;
-}
 #return {
   position: absolute;
   left: 0.32rem;
@@ -244,5 +243,7 @@ width: max-content;
   color: rgba(170, 170, 170, 1);
   margin-top: 0.3rem;
 }
+}
+
 </style>
 
