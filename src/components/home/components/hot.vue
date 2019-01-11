@@ -45,6 +45,8 @@
             font-size: 0.4rem;
             font-family: "PingFang-SC-Bold";
             margin-bottom: 0.27rem;
+            color: #000;
+            padding-left: 0.3rem;
         }
         .scrollHot{
             width: 100%;
@@ -52,6 +54,7 @@
                 display: flex;
                 justify-content: space-between;
                 width: max-content;
+                padding-left: 0.15rem;
                 li {
                     width:2.3rem;
                     height:2.3rem;

@@ -1,4 +1,3 @@
-import { stat } from "fs";
 
 export default {
     handleDetailData(state,params){
@@ -14,6 +13,10 @@ export default {
         state.shareFlag = !state.shareFlag;
     },
     handlePersonalTailor(state,params){
-        state.personaltailor = params;
+        state.p_photographer = params.photographer;
+        state.p_ScenicSpot = params.ScenicSpot;
+        state.p_hotel = params.hotel;
+        state.p_diet = params.diet;
+        state.p_traffic = params.traffic;
     }
 }

@@ -32,6 +32,7 @@
             font-weight:bold;
             color:rgba(0,0,0,1);
             margin-bottom: 0.32rem;
+            padding-left: 0.3rem;
         }
         dl {
             width:97.6%;
@@ -40,6 +41,7 @@
             font-family:PingFang-SC-Regular;
             font-weight:400;
             text-align: center;
+            margin: 0 auto;
             dt {
                 width: 100%;
                 height: 2.51rem;

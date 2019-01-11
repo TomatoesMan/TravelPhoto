@@ -1,3 +1,4 @@
 export default{
-	scartList:[]
+	scartList:[],
+	checkAll:false
 }

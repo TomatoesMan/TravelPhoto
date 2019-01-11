@@ -10,6 +10,10 @@ import Error from "../components/error/error.vue"
 import coupleBack from "../components/my/coupleBack"
 import setting from "../components/my/setting"
 import collect from "../components/my/collect"
+import wait from "../components/my/wait"
+import waiting from "../components/my/waiting"
+import payed from "../components/my/payed"
+import review from "../components/my/review"
 import parsonalpage from "../components/my/nickName/parsonPage/parsonalPage"
 import Login from "../components/login"
 import Register from  "../components/login/components/register.vue"
@@ -19,6 +23,7 @@ import Forget from "../components/login/components/forgetPwd.vue"
 import SelectCity from "../components/selectCity"
 import Seek from "../components/seek"
 import City from "../components/city"
+import Cusservice from "../components/cusservice"
 Vue.use(Router)
 
 import Detail from "../components/detail"
@@ -31,7 +36,7 @@ import travelForward from "../components/travel/components/travelForward"
 import travelSend from "../components/travel/components/travelsend"
 import PayList from "@/components/scart/components/payList"
 import PayPage from "@/components/scart/components/payPage"
-
+import Kong from "@/components/scart/components/Kong"
 import PaySuccess from "@/components/scart/components/paySuccess"
 Vue.use(Router)
 const router =  new Router({
@@ -152,6 +157,36 @@ const router =  new Router({
       },
     },
     {
+      path: '/my/wait',
+      name: 'wait',
+      component: wait,
+      meta : {
+        //table栏的显示
+        flag : false
+      },
+    },
+    {
+      path: '/my/waiting',
+      name: 'waiting',
+      component: waiting,
+      meta : {
+        //table栏的显示
+        flag : false
+      },
+    },
+    {
+      path: '/my/payed',
+      name: 'payed',
+      component: payed,
+      meta : {
+        //table栏的显示
+        flag : false
+      },
+    },
+    {
+      path: '/my/review',
+      name: 'review',
+      component: review,
       path: '/my/parsonalpage',
       name: 'parsonalpage',
       component: parsonalpage,
@@ -200,6 +235,17 @@ const router =  new Router({
 			meta : {
 				//table栏的显示
 				flag : false,
+				//登录验证
+				requireAuth : false
+			}
+    },
+    {
+			path:'/kong',
+			name:'kong',
+			component:Kong,
+			meta : {
+				//table栏的显示
+				flag : true,
 				//登录验证
 				requireAuth : false
 			}
@@ -253,6 +299,15 @@ const router =  new Router({
       path:'/seek',
       name:'seek',
       component:Seek,
+      meta:{
+        //table栏的显示
+        flag:false,
+       },
+    },
+    {
+      path:'/cusservice',
+      name:'cusservice',
+      component:Cusservice,
       meta:{
         //table栏的显示
         flag:false,

@@ -18,7 +18,7 @@ export default {
         })
         .then((data)=>{
             commit("handlePersonalTailor",data.data);
-            console.log(data.data)
+            // console.log(data.data)
         })
     }
 }
