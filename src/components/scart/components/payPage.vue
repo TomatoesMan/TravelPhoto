@@ -49,7 +49,7 @@
 	}
 </script>
 
-<style>
+<style scoped>
 	.mint-msgbox{
 		width: 80%;
 		height: 3rem;

@@ -27,9 +27,16 @@ export default{
 	},
 	//删除
 	handleDel(state,params){
-		
-		params.map((item)=>{
-			state.scartList.splice(item,1)
-		})
+		// params.map((item)=>{
+		// 	if(item.flag){
+		// 		state.scartList.splice(item,1)
+		// 	}
+		// })
+		for(var i = 0;i<params.length;i++){
+			let brr = state.scartList.filter((item)=>{
+				return item.comboId != params[i].comboId
+			})
+			state.scartList = brr
+		}
 	}
 }
