@@ -6,7 +6,7 @@ getData(state,params){
   state.group = params.data
 },
 //评价记录
-getess(state,params){
+getEss(state,params){
 state.assessList = params.data
 }
 }
