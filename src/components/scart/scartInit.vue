@@ -136,7 +136,7 @@
 		margin-bottom: .3rem;
 	}
 	.content_d input{
-		display: inline-block;
+		/* display: inline-block; */
 		width: .3rem;
 		height: .3rem;
 		border-radius: 50%;

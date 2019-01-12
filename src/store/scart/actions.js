@@ -1,10 +1,10 @@
 import axios from "../../lib"
-//https://www.easy-mock.com/mock/5c35b8d660b79a776b6df058/example/order
+//https://www.easy-mock.com/mock/5c39368a27e755129a330e33/travel/order
 export default{
 	getData({commit}){
 		axios({
 			method:"get",
-			url:"/api/mock/5c35b8d660b79a776b6df058/example/order"
+			url:"/api/mock/5c39368a27e755129a330e33/travel/order"
 		})
 		.then((data)=>{
 			data.list.data.map((item)=>{
