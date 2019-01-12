@@ -48,6 +48,7 @@ export default {
     font-weight: bold;
     color: rgba(0, 0, 0, 1);
     margin-bottom: 0.32rem;
+    padding-left: 0.3rem;
   }
   .scrollTravelCity {
     width: 100%;
@@ -55,6 +56,7 @@ export default {
       display: flex;
       justify-content: space-between;
       width: max-content;
+      padding-left: 0.15rem;
       li {
         width: 1.85rem;
         height: 4.35rem;

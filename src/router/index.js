@@ -15,6 +15,10 @@ import waiting from "../components/my/waiting"
 import payed from "../components/my/payed"
 import review from "../components/my/review"
 import parsonalpage from "../components/my/nickName/parsonPage/parsonalPage"
+<<<<<<< HEAD
+=======
+import quarterbell from "../components/my/nickName/quarterBell"
+>>>>>>> 31a0251d892594a1b5e07fb8ec1ad1907a1df213
 import Login from "../components/login"
 import Register from  "../components/login/components/register.vue"
 
@@ -23,6 +27,7 @@ import Forget from "../components/login/components/forgetPwd.vue"
 import SelectCity from "../components/selectCity"
 import Seek from "../components/seek"
 import City from "../components/city"
+import Cusservice from "../components/cusservice"
 Vue.use(Router)
 
 import Detail from "../components/detail"
@@ -35,7 +40,7 @@ import travelForward from "../components/travel/components/travelForward"
 import travelSend from "../components/travel/components/travelsend"
 import PayList from "@/components/scart/components/payList"
 import PayPage from "@/components/scart/components/payPage"
-
+import Kong from "@/components/scart/components/Kong"
 import PaySuccess from "@/components/scart/components/paySuccess"
 Vue.use(Router)
 const router =  new Router({
@@ -194,6 +199,16 @@ const router =  new Router({
         flag : false
       },
     },
+//quarterbell
+    {
+      path: '/my/quarterbell',
+      name: 'quarterbell',
+      component: quarterbell,
+         meta : {
+        //table栏的显示
+        flag : false
+      },
+    },
     {
       path: '/scart',
       name: 'scart',
@@ -206,7 +221,7 @@ const router =  new Router({
       }
     },
 		{
-			path:'/paylist',
+			path:'/paylist/:array',
 			name:'paylist',
 			component:PayList,
 			meta : {
@@ -214,7 +229,8 @@ const router =  new Router({
 				flag : false,
 				//登录验证
 				requireAuth : false
-			}
+      },
+      props:true
 		},
 		{
 			path:'/payPage',
@@ -234,6 +250,17 @@ const router =  new Router({
 			meta : {
 				//table栏的显示
 				flag : false,
+				//登录验证
+				requireAuth : false
+			}
+    },
+    {
+			path:'/kong',
+			name:'kong',
+			component:Kong,
+			meta : {
+				//table栏的显示
+				flag : true,
 				//登录验证
 				requireAuth : false
 			}
@@ -287,6 +314,15 @@ const router =  new Router({
       path:'/seek',
       name:'seek',
       component:Seek,
+      meta:{
+        //table栏的显示
+        flag:false,
+       },
+    },
+    {
+      path:'/cusservice',
+      name:'cusservice',
+      component:Cusservice,
       meta:{
         //table栏的显示
         flag:false,
