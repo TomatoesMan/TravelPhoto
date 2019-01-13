@@ -8,11 +8,12 @@ module.exports = {
   dev: {
 
     // Paths
+    //https://www.easy-mock.com/mock/5c346737fad511025643eecf/example/details
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
       "/api":{
-        target:"",
+        target:"https://www.easy-mock.com",
         changeOrigin:true,
         pathRewrite:{
           "^/api":""

@@ -5,7 +5,7 @@ import Travel from "../components/travel"
 import Scart from "../components/scart"
 import My from "../components/my"
 import Login from "../components/login"
- import Register from  "../components/login/components/register.vue"
+//  import Register from  "../components/login/components/register.vue"
 import Register from  "../components/login/components/register.vue"
 import Forget from "../components/login/components/forgetPwd.vue"
 import SelectCity from "../components/selectCity"
@@ -51,9 +51,9 @@ const router =  new Router({
         //table栏的显示
         flag : true
       },
-      children:[
+    },
       {
-        path: '/travel/components/traveldetails',
+        path: '/traveldetails',
         name: 'traveldetails',
         component: travelDetails,
         meta : {
@@ -62,7 +62,7 @@ const router =  new Router({
         },
       },
       {
-        path: '/travel/components/travelForward',
+        path: '/travelForward',
         name: 'travelforward',
         component: travelForward,
         meta : {
@@ -71,22 +71,21 @@ const router =  new Router({
         },
       },
       {
-        path: '/travel/components/travelsend',
+        path: '/travelsend',
         name: 'travelsend',
         component: travelSend,
         meta : {
           //table栏的显示
           flag : true
         },
-      }
-    ]
-    },
+      },
+    
     {
       path:'/travelnotes',
       name:'travelnotes',
       component:travelNotes,
       meta:{
-        flag:true
+        flag:false
       },
     },
     {
