@@ -92,7 +92,7 @@
 		border: 1px solid #f7f7f7;
 		box-shadow:0px 0px 30px 0px rgba(100,100,100,0.1);
 		margin-bottom: .3rem;
-		margin:auto;
+		margin: 0.2rem auto;
 	}
 	.payShow img{
 		width: 1.45rem;

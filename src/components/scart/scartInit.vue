@@ -162,7 +162,7 @@
 	.content_d>div:nth-child(3) p{
 		line-height: .24rem;
 		color: #909090;
-		font-size: .22rem;
+		font-size: .22 rem;
 		margin-bottom: .4rem;
 	}
 	.content_d>div:nth-child(3) span{

@@ -22,16 +22,20 @@
 			</li>
 		</ul>
 		<div class="payNow" @click="go()">立即付款</div>
+		<div class="ewm" v-show="show">
+			<span @click="go()">×</span>
+			<div><img src=../../../../static/payPage/ewm.jpg></div>
+		</div>
 	</div>
 </template>
 
 <script>
 	import { MessageBox } from 'mint-ui';
-	import { Popup } from 'mint-ui';
 	export default {
 		data() {
 			return {
-				flag:0
+				flag:1,
+				show:false
 			};
 		},
 		methods: {
@@ -44,7 +48,7 @@
 				this.flag = value
 			},
 			go(){
-					
+				this.show=!this.show	
 			}
 		},
 	}
@@ -136,4 +140,35 @@
 	color: #FFFEFE;
 	margin: 3.58rem auto;
 }
+
+.ewm{
+        width: 100%;
+        height: 100%;
+		position: absolute;
+		left: 0;top: 0;
+        background:rgba(0,0,0,0.3);
+        overflow: hidden;
+    }
+	.ewm>span{
+		width: .3rem;
+		height: .3rem;
+		border: 1px solid #fff;
+		border-radius: 50%;
+		font-size: .3rem;
+		text-align:center;
+		line-height: .3rem;
+		position: absolute;
+		right: 1rem;
+		top: 2.5rem;
+		color: #fff;
+	}
+    .ewm>div{
+        display: inline-block;
+        width: 3rem;
+        height: 3rem;
+        position: absolute;
+        left: 50%;top: 50%;
+        margin-left: -2.3rem;
+        margin-top: -2.3rem;
+    }
 </style>
