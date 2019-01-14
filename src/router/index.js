@@ -15,10 +15,7 @@ import waiting from "../components/my/waiting"
 import payed from "../components/my/payed"
 import review from "../components/my/review"
 import parsonalpage from "../components/my/nickName/parsonPage/parsonalPage"
-<<<<<<< HEAD
-=======
 import quarterbell from "../components/my/nickName/quarterBell"
->>>>>>> 31a0251d892594a1b5e07fb8ec1ad1907a1df213
 import Login from "../components/login"
 import Register from  "../components/login/components/register.vue"
 
