@@ -29,15 +29,13 @@ export default {
   },
   created() {
     this.hendleEss();
-    this.hendleAss();
+   
   },
   methods: {
     ...Vuex.mapActions({
       hendleEss: "parson_zj/hendleEss"
     }),
-    ...Vuex.mapMutations({
-      hendleAss: "parson_zj/getEss"
-    })
+
   }
 };
 </script>

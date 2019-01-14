@@ -49,7 +49,7 @@ export default {};
   li {
     border-bottom: 0.02rem solid #ccc;
     #myMent {
-      height: 4.5rem;
+      //height: 4.5rem;
       border-bottom: 0.02rem solid #ccc;
       #myInfo {
         width: 100%;
