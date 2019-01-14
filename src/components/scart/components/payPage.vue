@@ -27,6 +27,7 @@
 
 <script>
 	import { MessageBox } from 'mint-ui';
+	import { Popup } from 'mint-ui';
 	export default {
 		data() {
 			return {
@@ -49,7 +50,7 @@
 	}
 </script>
 
-<style>
+<style scoped>
 	.mint-msgbox{
 		width: 80%;
 		height: 3rem;
