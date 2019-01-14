@@ -3,7 +3,6 @@
         <router-link to="/home">
             <i class="iconfont">&#xe601;</i>
         </router-link>
-        <span>私人定制</span>
     </div>
 </template>
 <script>

@@ -10,9 +10,6 @@ import Footer from "./components/footer";
 export default {
   components : {
     "Footer-com" : Footer
-  },
-  created(){
-    document.body.removeChild(document.getElementById('Loading'))
   }
 }
 </script>
@@ -21,11 +18,5 @@ export default {
   #app {
     width: 100%;
     height: 100%;
-  }
-  #Loading{
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 100;
   }
 </style>

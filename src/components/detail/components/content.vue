@@ -7,7 +7,7 @@
             <p class="imgRecommend">推荐指数<img :src="message.length>0?message[0].imgRecommend:''"/></p>
             <p class="price">价格：<span>{{message.length>0?message[0].price:'' | price }}</span></p>
             <p class="SoldOut">已售：<span>{{message.length>0?message[0].SoldOut:'' }}</span></p>
-            <a class="btn" href="#"><p>立即预定</p></a>
+            <router-link class="btn" :to="{name : 'DateTime'}"><p>立即预定</p></router-link>
         </div>
         <div class="con_2">
             <h2><span>{{message.length>0?message[0].storename:''}}</span>官方旗舰店</h2>

@@ -28,6 +28,8 @@ Vue.use(Router)
 
 import Detail from "../components/detail"
 import PersonalTailor from "../components/personalTailor"
+import PersonalDateTime from "../components/personalDateTime"
+import DateTime from "../components/datetimePicker"
 
 import travelHome from "../components/travel/components/travelhome"
 import travelNotes from "../components/travel/components/travelnotes"
@@ -67,6 +69,22 @@ const router =  new Router({
       path: '/home/personaltailor',
       name:'PersonalTailor',
       component:PersonalTailor,
+      meta : {
+        flag : false
+      }
+    },
+    {
+      path:'/home/PersonalDateTime',
+      name:"PersonalDateTime",
+      component:PersonalDateTime,
+      meta:{
+        flag:false
+      }
+    },
+    {
+      path: '/home/datetime',
+      name:'DateTime',
+      component:DateTime,
       meta : {
         flag : false
       }
