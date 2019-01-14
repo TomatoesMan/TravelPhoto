@@ -15,6 +15,9 @@ import waiting from "../components/my/waiting"
 import payed from "../components/my/payed"
 import review from "../components/my/review"
 import parsonalpage from "../components/my/nickName/parsonPage/parsonalPage"
+
+import parsoninfo from "../components/my/nickName/parsonPage/parsonInfo.vue"
+
 import quarterbell from "../components/my/nickName/quarterBell"
 import Login from "../components/login"
 import Register from  "../components/login/components/register.vue"
@@ -188,6 +191,12 @@ const router =  new Router({
       path: '/my/review',
       name: 'review',
       component: review,
+      meta : {
+        //table栏的显示
+        flag : false
+      },
+    },
+    {
       path: '/my/parsonalpage',
       name: 'parsonalpage',
       component: parsonalpage,
@@ -205,6 +214,15 @@ const router =  new Router({
         //table栏的显示
         flag : false
       },
+    },
+    {
+      path:'/my/parsoninfo',
+      name:'/parsoninfo',
+      component:parsoninfo,
+      meta:{
+      //table栏的显示
+      flag:false
+      }
     },
     {
       path: '/scart',
@@ -239,7 +257,7 @@ const router =  new Router({
 				//登录验证
 				requireAuth : false
 			}
-		},
+    },
 		{
 			path:'/paySuccess',
 			name:'paySuccess',
