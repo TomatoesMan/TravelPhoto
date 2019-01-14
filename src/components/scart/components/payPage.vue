@@ -27,6 +27,7 @@
 
 <script>
 	import { MessageBox } from 'mint-ui';
+	import { Popup } from 'mint-ui';
 	export default {
 		data() {
 			return {
