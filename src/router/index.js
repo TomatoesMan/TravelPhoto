@@ -16,7 +16,7 @@ import payed from "../components/my/payed"
 import review from "../components/my/review"
 import parsonalpage from "../components/my/nickName/parsonPage/parsonalPage"
 <<<<<<< HEAD
-import parsoninfo from "../components/my/nickName/parsonPage/parsonInfo.vue"
+//import parsoninfo from "../components/my/nickName/parsonPage/parsonInfo.vue"
 =======
 <<<<<<< HEAD
 =======
