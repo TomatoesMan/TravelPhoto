@@ -1,10 +1,15 @@
 import Vue from "vue"
 import Vuex from "vuex"
+
 import home from "./home"
 import home_fq from "./home/home_fq"
 import scart from "./scart"
 import Lirui from "./home/lirui"
 import home_yxl from "./home/home_yxl"
+import my from "./my/attention"
+import fans from "./my/fans"
+
+
 Vue.use( Vuex );
 //创建仓库
 const store  = new Vuex.Store({
@@ -13,7 +18,10 @@ const store  = new Vuex.Store({
         home_fq,
         scart,
         Lirui,
-        home_yxl
+        home_yxl,
+        my,
+        fans,
     }
 })
+
 export default store;
