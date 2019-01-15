@@ -7,6 +7,7 @@
         <div class="main_del">
             <img src="../../../../static\guc_ch@2x.png">
         </div>
+        <div class="nul">购物车里什么都没有哦</div>
     </div>
 </template>
 
@@ -36,6 +37,14 @@ export default {
     display: block;
     width: 2.8rem;
     height: 2.8rem;
-    margin: 3.66rem auto;
+    margin: 3.45rem auto;
+}
+.nul{
+    width: 3.8rem;
+    height: .36rem;
+    font-size: .36rem;
+    margin: -3rem auto;
+    color: #85A8FF;
+    font-weight: bolder;
 }
 </style>

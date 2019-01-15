@@ -12,18 +12,22 @@
 					<input type="checkbox" :checked="item.flag" @click="handleFla(item.comboId)">
 				</div>
 				<div class="scartPic"><img :src="item.comboImg"></div>
-				<div>
-					<h4 class="scartName">{{item.comboName}}</h4>
-					<p class="scartTagname">{{item.comboTagname}}</p>
-					<span class="scartPrice">{{item.comboPrice | money}}</span>
-				</div>
+				<router-link :to="{name:'detail'}">
+					<div class="unique">
+						<h4 class="scartName">{{item.comboName}}</h4>
+						<p class="scartTagname">{{item.comboTagname}}</p>
+						<span class="scartPrice">{{item.comboPrice | money}}</span>
+					</div>
+				</router-link>
 			</div>
+		
 		</div>
 		<!-- 底部 -->
 		       <!-- 支付底部 -->
 		<div class="footer_d" v-show="flag">
 			<p>合计：<span class="scartSumPrice">{{result.scartPrice | sum(result.scartNum)}}</span></p>
-			<router-link :to="{name:'paylist',params:{array:result.ary}}"><div :style="{background:result.ary.length>0?'#0A91E5':'#CFCFCF'}">立即支付</div></router-link>
+			<!-- <div v-show="show" class="noChecked">立即支付</div> -->
+			<router-link :to="{name:'paylist',params:{array:result.ary}}"><div v-show="show" class="hasChecked">立即支付</div></router-link>
 		</div>
 		       <!-- 删除底部 -->
 		<div class="footer_d footer_d2" v-show="!flag">
@@ -48,12 +52,21 @@
 		},	
 		data(){
 			return{
-				flag:true
+				flag:true,
+				show:true
 			}
 		},
+		// beforeRouterEnter(to,from,next){
+		// 	if(result.ary.length<1){
+        //        next()
+		// 	}else{
+		// 		next("/paylist")
+		// 	}
+		// },
 		created(){
 			//页面跳转过来自动执行这个函数
-			this.scartShow()
+			this.scartShow(),
+			this.handleShow()
 		},
 		computed:{
 			...Vuex.mapState({
@@ -72,6 +85,11 @@
 			}),
 			handleChange(){
 				this.flag = !this.flag
+			},
+			handleShow(){
+				if(result.ary.length>0){
+					this.show = !this.show
+				}
 			},
 			...Vuex.mapMutations({
 				handleFla:"scart/handleFla",
@@ -129,7 +147,6 @@
 		width: 6.86rem;
 		height: 2.7rem;
 		display: flex;
-		justify-content: space-around;
 		align-items: center;
 		border: 1px solid #f7f7f7;
 		box-shadow: 0px 0px 15px 0px rgba(100,100,100,0.1);
@@ -149,23 +166,23 @@
 		margin-right: .24rem;
 		border-radius: .2rem;
 	}
-	.content_D>.content_d>div:nth-child(3){
+	.content_d .unique{
 		width: 3.95rem;
 		height: 1.9rem;
 		margin: .3rem .5rem .47rem 0;
 	} 
-	.content_d>div:nth-child(3) h4{
+	.content_d .unique h4{
 		font-size: .28rem;
 		line-height: .4rem;
 		margin-bottom: .1rem;
 	}
-	.content_d>div:nth-child(3) p{
+	.content_d .unique p{
 		line-height: .24rem;
 		color: #909090;
 		font-size: .22 rem;
 		margin-bottom: .4rem;
 	}
-	.content_d>div:nth-child(3) span{
+	.content_d .unique span{
 		float: right;
 		color: #ff6417;
 	}
@@ -193,7 +210,26 @@
 	.footer_d div{
 		width: 2rem;
 		height: .82rem;
-		 background: #CFCFCF; 
+		border-radius: .12rem;
+		text-align: center;
+		line-height: .82rem;
+		font-size: .3rem;
+		color: #fff;
+	}
+	/* .footer_d .noChecked{
+		width: 2rem;
+		height: .82rem;
+		background:#CFCFCF; 
+		border-radius: .12rem;
+		text-align: center;
+		line-height: .82rem;
+		font-size: .3rem;
+		color: #fff;
+	} */
+	.footer_d .hasChecked{
+		width: 2rem;
+		height: .82rem;
+		background:#199ED8; 
 		border-radius: .12rem;
 		text-align: center;
 		line-height: .82rem;
@@ -210,6 +246,7 @@
 		margin-top: .2.8rem;
 		font-size: .3rem;
 	}
+	
 	.footer_d2 div{
 		background: #FF6417;
 		color: #fff;

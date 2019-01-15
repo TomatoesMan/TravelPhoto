@@ -125,20 +125,20 @@
 		margin-top: .2rem;
 	}
 	.main_pay p{
-		font-size: .32rem;
+		font-size: .28rem;
 		margin-bottom: .62rem;
 	}
 	.main_pay span{
-		font-size: .32rem;
+		font-size: .28rem;
 	}
 	.main_pay textarea{
-		font-size: .28rem;
+		font-size: .24rem;
 		border: none;
 		width: 6rem;
 		height:1rem;
 		margin-left: 1rem;
 		margin-top: -.4rem;
-		color: #AAAAAA;
+		color: #000;
 	}
 	.foot_pay{
 		width: 100%;

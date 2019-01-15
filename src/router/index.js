@@ -19,6 +19,7 @@ import quarterbell from "../components/my/nickName/quarterBell"
 import Login from "../components/login"
 import Register from  "../components/login/components/register.vue"
 
+
 import Forget from "../components/login/components/forgetPwd.vue"
 
 import SelectCity from "../components/selectCity"
