@@ -2,10 +2,10 @@
     <div id="petName">
 
         <div id="headPortrait">
-          <p><img src="../../../../static/my-img/icon_tp.png"></p>
+          <p> <img src="../../../../static/my-img/icon_tp.png"></p>
         </div>
         <p id="youName">昵称</p>
-        <div class="img"><img src="../../../../static/my-img/icon_xx.png"></div>
+        <div class="img"><router-link to="/my/quarterbell"><img src="../../../../static/my-img/icon_xx.png"></router-link></div>
 				<ul id="my">
 					<li>关注(<span>12</span>)</li>
 					<li>粉丝(<span>40</span>)</li>

@@ -4,45 +4,55 @@
 			<div class="back_scart" @click="handleBack()"><img src="../../../../static/fh.png"></div>
 	        <h3>付款页</h3>
 		</div>
-		<div class="conetent_pay">
-			<div class="payShow">
-				<div><img src="../../../../../TravelPhoto/src/assets/img_01.jpg"></div>
-				<div>
-					<h4>十一丽江十日游套餐，泸沽湖、双廊等地活动召集</h4>
-					<p>七彩云南，玩鱼丽江、泸沽湖、双廊等地活动召开集，包车可定制行程</p>
-					<span>￥860</span>
+		<div class="mainList">
+			<div class="conetent_pay" v-for="(item,index) in array" :key="index">
+				<div class="payShow">
+					<div><img :src="item.comboImg"></div>
+					<div>
+						<h4>{{item.comboName}}</h4>
+						<p>{{item.comboTagname}}</p>
+						<span>{{item.comboPrice}}</span>
+					</div>
+				</div>
+				<div class="main_pay">
+					<p>日期:2018年12月7日至12月14日</p>
+					<span>留言:</span>
+					<textarea placeholder="选填:填写内容">
+					</textarea>
 				</div>
 			</div>
 		</div>
-		<div class="main_pay">
-			<p>日期:2018年12月7日至12月14日</p>
-			<span>留言:</span>
-			<textarea placeholder="选填:填写内容">
-			</textarea>
-		</div>
 		<div class="foot_pay">
-			<p>合计：<span>￥860</span></p>
+			<p>合计：<span>{{result.scartPrice | sum(result.scartNum)}}</span></p>
 			<router-link to="/payPage"><div>提交订单</div></router-link>
 		</div>
+		
 	</div>
 </template>
 
 <script>
+    import Vuex from "vuex";
 	export default {
-		data() {
-			return {
-				
-			};
-		},
+		props:["array"],
+		filters:{
+			sum:(n,p)=>{
+				return "￥"+p*n
+			}
+		},	
 		methods: {
 			handleBack() {
 				this.$router.back()
 			}
 		},
+		computed:{
+			...Vuex.mapGetters({
+				result:"scart/result"
+			})
+		}
 	}
 </script>
 
-<style>
+<style scoped>
 	.pay_main{
 		width: 100%;
 		height: 100%;
@@ -68,6 +78,11 @@
 		position: absolute;
 		left: 3.18rem;top: .14rem;
 	}
+	.mainList{
+		height: 10.5rem;
+		overflow-y: auto;
+		margin-top: .5rem ;
+	}
 	.payShow{
 		width: 6.86rem;
 		height: 2.7rem;
@@ -77,7 +92,7 @@
 		border: 1px solid #f7f7f7;
 		box-shadow:0px 0px 30px 0px rgba(100,100,100,0.1);
 		margin-bottom: .3rem;
-		margin:.5rem auto;
+		margin:auto;
 	}
 	.payShow img{
 		width: 1.45rem;
@@ -120,22 +135,25 @@
 		font-size: .28rem;
 		border: none;
 		width: 6rem;
-		height:6rem;
+		height:1rem;
 		margin-left: 1rem;
 		margin-top: -.4rem;
 		color: #AAAAAA;
 	}
 	.foot_pay{
 		width: 100%;
-		height: 1.2rem;
+		height: 1.0rem;
 		position: fixed;
 		left: 0;bottom: 0;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		background: #fff;
 	}
 	.foot_pay p{
 		width: 1.52rem;
 		height: .31rem;
-		position: absolute;
-		left: 3.33rem;bottom: .41rem;
+		margin-left: 3rem;
 	}
 	.foot_pay div{
 		width: 2.1rem;
@@ -144,8 +162,7 @@
 		background: #199ED8;
 		text-align: center;
 		line-height: .88rem;
-		position: absolute;
-		right: .32rem;bottom: .10rem;
 		border-radius: .2rem;
+		margin-right: .3rem;
 	}
 </style>

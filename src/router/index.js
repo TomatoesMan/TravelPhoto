@@ -15,6 +15,10 @@ import waiting from "../components/my/waiting"
 import payed from "../components/my/payed"
 import review from "../components/my/review"
 import parsonalpage from "../components/my/nickName/parsonPage/parsonalPage"
+
+import parsoninfo from "../components/my/nickName/parsonPage/parsonInfo.vue"
+
+import quarterbell from "../components/my/nickName/quarterBell"
 import Login from "../components/login"
 import Register from  "../components/login/components/register.vue"
 
@@ -28,6 +32,9 @@ import Cusservice from "../components/cusservice"
 import Detail from "../components/detail"
 import PersonalTailor from "../components/personalTailor"
 import Hdetails from "../components/hdetails"
+import PersonalDateTime from "../components/personalDateTime"
+import DateTime from "../components/datetimePicker"
+
 import travelHome from "../components/travel/components/travelhome"
 import travelNotes from "../components/travel/components/travelnotes"
 import travelDetails from "../components/travel/components/traveldetails"
@@ -71,6 +78,22 @@ const router =  new Router({
       path: '/home/personaltailor',
       name:'PersonalTailor',
       component:PersonalTailor,
+      meta : {
+        flag : false
+      }
+    },
+    {
+      path:'/home/PersonalDateTime',
+      name:"PersonalDateTime",
+      component:PersonalDateTime,
+      meta:{
+        flag:false
+      }
+    },
+    {
+      path: '/home/datetime',
+      name:'DateTime',
+      component:DateTime,
       meta : {
         flag : false
       }
@@ -191,6 +214,12 @@ const router =  new Router({
       path: '/my/review',
       name: 'review',
       component: review,
+      meta : {
+        //table栏的显示
+        flag : false
+      },
+    },
+    {
       path: '/my/parsonalpage',
       name: 'parsonalpage',
       component: parsonalpage,
@@ -198,6 +227,25 @@ const router =  new Router({
         //table栏的显示
         flag : false
       },
+    },
+//quarterbell
+    {
+      path: '/my/quarterbell',
+      name: 'quarterbell',
+      component: quarterbell,
+         meta : {
+        //table栏的显示
+        flag : false
+      },
+    },
+    {
+      path:'/my/parsoninfo',
+      name:'/parsoninfo',
+      component:parsoninfo,
+      meta:{
+      //table栏的显示
+      flag:false
+      }
     },
     {
       path: '/scart',
@@ -211,7 +259,7 @@ const router =  new Router({
       }
     },
 		{
-			path:'/paylist',
+			path:'/paylist/:array',
 			name:'paylist',
 			component:PayList,
 			meta : {
@@ -219,7 +267,8 @@ const router =  new Router({
 				flag : false,
 				//登录验证
 				requireAuth : false
-			}
+      },
+      props:true
 		},
 		{
 			path:'/payPage',
@@ -231,7 +280,7 @@ const router =  new Router({
 				//登录验证
 				requireAuth : false
 			}
-		},
+    },
 		{
 			path:'/paySuccess',
 			name:'paySuccess',

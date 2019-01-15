@@ -23,7 +23,7 @@
 		       <!-- 支付底部 -->
 		<div class="footer_d" v-show="flag">
 			<p>合计：<span class="scartSumPrice">{{result.scartPrice | sum(result.scartNum)}}</span></p>
-			<router-link to="/paylist"><div :style="{background:result.ary.length>0?'#0A91E5':'#CFCFCF'}">立即支付</div></router-link>
+			<router-link :to="{name:'paylist',params:{array:result.ary}}"><div :style="{background:result.ary.length>0?'#0A91E5':'#CFCFCF'}">立即支付</div></router-link>
 		</div>
 		       <!-- 删除底部 -->
 		<div class="footer_d footer_d2" v-show="!flag">
@@ -136,7 +136,7 @@
 		margin-bottom: .3rem;
 	}
 	.content_d input{
-		display: inline-block;
+		/* display: inline-block; */
 		width: .3rem;
 		height: .3rem;
 		border-radius: 50%;
@@ -162,7 +162,7 @@
 	.content_d>div:nth-child(3) p{
 		line-height: .24rem;
 		color: #909090;
-		font-size: .18rem;
+		font-size: .22rem;
 		margin-bottom: .4rem;
 	}
 	.content_d>div:nth-child(3) span{
@@ -176,7 +176,7 @@
 		position: fixed;
 		left: 0;bottom: 1rem;
 		padding: 0.18rem;
-		background: #fff; 
+		background: #f1f1f1; 
 		display: flex;
 		justify-content: space-between;
 		align-items: center;

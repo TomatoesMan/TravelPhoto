@@ -1,3 +1,6 @@
 export default {
-list:[]
+list:[],
+group:[],
+//评价记录
+assessList:[]
 }
