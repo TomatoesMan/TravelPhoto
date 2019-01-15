@@ -31,9 +31,10 @@ import Cusservice from "../components/cusservice"
 
 import Detail from "../components/detail"
 import PersonalTailor from "../components/personalTailor"
-import Hdetails from "../components/hdetails"
 import PersonalDateTime from "../components/personalDateTime"
 import DateTime from "../components/datetimePicker"
+import Hdetails from "../components/hdetails"
+import Combo from "../components/hdetails/components/combo.vue"
 
 import travelHome from "../components/travel/components/travelhome"
 import travelNotes from "../components/travel/components/travelnotes"
@@ -374,6 +375,13 @@ const router =  new Router({
         //table栏的显示
         flag:false,
        },
+       children:[
+         {
+           path:"combo",
+           name:"combo",
+           component:Combo
+         }
+       ]
     },
     {
       path: '**',
