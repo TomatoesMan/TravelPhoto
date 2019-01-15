@@ -3,7 +3,7 @@
         <Top-com class="top"/>
         <div class="wrapper per-wrap" ref="Personalwrapper">
             <div class="content">
-                <Option-com></Option-com>
+                <Content-com></Content-com>
             </div>
         </div>
     </div>
@@ -11,14 +11,14 @@
 </template>
 <script>
 import Top from "./components/top"
-import Option from "./components/option"
+import Content from "./vue-calendar-component/index.js"
 import Vuex from 'vuex'
 import BScroll from 'better-scroll';
 export default {
     
     components:{
         "Top-com":Top,
-        "Option-com":Option,
+        "Content-com":Content
     },
     created(){
         this.handlePersonalTailor();
@@ -52,5 +52,8 @@ export default {
 
 .per-wrap>.content{
     padding-bottom: 1.76rem;
+}
+.content{
+    margin-top:1.5rem;
 }
 </style>

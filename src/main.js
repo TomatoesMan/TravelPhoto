@@ -15,6 +15,7 @@ import "../src/common/css/iconfont/iconfont-details/iconfont.css"
 import "../src/common/css/iconfont/iconfont-seek/iconfont.css"
 import "../src/common/css/iconfont-font/iconfont.css"
 import "../node_modules/mint-ui/lib/style.css"
+
 Vue.config.productionTip = false
 /* eslint-disable no-new */
 
