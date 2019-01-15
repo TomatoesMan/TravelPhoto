@@ -7,10 +7,14 @@
     </div>
 </template>
 <script>
+import Vuex from "vuex"
 import Top from "./components/top.vue"
 import Article from "./components/article"
 import Combo from "./components/combo"
     export default {
+        created(){
+            this.handleHdetails()
+        },
         components: {
             "Top-com" : Top,
             "Article-com" : Article,
@@ -26,7 +30,7 @@ import Combo from "./components/combo"
         },
         methods: {
             ...Vuex.mapActions({
-                handle
+                handleHdetails:"hdetails/handleHdetails"
             })
         }
     }
