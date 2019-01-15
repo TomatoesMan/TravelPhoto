@@ -1,4 +1,5 @@
 export default{
     details:{},
-    list:[]
+    list:[],
+    comment:[]
 }

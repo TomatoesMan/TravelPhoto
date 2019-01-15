@@ -58,7 +58,7 @@ const router =  new Router({
         component: travelDetails,
         meta : {
           //table栏的显示
-          flag : true
+          flag : false
         },
       },
       {

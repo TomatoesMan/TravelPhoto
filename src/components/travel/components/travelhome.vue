@@ -97,8 +97,7 @@ export default {
 		    // slidesOffsetAfter : 100,
             // watchSlidesProgress : true,
 		})  
-        }
-         
+        } 
     },
 }
 </script>
@@ -199,7 +198,7 @@ export default {
                    height: 2.45rem;
                }
                 .firstImg{
-                   width: 100%;
+                   width: 100%; 
                    height:100%;
                }
             //    .secondImg{

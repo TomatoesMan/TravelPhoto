@@ -19,20 +19,27 @@
                 </dl>
                 <p class="write"><span>{{arr.tContent}}</span></p>
                 <div class="bannerImg">
-                    <img :src="arr.tUrl" alt="" class="firstImg">
-                    <img :src="arr.tUrl2" alt="" class="secondImg">
+                    <div class="swiper-container global-promotion">
+                        <div class="swiper-wrapper">
+                              <div class="swiper-slide hk"><img :src="arr.tImg" class="firstImg"></div>
+                              <div class="swiper-slide au"><img :src="arr.tImg" class="firstImg"></div>
+                              <div class="swiper-slide en"><img :src="arr.tImg" class="firstImg"></div>
+                              <div class="swiper-slide jp"><img :src="arr.tImg" class="firstImg"></div>
+                              <div class="swiper-slide us"><img :src="arr.tImg" class="firstImg"></div>
+                        </div>
+                    </div>
                 </div>
                 <img src="../../../../static/travel-img/collect.png" alt="" class="collect">
                 <p class="likeCount"><span>{{arr.tLike}}</span>人喜欢</p>
             </div>
             <!-- 下面的评论 -->
-            <div class="commit" v-for="(arr,index) in arr">
+            <div class="commit" v-for="(item,index) in comment">
                 <p class="commitCount">评论<span>({{arr.number}})</span></p>
                 <dl class="follower">
                     <dt class="followerPhoto"><img :src=arr.img2 alt=""></dt>
-                    <dd class="followerName"><span>{{arr.title2}}</span></dd>
-                    <dd class="followerDate"><span>{{arr.comtTime}}</span></dd>
-                    <dd class="followerCommit"><span>{{arr.comtDetail}}</span></dd>
+                    <dd class="followerName"><span>{{item.comtNickname}}</span></dd>
+                    <dd class="followerDate"><span>{{item.comtTime}}</span></dd>
+                    <dd class="followerCommit"><span>{{item.comtDetail}}</span></dd>
                 </dl>
             </div>
             </div>
@@ -47,14 +54,16 @@
 <script>
 import Vuex from "vuex"
 import Bscroll from "better-scroll"
+import Swiper from "swiper";
 export default {
     created() {
         this.$store.dispatch("travel/detailsActions")
-       console.log(this.$store)
+        this.$store.dispatch("travel/commentActions")
     },
     computed:{
           ...Vuex.mapState({
-              arr:state=>state.travel.details
+              arr:state=>state.travel.details,
+              comment:state=>state.travel.comment
           })
     },
     mounted(){
@@ -68,13 +77,22 @@ export default {
         console.log(this.scroll)
        }
     },
+    updated() {
+        if(!this.swiper){
+            this.swiper = new Swiper('.global-promotion',{
+		    slidesPerView:2,
+		    // slidesOffsetAfter : 100,
+            // watchSlidesProgress : true,
+		})  
+        } 
+    },
 }
 </script>
 <style lang="scss" scoped>
     .content{
                width: 100%;
                height: 100%;
-            //    height: max-content;
+               height: max-content;
            }
         .head{
             width: 100%;
@@ -106,7 +124,7 @@ export default {
                 margin-top: 0.2rem;
                 float: left;
             }
-        }
+}
         .banner{
             width: 7.18rem;
             height: 6.8rem;
@@ -163,17 +181,16 @@ export default {
                width: 100%;
                height: 2.46rem;
                margin-top: 0.2rem;
-                .firstImg{
+               .swiper-slide{
                    width: 3.91rem;
-                   height: 2.46rem;
-                   float: left;
+                   height: 2.45rem;
+                   margin-right: 0.25rem;
+                   .firstImg{
+                   width:100%;
+                   height: 100%;
                }
-               .secondImg{
-                   float: left;
-                   width: 3.17rem;
-                   height: 2.46rem;
-                   margin-left: 0.1rem;
                }
+                
             }
             .collect{
                 width: 0.64rem;
@@ -188,7 +205,8 @@ export default {
                 font-size:0.24rem;
                 font-family:PingFang-SC-Regular;
                 font-weight:400;
-                color:rgba(170,170,170,1);            }
+                color:rgba(170,170,170,1);
+           }
         }
         .commit{
             width: 7.18rem;
@@ -233,10 +251,19 @@ export default {
         background:rgba(255,255,255,1);
         box-shadow:0 0.01rem 0.06rem 0 rgba(139,139,139,1);
         text-align: center;
+        position: fixed;
+        left: 0;
+        bottom: 0;
         img{
             width: 0.6rem;
             height: 0.6rem;
+            margin-left: 47%;
+            margin-top: 0.19rem;
         }
     }
+    .wrapper{
+            width: 100%;
+            height: 100%;
+}
 
 </style>
