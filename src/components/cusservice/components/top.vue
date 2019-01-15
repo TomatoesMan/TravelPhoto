@@ -20,6 +20,7 @@
   top: 0;
   z-index: 5;
   justify-content: space-between;
+  background: #fff;
   a {
       i {
           font-size: 0.4rem;

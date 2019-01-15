@@ -5,7 +5,7 @@ import Travel from "../components/travel"
 import Scart from "../components/scart"
 import My from "../components/my"
 import Error from "../components/error/error.vue"
-
+import Duidance from "../components/guidance"
 
 import coupleBack from "../components/my/coupleBack"
 import setting from "../components/my/setting"
@@ -24,11 +24,10 @@ import SelectCity from "../components/selectCity"
 import Seek from "../components/seek"
 import City from "../components/city"
 import Cusservice from "../components/cusservice"
-Vue.use(Router)
 
 import Detail from "../components/detail"
 import PersonalTailor from "../components/personalTailor"
-
+import Hdetails from "../components/hdetails"
 import travelHome from "../components/travel/components/travelhome"
 import travelNotes from "../components/travel/components/travelnotes"
 import travelDetails from "../components/travel/components/traveldetails"
@@ -43,7 +42,12 @@ const router =  new Router({
   routes: [
     {
       path: '/',
-      redirect : "/home"
+      name: 'guidance',
+      component : Duidance,
+      meta : {
+        //table栏的显示
+        flag : true
+      }
     },
     {
       path: '/home',
@@ -308,6 +312,15 @@ const router =  new Router({
       path:'/cusservice',
       name:'cusservice',
       component:Cusservice,
+      meta:{
+        //table栏的显示
+        flag:false,
+       },
+    },
+    {
+      path:'/hdetails',
+      name:'hdetails',
+      component:Hdetails,
       meta:{
         //table栏的显示
         flag:false,
