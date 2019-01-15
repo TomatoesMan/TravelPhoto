@@ -8,16 +8,17 @@
 </template>
 <script>
 import Top from "./components/top.vue"
-import Article from "./components/article.vue"
-import Vuex from "vuex"
+import Article from "./components/article"
+import Combo from "./components/combo"
     export default {
         components: {
             "Top-com" : Top,
-            "Article-com" : Article
+            "Article-com" : Article,
+            "Combo-com": Combo 
         },
         data () {
             return {
-                comName:"Article-com"
+                comName:"Combo-com"
             }
         },
         computed: {
