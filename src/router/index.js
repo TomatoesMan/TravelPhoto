@@ -20,6 +20,7 @@ import parsoninfo from "../components/my/nickName/parsonPage/parsonInfo.vue"
 
 import quarterbell from "../components/my/nickName/quarterBell"
 import Login from "../components/login"
+//  import Register from  "../components/login/components/register.vue"
 import Register from  "../components/login/components/register.vue"
 
 import Forget from "../components/login/components/forgetPwd.vue"
@@ -106,18 +107,18 @@ const router =  new Router({
         //table栏的显示
         flag : true
       },
-      children:[
+    },
       {
-        path: '/travel/components/traveldetails',
+        path: '/traveldetails',
         name: 'traveldetails',
         component: travelDetails,
         meta : {
           //table栏的显示
-          flag : true
+          flag : false
         },
       },
       {
-        path: '/travel/components/travelForward',
+        path: '/travelForward',
         name: 'travelforward',
         component: travelForward,
         meta : {
@@ -126,22 +127,21 @@ const router =  new Router({
         },
       },
       {
-        path: '/travel/components/travelsend',
+        path: '/travelsend',
         name: 'travelsend',
         component: travelSend,
         meta : {
           //table栏的显示
           flag : true
         },
-      }
-    ]
-    },
+      },
+    
     {
       path:'/travelnotes',
       name:'travelnotes',
       component:travelNotes,
       meta:{
-        flag:true
+        flag:false
       },
     },
     {
