@@ -31,13 +31,13 @@ import Thumbsup from "./options/thumbsUp";
 export default {
   components: {
     "Assess-com": Assess,
-    "Comment-com":Comments,
+    // "Comment-com":Comments,
     "Overdue-com":Overdue,
-    "Thumbsup-com":Thumbsup
+     "Thumbsup-com":Thumbsup
   },
   data() {
     return {
-      quarterlist: ["评价记录", "点赞", "过期", "评论"],
+      quarterlist: ["评价记录", "点赞", "过期"],
       bellActive: 0,
       comName:"Assess-com"
     };
