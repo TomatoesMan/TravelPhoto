@@ -7,26 +7,31 @@
     </div>
 </template>
 <script>
-import Vuex from "vuex"
 import Top from "./components/top.vue"
-import Article from "./components/article"
-import Combo from "./components/combo"
+import essay  from "./components/essay.vue"
+import combo from "./components/combo.vue"
+import vlog from "./components/vlog.vue"
+import Vuex from "vuex"
     export default {
         created(){
             this.handleHdetails()
         },
         components: {
             "Top-com" : Top,
-            "Article-com" : Article,
-            "Combo-com": Combo 
+            "essay" : essay,
+            "combo" : combo,
+            "vlog" : vlog,
+        },
+        created () {
+            this.handleArticle();
+            this.Observer.$on( "handleName", ( val )=>{
+                this.comName = val;
+            } )
         },
         data () {
             return {
-                comName:"Combo-com"
+                comName:"essay"
             }
-        },
-        computed: {
-            
         },
         methods: {
             ...Vuex.mapActions({

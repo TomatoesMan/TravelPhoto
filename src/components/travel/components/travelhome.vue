@@ -11,7 +11,7 @@
             <div class="content">
                 <div class="banner" v-for="(item,index) in list">
                     <dl class="user">
-                        <router-link to="/my/quarterbell">
+                        <router-link to="/hdetails">
                             <dt class="userPhoto"><img :src=item.userPhoto alt=""></dt>
                         </router-link>
                         <dd class="userName"><span>{{item.userNickname}}</span></dd>

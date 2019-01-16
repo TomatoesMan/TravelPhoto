@@ -24,9 +24,13 @@ const store  = new Vuex.Store({
         home_yxl,
         parson_zj,
         travel,
+<<<<<<< HEAD
         hdetails,
         my,
         fans
+=======
+        hdetails
+>>>>>>> yxl
     }
 })
 
