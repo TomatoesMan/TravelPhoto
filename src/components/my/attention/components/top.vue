@@ -1,7 +1,7 @@
 <template>
 	<div class="top">
 		<router-link :to="{name:'my'}"><img src="../../../../../static/my-img/icon_fhj.png"></router-link>
-		<p>待出行</p>
+		<p>关注</p>
 	</div>
 </template>
 
@@ -9,7 +9,11 @@
 
 <script>
 	export default{
-
+		data(){
+			return{
+				data:""
+			}
+		}
 	}
 </script>
 
@@ -26,7 +30,6 @@
 		width: .23rem;
 		height: .38rem;
 		margin-left: .32rem;
-	
 	}
 	.top p{
 		margin-left: 2.79rem;

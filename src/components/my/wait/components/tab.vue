@@ -1,10 +1,7 @@
 <template>
 	<div class="tab">
-		<div class="taba">
-			<img src="../../../../../static/my-img/tupian_daixhuxing.png" alt="">
-		</div>
-		<p>和我一起去旅行吧，么么哒</p><br>
-		<p>我出钱，行不行</p>
+		<div class="taba"><img src="../../../../../static/my-img/tupian_daixhuxing.png" alt=""></div>
+		<p>和我一起去旅行吧，么么哒</p>
 	</div>
 </template>
 
@@ -37,6 +34,9 @@
 		width: 100%;
 		margin-top: .1rem;
 		text-align: center;
-		font-size: .31rem;
+		font-size:.32rem;
+		font-family:PingFang-SC-Regular;
+		font-weight:400;
+		color:rgba(116,155,255,1);
 	}
 </style>
