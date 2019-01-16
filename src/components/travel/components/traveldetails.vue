@@ -34,9 +34,9 @@
             </div>
             <!-- 下面的评论 -->
             <div class="commit" v-for="(item,index) in comment">
-                <p class="commitCount">评论<span>({{arr.number}})</span></p>
+                <p class="commitCount">评论<span>({{comment.number}})</span></p>
                 <dl class="follower">
-                    <dt class="followerPhoto"><img :src=arr.img2 alt=""></dt>
+                    <dt class="followerPhoto"><img :src=item.comtPhoto alt=""></dt>
                     <dd class="followerName"><span>{{item.comtNickname}}</span></dd>
                     <dd class="followerDate"><span>{{item.comtTime}}</span></dd>
                     <dd class="followerCommit"><span>{{item.comtDetail}}</span></dd>
@@ -46,7 +46,7 @@
         </div>
         <!-- 底部写笔记 -->
         <div class="foot">
-            <img src="../../../../static/travel-img/write.png" alt="">
+            <img src="../../../../static/travel-img/write.png" alt=""/>
         </div>
     </div>
 </template>
@@ -85,6 +85,10 @@ export default {
             // watchSlidesProgress : true,
 		})  
         } 
+    },
+    methods: {
+        // number:comment.length
+        
     },
 }
 </script>

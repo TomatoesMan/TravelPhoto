@@ -6,7 +6,7 @@
                 <img src="../../../../static/travel-img/add.png" alt="">
             </router-link>
         </div>
-
+    
         <div class="wrapper" ref="bannerwrapper">
             <div class="content">
                 <div class="banner" v-for="(item,index) in list">
