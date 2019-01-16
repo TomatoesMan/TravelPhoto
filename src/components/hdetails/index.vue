@@ -8,24 +8,31 @@
 </template>
 <script>
 import Top from "./components/top.vue"
-import Article from "./components/article.vue"
+import essay  from "./components/essay.vue"
+import combo from "./components/combo.vue"
+import vlog from "./components/vlog.vue"
 import Vuex from "vuex"
     export default {
         components: {
             "Top-com" : Top,
-            "Article-com" : Article
+            "essay" : essay,
+            "combo" : combo,
+            "vlog" : vlog,
+        },
+        created () {
+            this.handleArticle();
+            this.Observer.$on( "handleName", ( val )=>{
+                this.comName = val;
+            } )
         },
         data () {
             return {
-                comName:"Article-com"
+                comName:"essay"
             }
-        },
-        computed: {
-            
         },
         methods: {
             ...Vuex.mapActions({
-                handle
+               handleArticle : "hdetails/handleArticle"
             })
         }
     }

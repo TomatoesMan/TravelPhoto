@@ -7,6 +7,7 @@ import Lirui from "./home/lirui"
 import home_yxl from "./home/home_yxl"
 import parson_zj from "./parson/parson_zj"
 import travel from "./travel"
+import hdetails from "./hdetails"
 Vue.use( Vuex );
 //创建仓库
 const store  = new Vuex.Store({
@@ -17,7 +18,8 @@ const store  = new Vuex.Store({
         Lirui,
         home_yxl,
         parson_zj,
-        travel
+        travel,
+        hdetails
     }
 })
 export default store;
