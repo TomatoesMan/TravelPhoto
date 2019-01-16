@@ -169,18 +169,18 @@ export default {
     font-size: 0.28rem;
     font-family: PingFang-SC-Regular;
     font-weight: 400;
+    display: flex;
+justify-content: flex-start;
   }
   #follow {
     width: 1rem;
     height: 100%;
     margin-left: 2.03rem;
-    float: left;
-  }
+   }
   #fans {
     width: 1.5rem;
     height: 100%;
-    float: left;
-    margin-left: 1.37rem;
+     margin-left: 1.37rem;
   }
   #private {
     position: relative;

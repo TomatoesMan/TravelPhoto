@@ -1,6 +1,6 @@
 
 
- <template>
+  <template>
   <div id="revise">
     <div id="reviseUp">
       <div>
@@ -13,14 +13,23 @@
     <div id="reviseDown">
       <form>
         <div id="reviseHead">
-           <!--使用element-ul  进行头像的上传 -->
+          <!--  使用element-ul  进行头像的上传-->
 
+  <el-upload
+  class="avatar-uploader"
+  id="Oimg"
+  action="https://jsonplaceholder.typicode.com/posts/"
+  :show-file-list="false"
+  :on-success="handleAvatarSuccess"
+  :before-upload="beforeAvatarUpload">
+  <img v-if="imageUrl" :src="imageUrl" class="avatar">
+  <i v-else class="el-icon-plus avatar-uploader-icon"></i>
+</el-upload>
 
-
-        <input id="oimg" type="file" name="img" multiple>
- <!-- 用file点击  获取图片名称    根据图片名称显示到页面上
-          <img src="../../../../../static/image/flower.jpg"> -->
-          <p>更换头像</p>
+       <!-- <input id="oimg" type="file" name="img" multiple>
+ 用file点击  获取图片名称    根据图片名称显示到页面上
+          <img src="../../../../../static/image/flower.jpg">
+          <p>更换头像</p>-->
         </div>
         <div id="reviseModify">
           <h6>昵称</h6>
@@ -31,8 +40,7 @@
           <div class="reviseTxt">
             <input type="TEXT" v-model="userInfo">
             <input id="btn" @click="handSuccess()" type="submit" value="提交">
-            <input @click="aa()" type="file" name="img" multiple>
-          </div>
+           </div>
         </div>
       </form>
     </div>
@@ -44,6 +52,7 @@
 
    <script>
    //头像    传过来     利用非父子组件传值
+
 export default {
   data() {
     return {
@@ -53,29 +62,45 @@ export default {
     };
   },
   methods: {
-   handSuccess(){
-    console.log(this.userName);
-this.userName=this.userName;
-console.log(this.userInfo);
-this.userInfo=this.userInfo;
+//    handSuccess(){
+//     console.log(this.userName);
+// this.userName=this.userName;
+// console.log(this.userInfo);
+// this.userInfo=this.userInfo;
 
-//传值  $emit
-// this.Observer.$emit("aa",this.userName)
-// console.log(this.userName);
+// //传值  $emit
+// // this.Observer.$emit("aa",this.userName)
+// // console.log(this.userName);
+//       },
+handleAvatarSuccess(res, file) {
+        this.imageUrl = URL.createObjectURL(file.raw);
       },
+      beforeAvatarUpload(file) {
+        const isJPG = file.type === 'image/jpeg';
+        const isLt2M = file.size / 1024 / 1024 < 2;
 
-
-
+        if (!isJPG) {
+          this.$message.error('上传头像图片只能是 JPG 格式!');
+        }
+        if (!isLt2M) {
+          this.$message.error('上传头像图片大小不能超过 2MB!');
+        }
+        return isJPG && isLt2M;
+      },
   },
-  watch:{
+
+ watch:{
 'userName':function(val,oldval){
- //console.log(val,oldval);
+
 },
+ //console.log(val,oldval);
+
 'userInfo':function(val,oldval){
 //console.log(val,oldval);
 }
-  }
-};
+},
+
+}
  </script>
 
  <style lang="scss" scoped>
@@ -118,30 +143,55 @@ this.userInfo=this.userInfo;
       height: 1.5rem;
       margin: 0.5rem 0 0 3.05rem;
       position: relative;
-      img {
-        width: 100%;
-        height: 100%;
-        border-radius: 50%;
-      }
-      p {
-        position: absolute;
-        bottom: 0.15rem;
-        left: 0.27rem;
-        font-size: 0.22rem;
-        color: #fff;
-      }
-      #oimg {
+      // img {
+      //   width: 100%;
+      //   height: 100%;
+      //
+      // }
+      // p {
+      //   position: absolute;
+      //   bottom: 0.15rem;
+      //   left: 0.27rem;
+      //   font-size: 0.22rem;
+      //   color: #fff;
+      // }
+      #Oimg {
         width: 1.5rem;
         height: 1.5rem;
         border-radius: 50%;
-        background: #000;
-        input {
-          position: absolute;
-          left: 2rem;
-          top: 3rem;
-          display: none;
+        background: #ccc;
+img{
+width: 1.5rem;
+height: 1.5rem;
+ border-radius: 50%;
+}
         }
-      }
+      // }
+ .avatar-uploader .el-upload {
+    border: .05rem dashed #d9d9d9;
+    border-radius:50%;
+    width: 1.5rem;
+    height: 1.5rem;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+  }
+  .avatar-uploader .el-upload:hover {
+    border-color: #409EFF;
+  }
+  .avatar-uploader-icon {
+    font-size: 28px;
+    color: #8c939d;
+    width: 178px;
+    height: 178px;
+    line-height: 178px;
+    text-align: center;
+  }
+  .avatar {
+    width: 178px;
+    height: 178px;
+    display: block;
+  }
     }
   }
   #reviseModify {
@@ -181,11 +231,11 @@ this.userInfo=this.userInfo;
       border-radius: 0.12rem;
     }
   }
-    
+
 }
  </style>
 
-<!---<template>
+ <!--<template>
 <div>
   <el-upload
   class="avatar-uploader"
@@ -253,4 +303,4 @@ this.userInfo=this.userInfo;
       }
     }
   }
-</script>-->
+</script >-->

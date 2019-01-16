@@ -80,11 +80,11 @@ export default {
         this.spanpwd = "密码不能少于六位";
         this.userPassword = "";
         flagpwd = false;
-       // console.log(this.spanpwd);
+        // console.log(this.spanpwd);
       } else {
-       // console.log(this.userPassword);
+        // console.log(this.userPassword);
         flagpwd = true;
-       // console.log(flagpwd);
+        // console.log(flagpwd);
       }
 
       //验证确认密码
@@ -95,13 +95,13 @@ export default {
         flagmm = false;
       } else {
         flagmm = true;
-       // console.log(flagmm);
+        // console.log(flagmm);
       }
 
       //验证是否提交
       if (flag && flagpwd && flagmm === true) {
         //表示验证成功   开始传递数据
-       // alert("ok");
+        // alert("ok");
         Toast({
           message: "注册成功",
           duration: 500
@@ -130,9 +130,9 @@ export default {
           } else {
             alert("该用户已存在");
             Toast({
-                      message: "该用户已存在",
-                      duration: 500
-                    });
+              message: "该用户已存在",
+              duration: 500
+            });
           }
         });
 
@@ -183,6 +183,8 @@ export default {
   margin: 1.23rem 0 0.15rem 0.75rem;
   border-radius: 0.12rem;
   padding: 0 0.1rem;
+  display: flex;
+  justify-content: flex-start;
   p {
     width: 1.5rem;
     height: 0.88rem;
@@ -191,7 +193,6 @@ export default {
     font-family: PingFang-SC-Regular;
     font-weight: 400;
     color: rgba(51, 51, 51, 1);
-    float: left;
   }
 }
 
@@ -204,6 +205,8 @@ export default {
   padding: 0 0.1rem;
   margin-bottom: 0.15rem;
   margin-left: 0.75rem;
+  display: flex;
+  justify-content: flex-start;
   p {
     width: 1.5rem;
     height: 0.88rem;
@@ -212,7 +215,6 @@ export default {
     font-family: PingFang-SC-Regular;
     font-weight: 400;
     color: rgba(51, 51, 51, 1);
-    float: left;
   }
 }
 #userName,
@@ -243,6 +245,8 @@ export default {
   width: 100%;
   height: 0.88rem;
   margin-left: 0.75rem;
+  display: flex;
+  justify-content: flex-start;
 }
 #verificationCode {
   width: 3rem;
@@ -253,7 +257,6 @@ export default {
   padding: 0 0.6rem;
   font-weight: 400;
   outline: medium;
-  float: left;
   margin-right: 0.2rem;
 }
 #gainCode {
@@ -267,7 +270,6 @@ export default {
   color: #fff;
   outline: medium;
   border: none;
-  float: left;
 }
 .spanname {
   position: absolute;

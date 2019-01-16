@@ -154,6 +154,8 @@ export default {
     height: 2.3rem;
   }
 }
+#forgetCenter{
+
 #forgetName {
   width: 6rem;
   height: 0.88rem;
@@ -161,6 +163,8 @@ export default {
   margin: 1.23rem 0 0.15rem 0.75rem;
   border-radius: 0.12rem;
   padding: 0 0.1rem;
+  display: flex;
+justify-content: flex-start;
   p {
     width: 1.5rem;
     height: 0.88rem;
@@ -169,8 +173,7 @@ export default {
     font-family: PingFang-SC-Regular;
     font-weight: 400;
     color: rgba(51, 51, 51, 1);
-    float: left;
-  }
+   }
 }
 #userName,
 #forgetPassword,
@@ -188,6 +191,8 @@ export default {
   height: 0.88rem;
   margin-left: 0.75rem;
   margin-bottom: 0.15rem;
+  display: flex;
+justify-content: flex-start;
 }
 #twoCode {
   width: 3rem;
@@ -198,8 +203,7 @@ export default {
   padding: 0 0.6rem;
   font-weight: 400;
   outline: medium;
-  float: left;
-  margin-right: 0.2rem;
+   margin-right: 0.2rem;
 }
 #getCode {
   width: 2.76rem;
@@ -212,8 +216,7 @@ export default {
   color: #fff;
   outline: medium;
   border: none;
-  float: left;
-}
+ }
 #forgetPwd,
 #forgetQpwd {
   width: 6rem;
@@ -223,6 +226,9 @@ export default {
   padding: 0 0.1rem;
   margin-bottom: 0.15rem;
   margin-left: 0.75rem;
+display: flex;
+justify-content: flex-start;
+
   p {
     width: 1.5rem;
     height: 0.88rem;
@@ -231,8 +237,7 @@ export default {
     font-family: PingFang-SC-Regular;
     font-weight: 400;
     color: rgba(51, 51, 51, 1);
-    float: left;
-  }
+     }
 }
 #forgetIng {
   width: 6rem;
@@ -247,4 +252,6 @@ export default {
   outline: medium;
   border: none;
 }
+}
+
 </style>
