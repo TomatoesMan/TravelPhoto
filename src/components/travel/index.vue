@@ -1,6 +1,8 @@
 <template>
     <div>
-      <travelHome-com></travelHome-com>
+       
+        <travelHome-com></travelHome-com>
+        
     </div>
 </template>
 
@@ -10,6 +12,7 @@ import travelNotes from "./components/travelnotes.vue";
 import travelSend from "./components/travelsend.vue";
 import travelForward from "./components/travelForward.vue";
 import travelDetails from "./components/traveldetails.vue";
+import Bscroll from "better-scroll";
 export default {
     components:{
         "travelHome-com":travelHome,
@@ -17,10 +20,14 @@ export default {
         "travelSend-com":travelSend,
         "travelForward-com":travelForward,
         "travelDetails-com":travelDetails
-    } 
+    } ,
+    
+
 }
 </script>
 
-<style>
-
+<style scoped>
+ div{
+     height: 100%;
+ }
 </style>

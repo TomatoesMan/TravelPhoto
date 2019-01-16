@@ -12,7 +12,8 @@
         },
         methods: {
             sendText : function(){
-                
+                this.Observer.$emit( "handleSendText", { type : 1, text : this.text } );
+                this.text = "";
             }
         }
     }

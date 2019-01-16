@@ -64,6 +64,8 @@ export default {
         box-shadow: 0px 0px 8px 0px rgba(174, 174, 174, 0.31);
         flex-shrink: 0;
         margin-right: 0.33rem;
+        border-radius: 0.2rem;
+        overflow: hidden;
         p:first-child {
           width: 1.85rem;
           height: 1.92rem;

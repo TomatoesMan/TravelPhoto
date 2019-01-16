@@ -35,13 +35,15 @@
             padding-left: 0.3rem;
         }
         dl {
-            width:97.6%;
+            width:94%;
             height:4.34rem;
             box-shadow:0px 0.02rem 0.16rem 0px rgba(174,174,174,0.31);
             font-family:PingFang-SC-Regular;
             font-weight:400;
             text-align: center;
             margin: 0 auto;
+            overflow: hidden;
+            border-radius: 0.3rem;
             dt {
                 width: 100%;
                 height: 2.51rem;
