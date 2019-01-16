@@ -225,7 +225,6 @@ const router =  new Router({
       },
     },
     {
-<<<<<<< HEAD
       path: '/my/parsonalpage',
       name: 'parsonalpage',
       component: parsonalpage,
@@ -252,7 +251,8 @@ const router =  new Router({
       //table栏的显示
       flag:false
       }
-=======
+    },
+    {
       path: '/my/attention',
       name: 'attention',
       component: attention,
@@ -269,7 +269,6 @@ const router =  new Router({
           //table栏的显示
           flag : false
         },
->>>>>>> kai
     },
     {
       path: '/scart',

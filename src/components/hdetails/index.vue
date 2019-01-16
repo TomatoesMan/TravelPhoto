@@ -23,7 +23,7 @@ import Vuex from "vuex"
             "vlog" : vlog,
         },
         created () {
-            this.handleArticle();
+            this.handleHdetails();
             this.Observer.$on( "handleName", ( val )=>{
                 this.comName = val;
             } )
