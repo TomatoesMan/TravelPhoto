@@ -9,6 +9,7 @@ import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 import "./common/css/reset.css"
 import "./common/js/flexble"
+import "./common/css/icon/iconfont.css"
 import "../node_modules/swiper/dist/css/swiper.min.css"
 import "../src/common/css/iconfont/iconfont.css"
 import "../src/common/css/iconfont/city_iconfont/iconfont.css"

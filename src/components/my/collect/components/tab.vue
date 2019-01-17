@@ -36,6 +36,9 @@
 		width: 100%;
 		margin-top: .1rem;
 		text-align: center;
-		font-size: .31rem;
+		font-size:.32rem;
+		font-family:PingFang-SC-Regular;
+		font-weight:400;
+		color:rgba(116,155,255,1);
 	}
 </style>
