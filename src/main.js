@@ -18,6 +18,7 @@ import "../node_modules/mint-ui/lib/style.css"
 import oBserver from "./observer";
 Vue.prototype.Observer = oBserver;
 
+import "./common/css/animate.css"
 Vue.config.productionTip = false
 /* eslint-disable no-new */
 
