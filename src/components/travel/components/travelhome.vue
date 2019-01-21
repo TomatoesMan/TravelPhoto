@@ -48,10 +48,12 @@
                         </div>
                         <div class="footRight">
                             <img src="../../../../static/travel-img/like.png" alt="" class="likeImg">
-                            <span class="like">{{item.likeCount}}</span>    
+                            <span class="like">{{item.likeCount}}</span>  
+                            <router-link to="/traveldetails">
                             <img src="../../../../static/travel-img/comment.png" alt="" class="commentImg">
                             <span class="comment">{{item.comtCount}}</span>
-                            <img src="../../../../static/travel-img/forward.png" alt="" class="forwardImg">
+                            </router-link>  
+                            <img src="../../../../static/travel-img/forward.png" alt="" class="forwardImg" @click="handleToggle">
                             
                             
                             <span class="forward">{{item.retrCount}}</span>
@@ -60,6 +62,12 @@
                 </div>
             </div>
         </div>
+        <transition name="slide">
+            <hidden-com class="slide" v-show="flag" @s="handleClose"/>
+        </transition>
+        <transition name="fade">
+            <mask-com class="fade" v-if="flag" @s="handleClose"/>
+        </transition>
     </div>
 </template>
 
@@ -67,11 +75,12 @@
 import Vuex from "vuex";
 import Bscroll from "better-scroll";
 import Swiper from "swiper";
+import Hidden from "./hidden.vue";
+import Mask from "./mask.vue";
 export default {
     
      created() {
         this.$store.dispatch("travel/listActions")
-    //    console.log(this.$store)
     },
     computed:{
           ...Vuex.mapState({
@@ -99,6 +108,24 @@ export default {
 		})  
         } 
     },
+    components:{
+        "hidden-com":Hidden,
+        "mask-com":Mask
+    },
+    data(){
+        return {
+          flag:false
+        }
+  },
+  methods: {
+    handleToggle(){
+      this.flag = !this.flag;
+    },
+    handleClose(data){
+        this.flag = data;
+    }
+
+    }
 }
 </script>
 
@@ -143,7 +170,7 @@ export default {
                 height:100%;
                 margin-top: 0.5rem;
                 &:nth-of-type(1){
-                    margin-top: 0.88rem;
+                    margin-top: 0.9rem;
                 }
                .user{
                    width: 100%;
@@ -179,8 +206,6 @@ export default {
                     margin-left:1.42rem;
                   }   
                }
-               
-               
            }
            .bannerImg{
                width: 100%;
@@ -201,12 +226,6 @@ export default {
                    width: 100%; 
                    height:100%;
                }
-            //    .secondImg{
-            //        width: 3.17rem;
-            //        height: 2.45rem;
-            //        margin-left: 0.1rem;
-            //    }
-               
            }
            .says{
                 width:4.48rem;
@@ -242,7 +261,6 @@ export default {
                margin: 0 auto;
                margin-left: 0.4rem;
                margin-top: 0.35rem;
-               
                .footLeft{
                    width: 3rem;
                    height: 0.48rem;
@@ -299,5 +317,33 @@ export default {
             width: 100%;
             height: 100%;
 }
-
+.slide{
+    position: fixed;
+    bottom:0;
+    left:0;
+    z-index: 999;
+}
+ .slide-enter,.slide-leave-to {
+    bottom: -3.66rem;
+    left: 0;
+    z-index: 999;
+}
+.slide-enter-active,.slide-leave-active {
+    transition: all 500ms;
+}      
+.fade{
+    position: fixed;
+    top:0;
+    bottom: 3.66rem;
+    left:0;
+    z-index: 999;
+    opacity: 1;
+}
+.fade-enter,.fade-leave-to{
+  opacity: 0;
+}
+.fade-enter-active,.fade-leave-active{
+    transition: all 500ms;
+    
+}
 </style>
