@@ -142,9 +142,9 @@ export default {
                width: 100%;
                 height:100%;
                 margin-top: 0.5rem;
-                &:nth-of-type(1){
-                    margin-top: 0.88rem;
-                }
+                // &:nth-of-type(1){
+                //     margin-top: 0.9rem;
+                // }
                .user{
                    width: 100%;
                    height: 0.88rem;
@@ -299,5 +299,4 @@ export default {
             width: 100%;
             height: 100%;
 }
-
 </style>
