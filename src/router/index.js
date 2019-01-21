@@ -19,6 +19,8 @@ import parsonalpage from "../components/my/nickName/parsonPage/parsonalPage"
 import parsoninfo from "../components/my/nickName/parsonPage/parsonInfo.vue"
 
 import quarterbell from "../components/my/nickName/quarterBell"
+import attention from "../components/my/attention"
+import fans from "../components/my/fans"
 import Login from "../components/login"
 //  import Register from  "../components/login/components/register.vue"
 import Register from  "../components/login/components/register.vue"
@@ -32,9 +34,10 @@ import Cusservice from "../components/cusservice"
 
 import Detail from "../components/detail"
 import PersonalTailor from "../components/personalTailor"
-import Hdetails from "../components/hdetails"
 import PersonalDateTime from "../components/personalDateTime"
 import DateTime from "../components/datetimePicker"
+import Hdetails from "../components/hdetails"
+import Combo from "../components/hdetails/components/combo.vue"
 
 import travelHome from "../components/travel/components/travelhome"
 import travelNotes from "../components/travel/components/travelnotes"
@@ -45,6 +48,8 @@ import PayList from "@/components/scart/components/payList"
 import PayPage from "@/components/scart/components/payPage"
 import Kong from "@/components/scart/components/Kong"
 import PaySuccess from "@/components/scart/components/paySuccess"
+
+
 Vue.use(Router)
 const router =  new Router({
   routes: [
@@ -248,6 +253,24 @@ const router =  new Router({
       }
     },
     {
+      path: '/my/attention',
+      name: 'attention',
+      component: attention,
+        meta : {
+          //table栏的显示
+          flag : false
+        },
+    },
+    {
+      path: '/my/fans',
+      name: 'fans',
+      component: fans,
+        meta : {
+          //table栏的显示
+          flag : false
+        },
+    },
+    {
       path: '/scart',
       name: 'scart',
       component: Scart,
@@ -374,6 +397,13 @@ const router =  new Router({
         //table栏的显示
         flag:false,
        },
+       children:[
+         {
+           path:"combo",
+           name:"combo",
+           component:Combo
+         }
+       ]
     },
     {
       path: '**',
@@ -382,8 +412,10 @@ const router =  new Router({
     }
   ]
 })
+
 // import Vuex from "vuex"
 // router.beforeEach((to,  from, next) => {
 
 // })
+
 export default router;
