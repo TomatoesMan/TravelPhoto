@@ -37,10 +37,11 @@ export default {
 
 <style lang="scss">
     .Rc_city{
+        margin-top: .5rem;
         padding-top: 0.57rem;
         width: 100%;
         height: 100%;
-        padding-bottom: 0.62rem;
+        padding-bottom: 1rem;
         overflow-y:auto; 
         .scrollCity {
             height: 100%;

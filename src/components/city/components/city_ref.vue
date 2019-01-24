@@ -31,7 +31,7 @@ export default {
 
 <style lang="">
      .city_ref{
-            margin: .3rem;
+            padding: .5rem;
         }
       .city_ref .city_site{
         margin-top: .3rem;
@@ -60,12 +60,14 @@ export default {
      height: .7rem;
      border-radius: 10px;
      font-size: .3rem;
-     color: #4174f2;
      box-shadow: 0 0 10px #ccc;
      line-height: .7rem;
-     margin-top: .27rem;
-     margin-left: 2.4rem;
+     margin: .5rem auto;
+     margin-bottom: 0;
      text-align: center;  
+ }
+ .city_ref  .city_btn a{
+     color: #4174f2;
  }
 
 </style>
