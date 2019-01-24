@@ -16,8 +16,6 @@ import payed from "../components/my/payed"
 import review from "../components/my/review"
 import parsonalpage from "../components/my/nickName/parsonPage/parsonalPage"
 
-import quarterbell from "../components/my/nickName/quarterBell"
-
 import parsoninfo from "../components/my/nickName/parsonPage/parsonInfo.vue"
 
 import quarterbell from "../components/my/nickName/quarterBell"
