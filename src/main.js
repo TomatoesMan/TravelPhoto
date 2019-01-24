@@ -21,14 +21,11 @@ import "../node_modules/mint-ui/lib/style.css"
 import oBserver from "./observer";
 Vue.prototype.Observer = oBserver;
 
-<<<<<<< HEAD
 
 
 
 
-=======
 import "./common/css/animate.css"
->>>>>>> master
 Vue.config.productionTip = false
 Vue.use(ElementUI);
 /* eslint-disable no-new */
