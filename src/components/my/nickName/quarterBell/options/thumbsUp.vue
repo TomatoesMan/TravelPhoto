@@ -1,28 +1,45 @@
 <template>
   <div id="thumbsup">
     <ul id="honor">
-      <li>
+       <li v-for="(item,index) in thumbsup" :key="index">
         <div id="heiTop">
-          <div id="hisHead"></div>
-          <img src="../../../../../../static/image/椭圆 2 拷贝 2@2x.png">
-          <h6>心心乡音</h6>
+          <div id="hisHead">
+          <img :src="item.userPhoto">
+          </div>
+          <h6>{{item.userName}}</h6>
           <span>攒了你</span>
           <div id="goods">
             <img src="../../../../../../static/image/icon_dz@2x.png">
           </div>
         </div>
         <div id="myConter">
-          这是个不错的产品,这是个不错的产品,这这是个不错的产品,这是个不错的产品,这是个不错的产品,
-          这这是个不错的产品,这是个不错的产品,
-          这是个不错的产品,这这是个不错的产品,这是个不错的产品,这是个不错的产品,这这是个不错的产品
+          {{item.userConter}}
         </div>
       </li>
+
     </ul>
   </div>
 </template>
 
 <script>
-export default {};
+
+import Vuex from "vuex";
+export default {
+computed:{
+...Vuex.mapState({
+thumbsup:state=>state.parson_zj.thumbsup,
+})
+},
+created(){
+this.hendleUp()
+},
+methods:{
+...Vuex.mapActions({
+hendleUp:"parson_zj/hendleUp"
+})
+}
+};
+//https://www.easy-mock.com/mock/5c39368a27e755129a330e33/travel/Up
 </script>
 
 <style lang="scss" scoped>
@@ -34,7 +51,8 @@ export default {};
     height: 100%;
     padding: 0 0.32rem;
     li {
-      height: 1.92rem;
+      padding:.2rem;
+      margin-bottom: .5rem;
       width: 100%;
       border: 0.02rem dashed #ccc;
       box-shadow: 0px 0px 8px 0px rgba(183, 183, 183, 0.21);
@@ -47,7 +65,13 @@ export default {};
       align-items: center;
       justify-content: flex-start;
       #hisHead {
-        margin-top: 0.34rem;
+        width: .88rem;
+        height: .88rem;
+           border-radius: 50%;
+        img{
+
+border-radius: 50%;
+        }
       }
       h6 {
         margin-left: 0.4rem;
