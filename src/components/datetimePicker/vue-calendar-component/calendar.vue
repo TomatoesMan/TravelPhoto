@@ -136,7 +136,9 @@ wh_content_item_tag {
   font-size: .32rem;
   margin: 1rem auto;
 }
-
+#ckday{
+  margin-left: .5rem;
+}
 
 </style>
 <template>
@@ -171,10 +173,10 @@ wh_content_item_tag {
       </div>
       
     </div>
-    <div>
+    <div id="ckday">
       <p>您选择的日期为：{{this.historyChose}}</p>
     </div>
-    <div class="confirm_btn">
+    <div class="confirm_btn" @click="handleConfirm()">
       确认
     </div>
   </section>
@@ -215,6 +217,11 @@ export default {
     this.myDate = new Date();
   },
   methods: {
+    handleConfirm(){
+      console.log(this.historyChose);
+      let a = this.historyChose
+      this.$router.push({path:"/paylist",params:{a}})
+    },
     intStart() {
       timeUtil.sundayStart = this.sundayStart;
     },

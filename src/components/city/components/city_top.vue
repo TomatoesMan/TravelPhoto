@@ -1,6 +1,6 @@
 <template>
     <div class="top">
-            <div class="top_j">
+            <div class="top_j" @click="handleback()">
                 <i class="iconfont">&#xe604;</i>
             </div>
             <h2 class="top_tit">经典旅游城市</h2>
@@ -9,12 +9,17 @@
 
 <script>
 export default {
- 
+    methods:{
+        handleback(){
+            this.$router.push("/home");
+        }
+    }
 }
 </script>
 
 <style scoped lang="">
     .top{
+        margin-top: .4rem;
         width: 100%;
         height:.9rem ;
         display: flex;
@@ -24,7 +29,6 @@ export default {
         left: 0;
         z-index: 5;
         background: #fff;
-        padding-top: 0.65rem;
     }
     .top .top_j{
         width:.26rem;

@@ -1,7 +1,5 @@
 <template>
     <div class="combo">
-        <h2 style="text-align:center;margin-top:30px;">他的套餐</h2>
-
         <!-- <div class="list">
             <div class="list_img">
                 <img src="http://img0.imgtn.bdimg.com/it/u=1234902808,3611725104&fm=200&gp=0.jpg" alt="">

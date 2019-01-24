@@ -47,7 +47,7 @@
         </div>
         <!-- 底部写笔记 -->
         <div class="foot">
-            <img src="../../../../static/travel-img/write.png" alt=""/>
+            <img src="../../../../static/travel-img/travel10.jpg" alt=""/>
         </div>
         
     </div>
