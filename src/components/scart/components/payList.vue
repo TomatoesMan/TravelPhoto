@@ -141,20 +141,19 @@
 	}
 	.foot_pay{
 		width: 100%;
-		height: 1.0rem;
+		height: 1.2rem;
 		position: fixed;
 		left: 0;bottom: 0;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		background: #fff;
+		background: #f1f1f1; 
 	}
 	.foot_pay p{
 		width: 2rem;
 		height: .31rem;
 		margin-left: 3rem;
 		font-size: .31rem;
-		margin-bottom: .41rem;
 	}
 	.foot_pay div{
 		width: 2.1rem;
@@ -166,6 +165,5 @@
 		line-height: .88rem;
 		border-radius: .2rem;
 		margin-right: .3rem;
-		margin-bottom: .1rem;
 	}
 </style>

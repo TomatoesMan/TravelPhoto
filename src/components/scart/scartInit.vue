@@ -148,7 +148,8 @@
 		display: flex;
 		align-items: center;
 		border: 1px solid #f7f7f7;
-		box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.2);
+		border-radius:12px;
+		box-shadow:0px 0px 10px 0px rgba(180,180,180,0.23);
 		margin-bottom: .3rem;
 	}
 	.content_d input{
@@ -290,5 +291,5 @@
 		position: absolute;
 		left: 5.21rem;
 		bottom:.46rem; 
-	}
+   	}
 </style>
