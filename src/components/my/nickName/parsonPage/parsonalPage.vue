@@ -9,8 +9,7 @@
       </router-link>
     </div>
     <div id="headPhoto">
-      <!-- <router-link to="/my/parsoninfo"></router-link> -->
-      <img src="../../../../../static/image/icon_tp.png">
+       <img src="../../../../../static/image/icon_tp.png">
     </div>
     <div id="motto">
       <div id="myPet">
