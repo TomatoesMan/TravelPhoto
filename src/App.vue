@@ -5,6 +5,7 @@
   </div>
 </template>
 
+
 <script>
 import Footer from "./components/footer";
 export default {
@@ -14,15 +15,10 @@ export default {
 }
 </script>
 
+
 <style>
   #app {
     width: 100%;
     height: 100%;
-  }
-  #Loading{
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 100;
   }
 </style>

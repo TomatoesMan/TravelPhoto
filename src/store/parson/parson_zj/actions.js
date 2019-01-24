@@ -23,7 +23,7 @@ axios({
   url:"/api/mock/5c358c233df7227eb0a9d44a/example/assess"
 
 }).then((data)=>{
-commit("getess",data);
+commit("getEss",data);
 })
 }
 

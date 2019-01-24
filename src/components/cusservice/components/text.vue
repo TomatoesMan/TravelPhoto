@@ -1,18 +1,27 @@
 <template>
     <div id="text">
-        <input type="text" placeholder="说些什么" v-model="text"><button @click="sendText">发送</button>
+        <input type="text" placeholder="说些什么" v-model="text" v-focus="flag"><button @click="sendText">发送</button>
     </div>
 </template>
 <script>
     export default {
         data () {
             return {
-                text : ""
+                text : "",
+                flag : true
             }
+        },
+        directives: {
+          focus  : {
+              inserted( el ){
+                  el.focus();
+              }
+          }  
         },
         methods: {
             sendText : function(){
-                
+                this.Observer.$emit( "handleSendText", { type : 1, text : this.text } );
+                this.text = "";
             }
         }
     }
