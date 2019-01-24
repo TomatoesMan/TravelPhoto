@@ -2,7 +2,11 @@
     <div id="hdetails">
         <Top-com></Top-com>
         <keep-alive>
-            <component :is="comName"></component>
+            <div class="wrapper scrollHdetails" ref="Wrapper">
+			  <div class="content">
+                <component :is="comName"></component>
+			  </div>
+            </div>
         </keep-alive>
     </div>
 </template>
@@ -12,6 +16,7 @@ import essay  from "./components/essay.vue"
 import combo from "./components/combo.vue"
 import vlog from "./components/vlog.vue"
 import Vuex from "vuex"
+import BScroll from "better-scroll";
     export default {
         created(){
             this.handleHdetails()
@@ -37,9 +42,24 @@ import Vuex from "vuex"
             ...Vuex.mapActions({
                 handleHdetails:"hdetails/handleHdetails"
             })
+        },
+        mounted () {
+            this.scroll = new BScroll(this.$refs.Wrapper,{
+				//只有设置成true pullingUp才能使用
+				pullUpLoad:true,
+				click:true,
+				probeType:2,
+            });
         }
     }
 </script>
 <style scoped lang="scss">
-    
+    #hdetails {
+        width: 100%;
+        height: 100%;
+        .scrollHdetails {
+            width: 100%;
+            height: 100%;
+        }
+    }
 </style>
