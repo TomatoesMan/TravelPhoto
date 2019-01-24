@@ -1,3 +1,6 @@
 export default {
-    combo:[]
+    combo:[],
+    article : [],
+    userName : "",
+    userPhoto : ""
 }

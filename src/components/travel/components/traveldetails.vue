@@ -5,12 +5,10 @@
                 <img src="../../../../static/travel-img/back.png" alt="" class="back">
             </router-link>
             <p class="detailTitle">详情</p>
+            <!-- <p class="forward" @click="handleToggle">···</p> -->
         </div>
         
         <!-- 详情部分 -->
-        <div class="wrapper" ref="bannerwrapper">
-            <div class="content">
-                <!-- v-for="(arr,index) in arr" v-if="index<1" -->
             <div class="banner" >
                 <dl class="user">
                     <dt class="userPhoto"><img :src="arr.img1" alt=""></dt>
@@ -32,22 +30,26 @@
                 <img src="../../../../static/travel-img/collect.png" alt="" class="collect">
                 <p class="likeCount"><span>{{arr.tLike}}</span>人喜欢</p>
             </div>
-            <!-- 下面的评论 -->
-            <div class="commit" v-for="(item,index) in comment">
-                <p class="commitCount">评论<span>({{arr.number}})</span></p>
-                <dl class="follower">
-                    <dt class="followerPhoto"><img :src=arr.img2 alt=""></dt>
-                    <dd class="followerName"><span>{{item.comtNickname}}</span></dd>
-                    <dd class="followerDate"><span>{{item.comtTime}}</span></dd>
-                    <dd class="followerCommit"><span>{{item.comtDetail}}</span></dd>
-                </dl>
-            </div>
+
+        <div class="wrapper" ref="commentwrapper">
+            <div class="content">
+                <!-- 下面的评论 -->
+                <div class="commit" >
+                    <p class="commitCount">评论<span>({{comment.length}})</span></p>
+                    <dl class="follower" v-for="(item,index) in comment">
+                        <dt class="followerPhoto"><img :src=arr.img2 alt=""></dt>
+                        <dd class="followerName"><span>{{item.comtNickname}}</span></dd>
+                        <dd class="followerDate"><span>{{item.comtTime}}</span></dd>
+                        <dd class="followerCommit"><span>{{item.comtDetail}}</span></dd>
+                    </dl>
+                </div>
             </div>
         </div>
         <!-- 底部写笔记 -->
         <div class="foot">
-            <img src="../../../../static/travel-img/write.png" alt="">
+            <img src="../../../../static/travel-img/write.png" alt=""/>
         </div>
+        
     </div>
 </template>
 
@@ -55,10 +57,11 @@
 import Vuex from "vuex"
 import Bscroll from "better-scroll"
 import Swiper from "swiper";
+
 export default {
     created() {
         this.$store.dispatch("travel/detailsActions")
-        this.$store.dispatch("travel/commentActions")
+        this.$store.dispatch("travel/comtActions")
     },
     computed:{
           ...Vuex.mapState({
@@ -68,13 +71,14 @@ export default {
     },
     mounted(){
        if(!this.scroll){
-           this.scroll = new Bscroll(this.$refs.bannerwrapper,{
+           this.scroll = new Bscroll(this.$refs.commentwrapper,{
             //只有设置成true pullingUp才能使
             pullUpLoad:true,
             click:true,
-            probeType:2
+            probeType:2,
+           
         });
-        console.log(this.scroll)
+        console.log(112233)
        }
     },
     updated() {
@@ -86,6 +90,7 @@ export default {
 		})  
         } 
     },
+    
 }
 </script>
 <style lang="scss" scoped>
@@ -123,6 +128,17 @@ export default {
                 margin-left: 0.33rem;
                 margin-top: 0.2rem;
                 float: left;
+            }
+            .forward{
+                font-size: 0.4rem;
+                width: 1.2rem;
+                height: 0.4rem;
+                font-weight: bold;
+                font-family: PingFang-SC-Bold;
+                color: rgba(0, 0, 0, 1);
+                float: left;
+                margin-left: 2.36rem;
+                text-align: center;
             }
 }
         .banner{
@@ -206,6 +222,7 @@ export default {
                 font-family:PingFang-SC-Regular;
                 font-weight:400;
                 color:rgba(170,170,170,1);
+                margin-left: 3rem;
            }
         }
         .commit{
@@ -228,7 +245,10 @@ export default {
                 width: 7.18rem;
                 height: 1.2rem;
                 margin-left: 0.32rem;
-                margin-top: 0.32rem;
+                margin-top: 0.7rem;
+                &:nth-of-type(1){
+                    margin-top: 0.32rem;
+                }
                 .followerPhoto{
                     width: 0.88rem;
                     height: 0.88rem;
@@ -263,7 +283,11 @@ export default {
     }
     .wrapper{
             width: 100%;
-            height: 100%;
+            height: max;
+            .content{
+                height: max-content;
+            }
 }
+
 
 </style>

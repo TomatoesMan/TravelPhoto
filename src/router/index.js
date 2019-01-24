@@ -19,6 +19,8 @@ import parsonalpage from "../components/my/nickName/parsonPage/parsonalPage"
 import parsoninfo from "../components/my/nickName/parsonPage/parsonInfo.vue"
 
 import quarterbell from "../components/my/nickName/quarterBell"
+import attention from "../components/my/attention"
+import fans from "../components/my/fans"
 import Login from "../components/login"
 //  import Register from  "../components/login/components/register.vue"
 import Register from  "../components/login/components/register.vue"
@@ -47,6 +49,8 @@ import PayList from "@/components/scart/components/payList"
 import PayPage from "@/components/scart/components/payPage"
 import Kong from "@/components/scart/components/Kong"
 import PaySuccess from "@/components/scart/components/paySuccess"
+
+
 Vue.use(Router)
 const router =  new Router({
   routes: [
@@ -250,6 +254,24 @@ const router =  new Router({
       }
     },
     {
+      path: '/my/attention',
+      name: 'attention',
+      component: attention,
+        meta : {
+          //table栏的显示
+          flag : false
+        },
+    },
+    {
+      path: '/my/fans',
+      name: 'fans',
+      component: fans,
+        meta : {
+          //table栏的显示
+          flag : false
+        },
+    },
+    {
       path: '/scart',
       name: 'scart',
       component: Scart,
@@ -392,8 +414,10 @@ const router =  new Router({
     }
   ]
 })
+
 // import Vuex from "vuex"
 // router.beforeEach((to,  from, next) => {
 
 // })
+
 export default router;

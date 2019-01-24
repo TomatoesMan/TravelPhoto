@@ -8,7 +8,7 @@ export default{
             url:"/api/mock/5c346737fad511025643eecf/example/travel/details"
         }).then((data)=>{
             commit("detailsMutations",data.data)
-            //console.log(data)
+            console.log("details")
         })
     }    , 
     listActions({commit}){
@@ -26,7 +26,7 @@ export default{
        url:"/api/mock/5c346737fad511025643eecf/example/travel/details/comment"
    }).then((data)=>{
        commit("comtMutations",data.data)
-       console.log(data)
+       console.log("comment")
    })
 }     
 }

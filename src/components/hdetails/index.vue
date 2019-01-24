@@ -2,39 +2,64 @@
     <div id="hdetails">
         <Top-com></Top-com>
         <keep-alive>
-            <component :is="comName"></component>
+            <div class="wrapper scrollHdetails" ref="Wrapper">
+			  <div class="content">
+                <component :is="comName"></component>
+			  </div>
+            </div>
         </keep-alive>
     </div>
 </template>
 <script>
-import Vuex from "vuex"
 import Top from "./components/top.vue"
-import Article from "./components/article"
-import Combo from "./components/combo"
+import essay  from "./components/essay.vue"
+import combo from "./components/combo.vue"
+import vlog from "./components/vlog.vue"
+import Vuex from "vuex"
+import BScroll from "better-scroll";
     export default {
         created(){
             this.handleHdetails()
         },
         components: {
             "Top-com" : Top,
-            "Article-com" : Article,
-            "Combo-com": Combo 
+            "essay" : essay,
+            "combo" : combo,
+            "vlog" : vlog,
+        },
+        created () {
+            this.handleHdetails();
+            this.Observer.$on( "handleName", ( val )=>{
+                this.comName = val;
+            } )
         },
         data () {
             return {
-                comName:"Combo-com"
+                comName:"essay"
             }
-        },
-        computed: {
-            
         },
         methods: {
             ...Vuex.mapActions({
                 handleHdetails:"hdetails/handleHdetails"
             })
+        },
+        mounted () {
+            this.scroll = new BScroll(this.$refs.Wrapper,{
+				//只有设置成true pullingUp才能使用
+				pullUpLoad:true,
+				click:true,
+				probeType:2,
+            });
         }
     }
 </script>
 <style scoped lang="scss">
-    
+    #hdetails {
+        width: 100%;
+        height: 100%;
+        .scrollHdetails {
+            width: 100%;
+            height: 100%;
+        }
+    }
 </style>
