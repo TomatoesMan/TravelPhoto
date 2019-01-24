@@ -15,16 +15,14 @@ import waiting from "../components/my/waiting"
 import payed from "../components/my/payed"
 import review from "../components/my/review"
 import parsonalpage from "../components/my/nickName/parsonPage/parsonalPage"
-<<<<<<< HEAD
+
 import quarterbell from "../components/my/nickName/quarterBell"
-=======
 
 import parsoninfo from "../components/my/nickName/parsonPage/parsonInfo.vue"
 
 import quarterbell from "../components/my/nickName/quarterBell"
 import attention from "../components/my/attention"
 import fans from "../components/my/fans"
->>>>>>> 2af570210328f353b3041e6f5bc06f78446ff192
 import Login from "../components/login"
 //  import Register from  "../components/login/components/register.vue"
 import Register from  "../components/login/components/register.vue"

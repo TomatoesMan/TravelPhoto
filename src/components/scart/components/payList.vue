@@ -91,14 +91,13 @@
 		align-items: center;
 		border: 1px solid #f7f7f7;
 		box-shadow:0px 0px 30px 0px rgba(100,100,100,0.1);
-		margin-bottom: .3rem;
 		margin: 0.2rem auto;
 	}
 	.payShow img{
-		width: 1.45rem;
-		height: 1.89rem;
+		width: 1.55rem;
+		height: 1.62rem;
 		margin-left: .24rem;
-		margin-right: .24rem;
+		margin-right: .39rem;
 		border-radius: .2rem;
 	}
 	.payShow>div:nth-child(2){
@@ -107,7 +106,7 @@
 		margin: .3rem .5rem .47rem 0;
 	} 
 	.payShow>div:nth-child(2) h4{
-		font-size: .28rem;
+		font-size: .32rem;
 		line-height: .4rem;
 		margin-bottom: .1rem;
 	}
@@ -122,10 +121,10 @@
 	}
 	.main_pay{
 		margin-left: .3rem;
-		margin-top: .2rem;
+		margin-top: .83rem;
 	}
 	.main_pay p{
-		font-size: .28rem;
+		font-size: .32rem;
 		margin-bottom: .62rem;
 	}
 	.main_pay span{
@@ -134,10 +133,10 @@
 	.main_pay textarea{
 		font-size: .24rem;
 		border: none;
-		width: 6rem;
+		width: 5.5rem;
 		height:1rem;
 		margin-left: 1rem;
-		margin-top: -.4rem;
+		margin-top: -.32rem;
 		color: #000;
 	}
 	.foot_pay{
@@ -151,18 +150,22 @@
 		background: #fff;
 	}
 	.foot_pay p{
-		width: 1.52rem;
+		width: 2rem;
 		height: .31rem;
 		margin-left: 3rem;
+		font-size: .31rem;
+		margin-bottom: .41rem;
 	}
 	.foot_pay div{
 		width: 2.1rem;
 		height: .88rem;
 		font-size: .32rem;
+		color: #fff;
 		background: #199ED8;
 		text-align: center;
 		line-height: .88rem;
 		border-radius: .2rem;
 		margin-right: .3rem;
+		margin-bottom: .1rem;
 	}
 </style>
