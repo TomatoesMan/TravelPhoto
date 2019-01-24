@@ -4,7 +4,7 @@
       <router-link :to="{name : 'home'}">
         <i class="iconfont">&#xe616;</i>
       </router-link>
-      <input type="text" placeholder="想搜什么？">
+      <input type="text" placeholder="想搜什么？" v-focus="flag">
     </div>
     <p>热门搜索</p>
     <ul>
@@ -21,6 +21,20 @@
 </template>
 
 <script>
+  export default {
+    data () {
+      return {
+        flag : true  
+      }
+    },
+    directives: {
+          focus  : {
+              inserted( el ){
+                  el.focus();
+              }
+          }  
+        }
+  }
 </script>
 <style scoped lang="scss">
 #seek {

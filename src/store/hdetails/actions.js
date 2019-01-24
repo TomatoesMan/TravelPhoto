@@ -7,7 +7,8 @@ export default {
         })
         .then((data)=>{
             commit("handleHdetails",data.data);
-            commit( "handleTopMutations", data.data.user )
+            commit( "handleTopMutations", data.data.user );
+            commit( "handleArticle", data.data.article)
         })
     }
 }
