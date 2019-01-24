@@ -80,11 +80,11 @@ export default {
         this.spanpwd = "密码不能少于六位";
         this.userPassword = "";
         flagpwd = false;
-        console.log(this.spanpwd);
+       // console.log(this.spanpwd);
       } else {
-        console.log(this.userPassword);
+       // console.log(this.userPassword);
         flagpwd = true;
-        console.log(flagpwd);
+       // console.log(flagpwd);
       }
 
       //验证确认密码
@@ -95,15 +95,15 @@ export default {
         flagmm = false;
       } else {
         flagmm = true;
-        console.log(flagmm);
+       // console.log(flagmm);
       }
 
       //验证是否提交
       if (flag && flagpwd && flagmm === true) {
         //表示验证成功   开始传递数据
-        alert("ok");
+       // alert("ok");
         Toast({
-          message: "登录成功",
+          message: "注册成功",
           duration: 500
         });
         //存入数据
@@ -129,12 +129,16 @@ export default {
             });
           } else {
             alert("该用户已存在");
+            Toast({
+                      message: "该用户已存在",
+                      duration: 500
+                    });
           }
         });
 
         //ajax
       } else {
-        alert("no");
+        //alert("no");
       }
     }
   }

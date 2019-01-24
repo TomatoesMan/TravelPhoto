@@ -8,8 +8,12 @@
 		<!-- 列表 -->
 		<div class="content_D">
 			<div class="content_d" v-for="(item,index) in scartList" v-bind:key="index">
-				<div class="scartCheckbox">
-					<input type="checkbox" :checked="item.flag" @click="handleFla(item.comboId)">
+				<div class="scartCheckbox" @click="abc()">
+					<input type="checkbox"
+					 :checked="item.flag"
+					 class="Checkbox" id="check1"
+					  @click="handleFla(item.comboId)">
+					  <label for="check1"></label>
 				</div>
 				<div class="scartPic"><img :src="item.comboImg"></div>
 				<router-link :to="{name:'detail'}">
@@ -26,8 +30,8 @@
 		       <!-- 支付底部 -->
 		<div class="footer_d" v-show="flag">
 			<p>合计：<span class="scartSumPrice">{{result.scartPrice | sum(result.scartNum)}}</span></p>
-			<!-- <div v-show="show" class="noChecked">立即支付</div> -->
-			<router-link :to="{name:'paylist',params:{array:result.ary}}"><div v-show="show" class="hasChecked">立即支付</div></router-link>
+			<div v-show="show" class="noChecked">立即支付</div> 
+			<router-link :to="{name:'paylist',params:{array:result.ary}}"><div v-show="!show" class="hasChecked">立即支付</div></router-link>
 		</div>
 		       <!-- 删除底部 -->
 		<div class="footer_d footer_d2" v-show="!flag">
@@ -56,17 +60,9 @@
 				show:true
 			}
 		},
-		// beforeRouterEnter(to,from,next){
-		// 	if(result.ary.length<1){
-        //        next()
-		// 	}else{
-		// 		next("/paylist")
-		// 	}
-		// },
 		created(){
 			//页面跳转过来自动执行这个函数
-			this.scartShow(),
-			this.handleShow()
+			this.scartShow()
 		},
 		computed:{
 			...Vuex.mapState({
@@ -86,15 +82,18 @@
 			handleChange(){
 				this.flag = !this.flag
 			},
-			handleShow(){
-				if(result.ary.length>0){
-					this.show = !this.show
-				}
-			},
 			...Vuex.mapMutations({
 				handleFla:"scart/handleFla",
 				handCheckAll:"scart/handCheckAll"
-			})
+			}),
+			abc(){
+				if(this.result.ary.length>0){
+					console.log(1)
+					this.show = false
+				}else{
+					this.show=true
+				}
+			}
 		},
 		watch:{
            scartList(n){
@@ -149,7 +148,7 @@
 		display: flex;
 		align-items: center;
 		border: 1px solid #f7f7f7;
-		box-shadow: 0px 0px 15px 0px rgba(100,100,100,0.1);
+		box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.2);
 		margin-bottom: .3rem;
 	}
 	.content_d input{
@@ -159,6 +158,34 @@
 		border-radius: 50%;
 		margin-left: .22rem;
 	}
+/* 
+.Checkbox {
+    position: absolute;
+    visibility: hidden;
+}
+.Checkbox+label {
+    position:absolute;
+    width: 16px;
+    height: 16px;
+    border: 1px solid #A6A6A6;
+    border-radius: 50%;
+    background-color:#DEDEDE;
+} 
+.Checkbox:checked+label:after {
+    content: "";
+    position: absolute;
+    left: 2px;
+    top:2px;
+    width: 9px;
+    height: 4px;
+    border: 2px solid #424242;
+    border-top-color: transparent;
+    border-right-color: transparent; 
+    transform: rotate(-45deg);
+    -ms-transform: rotate(-60deg);
+    -moz-transform: rotate(-60deg);
+    -webkit-transform: rotate(-60deg);
+} */
 	.content_d img{
 		width: 1.45rem;
 		height: 1.89rem;
@@ -195,13 +222,12 @@
 		padding: 0.18rem;
 		background: #f1f1f1; 
 		display: flex;
-		justify-content: space-between;
 		align-items: center;
 	}
 	.footer_d>p{
 		width: 1.96rem;
 		height: .32rem;
-		font-size: .28rem;
+		font-size: .32rem;
 		margin-left: .2rem;
 	}
 	.footer_d>p>span{
@@ -216,7 +242,7 @@
 		font-size: .3rem;
 		color: #fff;
 	}
-	/* .footer_d .noChecked{
+	.footer_d .noChecked{
 		width: 2rem;
 		height: .82rem;
 		background:#CFCFCF; 
@@ -225,7 +251,10 @@
 		line-height: .82rem;
 		font-size: .3rem;
 		color: #fff;
-	} */
+		position: absolute;
+		left: 5.21rem;
+		bottom:.46rem; 
+	}
 	.footer_d .hasChecked{
 		width: 2rem;
 		height: .82rem;
@@ -235,20 +264,31 @@
 		line-height: .82rem;
 		font-size: .3rem;
 		color: #fff;
+		position: absolute;
+		left: 5.21rem;
+		bottom:.46rem; 
+	}
+	.footer_d2{
+		display: flex;
+		justify-content: space-between;
 	}
 	.footer_d2 input{
 		display: inline-block;
 		width: .3rem;
 		height: .3rem;
 	}
-	.footer_d2 span{
-		margin-left: -4rem;
-		margin-top: .2.8rem;
+	.footer_d2>span{
+		position: absolute;
+		left: 0.7rem;
+		bottom:.7rem;
 		font-size: .3rem;
-	}
+	} 
 	
 	.footer_d2 div{
 		background: #FF6417;
 		color: #fff;
+		position: absolute;
+		left: 5.21rem;
+		bottom:.46rem; 
 	}
 </style>

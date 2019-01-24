@@ -9,6 +9,7 @@
       </router-link>
     </div>
     <div id="headPhoto">
+      <!-- <router-link to="/my/parsoninfo"></router-link> -->
       <img src="../../../../../static/image/icon_tp.png">
     </div>
     <div id="motto">
@@ -52,14 +53,7 @@
     </div>
 <div id="myTimer">{{myTime}}</div>
  </div>
-    <!-- <div id="myView">
-          <div id="private">
-            <img src="../../../../../static/image/bj-1.jpg">
-            <h5>￥13888</h5>
-            <h6>私人订制</h6>
-    </div>-->
-
-  </div>
+   </div>
 
 </template>
 
@@ -93,7 +87,7 @@ export default {
       (this.scroll = new BScroll(this.$refs.sonWrapper, {
         scrollX: true
       }));
-    console.log(this.scroll);
+    //console.log(this.scroll);
     // }
   },
   data() {
@@ -101,7 +95,7 @@ export default {
       myPet: "努力努力",
       myMaxim: "人生最难的是不遗憾",
       myTime: new Date(),
- 
+
     };
   }
   ///mock/5c358c233df7227eb0a9d44a/example
@@ -129,7 +123,7 @@ export default {
     left: 2.46rem;
     border: #fff solid 0.1rem;
     border-radius: 50%;
-    img {
+       img {
       width: 2.55rem;
       height: 2.48rem;
     }
