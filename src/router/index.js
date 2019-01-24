@@ -143,7 +143,7 @@ const router =  new Router({
           flag : true
         },
       },
-    
+
     {
       path:'/travelnotes',
       name:'travelnotes',
@@ -329,7 +329,7 @@ const router =  new Router({
 				requireAuth : false
 			}
     },
-    
+
     {
       path: '/city',
       name: 'city',

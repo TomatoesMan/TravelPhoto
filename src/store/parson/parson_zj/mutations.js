@@ -8,6 +8,10 @@ getData(state,params){
 //评价记录
 getEss(state,params){
 state.assessList = params.data
+},
+
+getDue(state,params){
+state.overdue = params.data
 }
 }
 

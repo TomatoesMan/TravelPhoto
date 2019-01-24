@@ -1,20 +1,19 @@
 <template>
-  <div id="petName">
-    <div id="headPortrait">
-      <p>
-        <img src="../../../../static/my-img/icon_tp.png">
-      </p>
-    </div>
-    <p id="youName">昵称</p>
-    <div class="img">
-      <img src="../../../../static/my-img/icon-sa.png">
-    </div>
-    <ul id="my">
-      <router-link :to="{name:'attention'}"><li>关注(<span>30</span>)</li></router-link>
-      <router-link :to="{name:'fans'}"><li> 粉丝(<span>5</span>)</li></router-link>
-      <li>个人主页</li>
-    </ul>
-  </div>
+    <div id="petName">
+
+        <div id="headPortrait">
+          <p><router-link to = "/my/parsoninfo"><img src="../../../../static/my-img/icon_tp.png"></router-link></p>
+        </div>
+        <p id="youName">昵称</p>
+        <div class="img"><router-link to="/my/quarterbell"><img src="../../../../static/my-img/icon_xx.png"></router-link></div>
+				<ul id="my">
+					<li>关注(<span>12</span>)</li>
+					<li>粉丝(<span>40</span>)</li>
+					<li><router-link to="/my/parsonalpage">个人主页</router-link></li>
+				</ul>
+
+		</div>
+ 
 </template>
 
 

@@ -17,12 +17,15 @@
         <input id="loginPassword" v-model="userPassword" type="password" :placeholder="spanPwd">
       </div>
       <button id="loginIng" @click="hendleSuccess()">登录</button>
-      <div class="forget">
+<div class="loginHref">
+<div class="forget">
         <router-link to="/forget">忘记密码</router-link>
       </div>
       <div class="register">
         <router-link to="/register">注册</router-link>
       </div>
+</div>
+
     </div>
     <!-- <router-view/> -->
   </div>
@@ -79,7 +82,6 @@ export default {
 .pageTable {
   width: 100%;
   height: 100%;
-}
 #bj {
   img {
     width: 100%;
@@ -113,6 +115,8 @@ export default {
   margin: 1.23rem 0 0.1rem 0.75rem;
   border-radius: 0.12rem;
   padding: 0 0.1rem;
+display: flex;
+justify-content: flex-start;
 }
 .loginNumber,
 .loginCode {
@@ -123,16 +127,14 @@ export default {
   font-family: PingFang-SC-Regular;
   font-weight: 400;
   color: rgba(51, 51, 51, 1);
-  float: left;
-}
+ }
 #userName,
 #loginPassword {
   border: none;
   width: 60%;
   height: 100%;
   font-size: 0.26rem;
-  /* text-align: center; */
-  margin-left: 0.8rem;
+   margin-left: 0.8rem;
   font-weight: 400;
   outline: medium;
 }
@@ -143,6 +145,8 @@ export default {
   border-radius: 0.12rem;
   padding: 0 0.1rem;
   margin-left: 0.75rem;
+  display: flex;
+justify-content: flex-start;
 }
 #loginIng {
   width: 6rem;
@@ -157,22 +161,25 @@ export default {
   outline: medium;
   border: none;
 }
+.loginHref{
+display: flex;
+justify-content: flex-start;
 .forget {
-  width: 3rem;
+  width: 5rem;
   height: 0.5rem;
-  float: left;
-  margin: 0.2rem 0 0 0.75rem;
+   margin: 0.2rem 0 0 0.75rem;
   color: #5b5b5b;
   font-size: 0.28rem;
 }
 .register {
   width: 0.8rem;
   height: 0.5rem;
-  float: right;
-  margin: 0.2rem 0.75rem 0 0;
+   margin: 0.2rem 0.75rem 0 0;
   color: #5b5b5b;
   font-size: 0.28rem;
 }
+}
+
 .mint-toast {
   width: 2rem;
   height: 0.6rem;
@@ -182,4 +189,6 @@ export default {
     font-family: PingFang-SC-Bold;
   }
 }
+}
+
 </style>

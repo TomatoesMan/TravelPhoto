@@ -14,10 +14,12 @@
     </div>
     <div id="motto">
       <div id="myPet">
-        <input type="text" v-model="myPet">
+        <!-- <input type="text" v-model="myPet"> -->
+        {{myPe}}
       </div>
       <div id="myMaxim">
-        <input type="text" v-model="myMaxim">
+        <!-- <input type="text" v-model="myMaxim"> -->
+        {{myMaxim}}
       </div>
       <div id="Popularity">
         <div id="follow">
@@ -42,25 +44,31 @@
       <div id="myTimer">{{myTime}}</div>
     </div>
 
-     <div id="GroupTour">
-       <p>组团送人头</p>
-<div class="wrapper  scrollSon" ref="sonWrapper">
-<ul class="content">
-
- <li  v-for="(item,index) in group " :key="index">
-    <img :src="item.imgUrl"></li>
-    </ul>
+    <div id="GroupTour">
+      <p>组团送人头</p>
+      <div class="wrapper scrollSon" ref="sonWrapper">
+        <ul class="content">
+          <li v-for="(item,index) in group " :key="index">
+            <img :src="item.imgUrl">
+          </li>
+        </ul>
+      </div>
+      <div id="myTimer">{{myTime}}</div>
     </div>
-<div id="myTimer">{{myTime}}</div>
- </div>
-   </div>
-
+  </div>
 </template>
 
 <script>
 import Vuex from "vuex";
 import BScroll from "better-scroll";
 export default {
+  data() {
+    return {
+      myPe: "111",
+      myMaxim: "",
+      myTime: new Date()
+    };
+  },
   computed: {
     ...Vuex.mapState({
       list: state => state.parson_zj.list,
@@ -68,6 +76,14 @@ export default {
     })
   },
   created() {
+    console.log("ok");
+    // this.Observer.$on("aa", (val)=>{
+    // this.myPe == val;
+    //   //this.myMaxim=val[1];
+    //  console.log(val);
+    // });
+
+
     this.hendlePage();
     this.hendleSon();
   },
@@ -89,15 +105,8 @@ export default {
       }));
     //console.log(this.scroll);
     // }
-  },
-  data() {
-    return {
-      myPet: "努力努力",
-      myMaxim: "人生最难的是不遗憾",
-      myTime: new Date(),
-
-    };
   }
+
   ///mock/5c358c233df7227eb0a9d44a/example
 };
 </script>
@@ -123,7 +132,7 @@ export default {
     left: 2.46rem;
     border: #fff solid 0.1rem;
     border-radius: 50%;
-       img {
+    img {
       width: 2.55rem;
       height: 2.48rem;
     }
@@ -133,30 +142,26 @@ export default {
     background: #fff;
   }
   #myPet {
-    input {
-      width: 1.5rem;
-      height: 0.35rem;
-      margin: 1.59rem 0 0 3.12rem;
-      font-size: 0.32rem;
-      border: none;
-      font-family: PingFang-SC-Medium;
-      font-weight: 500;
-    }
+    width: 1.5rem;
+    height: 0.35rem;
+    margin: 1.59rem 0 0 3.12rem;
+    font-size: 0.32rem;
+    border: none;
+    font-family: PingFang-SC-Medium;
+    font-weight: 500;
   }
   #myMaxim {
-    input {
-      width: 2.5rem;
-      height: 0.28rem;
-      margin: 0.3rem 0 0 2.68rem;
-      font-size: 0.24rem;
-      border: none;
-      font-family: PingFang-SC-Medium;
-      font-weight: 400;
-      color: #333;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
+    width: 2.5rem;
+    height: 0.28rem;
+    margin: 0.3rem 0 0 2.68rem;
+    font-size: 0.24rem;
+    border: none;
+    font-family: PingFang-SC-Medium;
+    font-weight: 400;
+    color: #333;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   #Popularity {
     height: 0.3rem;
@@ -164,18 +169,18 @@ export default {
     font-size: 0.28rem;
     font-family: PingFang-SC-Regular;
     font-weight: 400;
+    display: flex;
+justify-content: flex-start;
   }
   #follow {
     width: 1rem;
     height: 100%;
     margin-left: 2.03rem;
-    float: left;
-  }
+   }
   #fans {
     width: 1.5rem;
     height: 100%;
-    float: left;
-    margin-left: 1.37rem;
+     margin-left: 1.37rem;
   }
   #private {
     position: relative;
@@ -203,7 +208,7 @@ export default {
     }
   }
   #GroupTour {
- margin-top: .2rem;
+    margin-top: 0.2rem;
   }
   #OnedayTour,
   #GroupTour {
