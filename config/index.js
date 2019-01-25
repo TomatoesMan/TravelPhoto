@@ -10,6 +10,7 @@ module.exports = {
     //https://www.easy-mock.com/mock/5c35e6db17c96e7d2a33f892/example/data#!method=get
     //https://www.easy-mock.com     /mock/5c3703307bfaf1250bff132b/attention/api  (关注)
     //https://www.easy-mock.com     /mock/5c3703307bfaf1250bff132b/attention/user/viewFans/1    (粉丝)
+    //https://www.easy-mock.com      /mock/5c3703307bfaf1250bff132b/attention/wait
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
