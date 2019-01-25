@@ -69,7 +69,8 @@ this.comName = "Comment-com"
   width: 100%;
 height: 100%;
   padding-top: 0.3rem;
-  background: url(../../../../../static/image/assess-1.jpeg) no-repeat;
+background: #f3f3f3;
+  //background: url(../../../../../static/image/assess-1.jpeg) no-repeat;
   display: flex;
  flex-direction:column;
   #bellImg {
