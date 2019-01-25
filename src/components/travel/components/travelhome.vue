@@ -160,7 +160,6 @@ export default {
             .content{
                width: 100%;
                height: max-content;
-            //    height: 25rem; 
                .banner{
                     width: 100%;
                     height:100%;
