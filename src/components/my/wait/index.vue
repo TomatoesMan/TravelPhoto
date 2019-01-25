@@ -7,6 +7,7 @@
 </template>
 
 <script>
+    import Vuex from "vuex";
     import  top  from "./components/top";
     import  tab  from "./components/tab";
     import  have from "./components/have";

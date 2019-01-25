@@ -8,11 +8,13 @@ import Lirui from "./home/lirui"
 import home_yxl from "./home/home_yxl"
 import my from "./my/attention"
 import fans from "./my/fans"
+import wait from "./my/wait"
 
 
 Vue.use( Vuex );
 //创建仓库
 const store  = new Vuex.Store({
+
     modules : {
         home,
         home_fq,
@@ -21,6 +23,7 @@ const store  = new Vuex.Store({
         home_yxl,
         my,
         fans,
+        wait,
     }
 })
 
