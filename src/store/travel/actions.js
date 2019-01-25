@@ -8,7 +8,7 @@ export default{
             url:"/api/mock/5c346737fad511025643eecf/example/travel/details"
         }).then((data)=>{
             commit("detailsMutations",data.data)
-            console.log("details")
+            // console.log("details")
         })
     }    , 
     listActions({commit}){
@@ -19,14 +19,14 @@ export default{
            commit("listMutations",data.data)
         //    console.log(data)
        })
-   }    ,
+   },
    comtActions({commit}){
     axios({
        method:"post",
        url:"/api/mock/5c346737fad511025643eecf/example/travel/details/comment"
    }).then((data)=>{
        commit("comtMutations",data.data)
-       console.log("comment")
+    //    console.log("comment")
    })
 }     
 }

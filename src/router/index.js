@@ -20,7 +20,6 @@ import quarterbell from "../components/my/nickName/quarterBell"
 
 import parsoninfo from "../components/my/nickName/parsonPage/parsonInfo.vue"
 
-import quarterbell from "../components/my/nickName/quarterBell"
 import attention from "../components/my/attention"
 import fans from "../components/my/fans"
 import Login from "../components/login"
