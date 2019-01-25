@@ -1,6 +1,5 @@
 <template>
     <div class="top">
-        <a class="back" href="#/home"><img :src="top.length>0?top[1].src:''" alt=""></a>
         <div class="collec">收藏数：<span>{{top.length>0?top[2].collection:''}}</span></div>
         <img :src="top.length>0?top[0]['src']:''" alt="">
     </div>

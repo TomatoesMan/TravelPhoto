@@ -9,7 +9,7 @@
         </div>
         <div class="banner">
             <dl class="user">
-                <dt class="userPhoto"><img src="../../../../static/travel-img/userphoto03.jpg" alt=""></dt>
+                <dt class="userPhoto"><img src="../../../../static/travel-img/travel10.jpg" alt=""></dt>
                 <dd class="userName"><span>liushashang</span></dd>
                 <dd class="userAutograph"><span>2018-8-16</span></dd>
             </dl>
@@ -17,8 +17,8 @@
                             "旅游是需要时间和金钱来作为基础的。"其实,旅游本身就是一种生活的方式。周末,带上家人,约着三朋四友,来到附近山里走在这无名的小溪旁,观赏这些无名的野草,听着那细细的涓涓流水闻着带点潮味的空气,默念王维的"明月松间照,清泉石上流....",有几个门票昂贵的风景区能给我们这等神仙般的享受呀
                         </span></p>
             <div class="bannerImg">
-                <img src="../../../../static/travel-img/traveld1.jpg" alt="" class="firstImg">
-                <img src="../../../../static/travel-img/traveld2.jpg" alt="" class="secondImg">
+                <img src="../../../../static/travel-img/travel01.jpg" alt="" class="firstImg">
+                <img src="../../../../static/travel-img/travel02.png" alt="" class="secondImg">
             </div>
             <img src="../../../../static/travel-img/collect@2x.png" alt="" class="collect">
             <p class="likeCount"><span>5200</span>人喜欢</p>
@@ -26,7 +26,7 @@
         <div class="commit">
             <p class="commitCount">评论<span>(10)</span></p>
             <dl class="follower">
-                <dt class="followerPhoto"><img src="../../../../static/travel-img/userphoto04.jpg" alt=""></dt>
+                <dt class="followerPhoto"><img src="../../../../static/travel-img/travel.png" alt=""></dt>
                 <dd class="followerName"><span>liushashang</span></dd>
                 <dd class="followerDate"><span>2018-8-16</span></dd>
                 <dd class="followerCommit"><span>哇哇哇！好喜欢这个地方，看起来炒鸡赞</span></dd>

@@ -1,6 +1,6 @@
 <template>
 	<div class="final_Pay">
-		<div @click="handleSuccess()"><img src="../../../../../TravelPhoto/static/fh.png"></div>
+		<div @click="handleSuccess()"><img src="../../../../static/fh.png"></div>
 		<div><img src="../../../../static/succ.png"></div>
 		<div>支付成功</div>
 		<div>返回首页</div>

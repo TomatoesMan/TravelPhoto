@@ -1,5 +1,7 @@
 <template>
     <div class="main">
+                <a class="back" href="#/home"><img src="static/image-detail/setMeal/icon_1_tc@2x.png" alt=""></a>
+
         <div class="wrapper det-wrap" ref="Detailwrapper">
             <div class="content">
                 <Top-com></Top-com>
@@ -65,6 +67,10 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+    .back{
+        position: absolute;
+        z-index: 5;
+    }
     .main{
         height: 100%;
         background-color: #F2F9F8;

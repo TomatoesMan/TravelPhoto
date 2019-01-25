@@ -1,6 +1,6 @@
 <template>
     <div class="top">
-        <router-link to="/home">
+        <router-link to="/home/detail">
             <i class="iconfont">&#xe601;</i>
         </router-link>
         <span>套餐开始日期选择</span>

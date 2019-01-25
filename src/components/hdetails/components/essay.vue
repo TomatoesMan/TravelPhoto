@@ -12,9 +12,11 @@
           </p>
         </div>
         <p class="say">{{item.tContent}}</p>
-            <ul class="photo">
+        <div class="wrapper scrollEssay" ref="essayWrapper">
+            <ul class="content photo">
                 <li v-for="( item1, index1 ) in item.tUrl" :key="index1"><img :src="item1" alt=""></li>
             </ul>
+        </div>
         <p class="bottom">
             <ul class="bottomLeft">
                 <li v-for="( item2, index2 ) in item.headPortrait" :key="index2"><img :src="item2" alt=""></li>
@@ -39,15 +41,17 @@ export default {
             article : state=>state.hdetails.article
         })
     },
-    //  mounted () {
-    //     this.scroll = new BScroll(this.$refs.essayWrapper,{
-    //         //只有设置成true pullingUp才能使用
-    //         pullUpLoad:true,
-    //         click:true,
-    //         probeType:2,
-    //     });
-    //     console.log( this.scroll )
-    // }
+    updated () {
+        if(!this.scroll){
+           for(var i=0;i<this.$refs.essayWrapper.length;i++){
+                this.scroll = new BScroll( this.$refs.essayWrapper[i], {
+                        scrollX : true,
+                        click : true,
+                        probeType: 2
+                    } )
+           }
+        }
+    }
 };
 </script>
 <style scoped lang="scss">
@@ -56,7 +60,7 @@ export default {
     padding-bottom : 4rem;
     >ul {
         >li{
-            padding: 0 0.31rem 0 0.27rem;
+            padding: 0 0.11rem 0.2rem 0.27rem;
             .head {
                 display: flex;
                 margin-bottom: 0.22rem;
@@ -86,7 +90,7 @@ export default {
                 }
             }
             .say {
-                font-size:0.24rem;
+                font-size:0.30rem;
                 font-family:PingFang-SC-Regular;
                 font-weight:400;
                 color:rgba(0,0,0,1);

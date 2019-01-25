@@ -14,7 +14,7 @@
                 <span @click="handleAttend">{{attend}}</span>
             </div>
             <ul>
-                <li v-for="( item, index ) in list" :key="index" @click="handle( item.name )">{{item.title}}</li>
+                <li v-for="( item, index ) in list" :key="index" @click="handle( item.name, index )" >{{item.title}}<span :class="activeIndex == index ? 'active' : ''"></span></li>
             </ul>
         </div>
     </div>
@@ -25,7 +25,8 @@ import Vuex from "vuex"
         data () {
             return {
                 list : [ {"title" : "他的文章", "name" : "essay"}, {"title" : "他的套餐", "name" : "combo"}, {"title" : "他的私人定制","name" : "vlog"} ],
-                attend : "关注"
+                attend : "关注",
+                activeIndex : 0 
             }
         },
         computed: {
@@ -35,8 +36,9 @@ import Vuex from "vuex"
             })
         },
         methods: {
-            handle : function( name ){
+            handle : function( name, index ){
                this.Observer.$emit( "handleName", name )
+               this.activeIndex = index;
             },
             handleAttend : function(){
                 this.attend = "已关注"
@@ -96,12 +98,28 @@ import Vuex from "vuex"
             display: flex;
             justify-content: space-around;
             margin-top: 0.2rem;
+            padding-bottom: 0.27rem;
             li {
                 font-size:0.32rem;
                 font-family:PingFang-SC-Regular;
                 font-weight:400;
                 color:rgba(51,51,51,1);
+                position: relative;
+                span {
+                    display: inline-block;
+                    width:0.48rem;
+                    height:0.04rem;
+                    position: absolute;
+                    left: 50%;
+                    bottom: -0.05rem;
+                    margin-left: -0.24rem; 
+                    border-radius:0.02rem; 
+                }
             }
         }
+        
+    }
+    .active {
+        background:rgba(65,116,242,1); 
     }
 </style>
