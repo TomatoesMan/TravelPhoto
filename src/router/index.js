@@ -5,7 +5,7 @@ import Travel from "../components/travel"
 import Scart from "../components/scart"
 import My from "../components/my"
 import Error from "../components/error/error.vue"
-import Duidance from "../components/guidance"
+import Guidance from "../components/guidance"
 
 import coupleBack from "../components/my/coupleBack"
 import setting from "../components/my/setting"
@@ -57,7 +57,7 @@ const router =  new Router({
     {
       path: '/',
       name: 'guidance',
-      component : Duidance,
+      component : Guidance,
       meta : {
         //table栏的显示
         flag : true
