@@ -8,51 +8,54 @@
         <img src="../../../../../static/image/返回.png">
       </router-link>
     </div>
+<!--  -->
+   <!--  <div>
+
+    </div> -->
     <div id="headPhoto">
-       <img src="../../../../../static/image/icon_tp.png">
+       <img :src="parsonpage[0].userPhoto">
     </div>
     <div id="motto">
       <div id="myPet">
-        <!-- <input type="text" v-model="myPet"> -->
-        {{myPe}}
+
+  {{parsonpage[0].userName}}
       </div>
       <div id="myMaxim">
-        <!-- <input type="text" v-model="myMaxim"> -->
-        {{myMaxim}}
+  {{parsonpage[0].userInfo}}
       </div>
       <div id="Popularity">
         <div id="follow">
           关注
-          <span>12</span>
+          <span>{{parsonpage[0].likeCount}}</span>
         </div>
         <div id="fans">
           粉丝
-          <span>1597</span>
+          <span>{{parsonpage[0].fansCount}}</span>
         </div>
       </div>
     </div>
     <div id="OnedayTour">
-      <p>杀马特一日游</p>
+      <p>{{parsonpage[0].combo.date[0].userConter}}</p>
       <div class="wrapper scrollPar" ref="parWrapper">
         <ul class="content">
-          <li v-for="(item,index) in list " :key="index">
-            <img :src="item.imgUrl">
+          <li v-for="(item,index) in parsonpage[0].combo.data " :key="index">
+            <img :src="item.userImg">
           </li>
         </ul>
       </div>
-      <div id="myTimer">{{myTime}}</div>
+      <div id="myTimer">{{parsonpage[0].combo.date[0].tTime}}</div>
     </div>
 
     <div id="GroupTour">
-      <p>组团送人头</p>
+      <p>{{parsonpage[0].combo.date[1].userConter}} </p>
       <div class="wrapper scrollSon" ref="sonWrapper">
         <ul class="content">
-          <li v-for="(item,index) in group " :key="index">
-            <img :src="item.imgUrl">
+          <li v-for="(item,index) in parsonpage[0].combo.data " :key="index">
+            <img :src="item.userImg">
           </li>
         </ul>
       </div>
-      <div id="myTimer">{{myTime}}</div>
+      <div id="myTimer">{{parsonpage[0].combo.date[1].tTime}}</div>
     </div>
   </div>
 </template>
@@ -63,36 +66,33 @@ import BScroll from "better-scroll";
 export default {
   data() {
     return {
-      myPe: "111",
-      myMaxim: "",
-      myTime: new Date()
-    };
+     };
   },
   computed: {
     ...Vuex.mapState({
-      list: state => state.parson_zj.list,
-      group: state => state.parson_zj.group
+parsonpage :state =>state.parson_zj.parsonpage,
+
     })
+
   },
   created() {
     console.log("ok");
-    // this.Observer.$on("aa", (val)=>{
-    // this.myPe == val;
-    //   //this.myMaxim=val[1];
-    //  console.log(val);
-    // });
 
+    // this.hendlePar();
+    // this.hendleSon();
+this.hendlePage();
 
-    this.hendlePage();
-    this.hendleSon();
   },
   methods: {
-    ...Vuex.mapActions({
-      hendlePage: "parson_zj/hendlePar"
+    // ...Vuex.mapActions({
+    //   hendlePar: "parson_zj/hendlePar"
+    // }),
+    // ...Vuex.mapActions({
+    //   hendleSon: "parson_zj/hendleSon"
+    // }),
+ ...Vuex.mapActions({
+      hendlePage: "parson_zj/hendlePage"
     }),
-    ...Vuex.mapActions({
-      hendleSon: "parson_zj/hendleSon"
-    })
   },
   mounted() {
     //if(!this.scroll){
@@ -102,7 +102,7 @@ export default {
       (this.scroll = new BScroll(this.$refs.sonWrapper, {
         scrollX: true
       }));
-    //console.log(this.scroll);
+    console.log(this.scroll);
     // }
   }
 
@@ -134,10 +134,11 @@ export default {
     img {
       width: 2.55rem;
       height: 2.48rem;
+      border-radius: 50%;
     }
   }
   #motto {
-    height: 3.5rem;
+
     background: #fff;
   }
   #myPet {
@@ -169,12 +170,13 @@ export default {
     font-family: PingFang-SC-Regular;
     font-weight: 400;
     display: flex;
+padding-bottom: .8rem;
 justify-content: flex-start;
   }
   #follow {
-    width: 1rem;
+    width: 2rem;
     height: 100%;
-    margin-left: 2.03rem;
+    margin-left: 1.5rem;
    }
   #fans {
     width: 1.5rem;
@@ -207,7 +209,7 @@ justify-content: flex-start;
     }
   }
   #GroupTour {
-    margin-top: 0.2rem;
+    margin-top: 0.1rem;
   }
   #OnedayTour,
   #GroupTour {

@@ -43,7 +43,7 @@
 }
 
 .wh_content_item,
-wh_content_item_tag {
+.wh_content_item_tag {
   display: flex;
   align-items: center;
   font-size: .28rem;
@@ -126,6 +126,7 @@ wh_content_item_tag {
 }
 
 .confirm_btn{
+  display: block;
   width: 4.38rem;
   height: .88rem;
   line-height: .88rem;

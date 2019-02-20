@@ -83,15 +83,14 @@ export default {
             probeType:2,
            
         });
-        console.log(this.scroll)
+        
        }
     },
     updated() {
         if(!this.swiper){
             this.swiper = new Swiper('.global-promotion',{
 		    slidesPerView:2,
-		    // slidesOffsetAfter : 100,
-            // watchSlidesProgress : true,
+		    
 		})  
         } 
     },

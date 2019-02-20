@@ -4,10 +4,12 @@
       <ul id="assessOne">
         <li v-for="(item,index) in assessList" :key="index">
           <div id="assUp">
-            <img :src="item.src">
-            <h6>{{item.name}}</h6>
+            <div id="userPhoto">
+              <img :src="item.userPhoto">
+            </div>
+            <h6>{{item.userName}}</h6>
           </div>
-          <p>{{item.txt}}</p>
+          <p>{{item.userEvaluate}}</p>
           <div id="bellLook">查看情侣套餐</div>
         </li>
       </ul>
@@ -29,13 +31,11 @@ export default {
   },
   created() {
     this.hendleEss();
-   
   },
   methods: {
     ...Vuex.mapActions({
       hendleEss: "parson_zj/hendleEss"
-    }),
-
+    })
   }
 };
 </script>
@@ -44,6 +44,7 @@ export default {
 #bellAssess {
   width: 100%;
   height: 100%;
+
   // display: flex;
   #bellBottom {
     width: 100%;
@@ -55,16 +56,23 @@ export default {
 
       li {
         width: 100%;
-        padding: 0.2rem 0 0 0.4rem;
+        padding: 0.2rem 0 0.2rem 0.4rem;
         border-bottom: 0.02rem solid #ccc;
+
         #assUp {
           width: 100%;
           height: 1rem;
-
-          img {
-            float: left;
+           display: flex;
+          align-items: center;
+          justify-content: flex-start;
+           #userPhoto {
+            width: 0.88rem;
+            height: 0.88rem;
+             img {
+              border-radius: 50%;
+            }
           }
-          h6 {
+           h6 {
             float: left;
             margin-left: 0.5rem;
             font-size: 0.36rem;
@@ -81,7 +89,7 @@ export default {
           font-size: 0.32rem;
           font-family: PingFang-SC-Regular;
           font-weight: 400;
-          margin-top: .15rem;
+          margin-top: 0.15rem;
           color: rgba(65, 116, 242, 1);
         }
       }

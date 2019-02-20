@@ -1,7 +1,7 @@
 <template>
     <div class="footer">
-        <div class="chat"><router-link :to="{name : 'cusservice'}"><i class="iconfont">&#xe613;</i><span>客服</span></router-link></div>
-        <div class="colloect"><i class="iconfont">&#xe610;</i><span>收藏</span></div>
+        <div class="chat"><router-link :to="{name : 'cusservice'}"><i class="iconfont">&#xe610;</i><span>客服</span></router-link></div>
+        <div class="colloect"><i class="iconfont">&#xe613;</i><span>收藏</span></div>
         <div class="scart">加入购物车</div>
     </div>
 </template>

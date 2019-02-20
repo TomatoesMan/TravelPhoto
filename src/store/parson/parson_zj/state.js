@@ -1,8 +1,40 @@
 export default {
-list:[],
-group:[],
-//评价记录
-assessList:[],
+   
+  //评价记录
+  assessList: [],
 
-overdue:[]
+  overdue: [],
+  thumbsup: [],
+
+  //个人主页
+  parsonpage: [
+    {
+      userId: "",
+      userInfo: "",
+      userName: "",
+      likeCount: "",
+      fansCount: "",
+      userId: "",
+      userPhoto: "",
+      combo: {
+        date: [{
+          userConter: "",
+          tTime: ""
+        },
+        {
+          userConter: "",
+          tTime: ""
+        }
+
+        ],
+        data: [
+          {
+            userImg: ""
+          }
+        ]
+      }
+    }
+  ]
+
+
 }

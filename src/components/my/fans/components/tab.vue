@@ -39,7 +39,7 @@ export default {
     updated(){
         if(!this.scroll){
             this.scroll = new BScroll(this.$refs.wrappertab);
-            console.log(this.scroll)
+            //console.log(this.scroll)
         }else{
             let wrapper = document.querySelector('.wrapper');
             let scroll = new BScroll('.wrapper');
