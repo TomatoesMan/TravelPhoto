@@ -10,17 +10,16 @@
         <div class="wrapper" ref="bannerwrapper">
             <div class="content">
                 <div class="banner" v-for="(item,index) in list">
-                    <dl class="user">
-                        <router-link to="/hdetails">
-                            <dt class="userPhoto"><img :src=item.userPhoto alt=""></dt>
+                    <dl class="user">               
+                        <dt class="userPhoto"><img :src=item.userPhoto alt=""></dt>
+                        <router-link to="/traveldetails">
+                            <dd class="userName"><span>{{item.userNickname}}</span></dd>
+                            <dd class="userAutograph"><span>{{item.userInfo}}</span></dd>
                         </router-link>
-                        <dd class="userName"><span>{{item.userNickname}}</span></dd>
-                        <dd class="userAutograph"><span>{{item.userInfo}}</span></dd>
                     </dl>
-                    <div class="wrapper" ref="bannerImgwrapper">
-                        <div class="content">
-                            <div class="bannerImg">
-                                <div class="swiper-container global-promotion">
+                    <router-link to="/traveldetails">
+                        <div class="bannerImg">
+                                    <div class="swiper-container global-promotion">
                                     <div class="swiper-wrapper">
                                           <div class="swiper-slide hk"><img :src="item.tImg" class="firstImg"></div>
                                           <div class="swiper-slide au"><img :src="item.tImg" class="firstImg"></div>
@@ -28,16 +27,14 @@
                                           <div class="swiper-slide jp"><img :src="item.tImg" class="firstImg"></div>
                                           <div class="swiper-slide us"><img :src="item.tImg" class="firstImg"></div>
                                     </div>
-                                </div>
-                            </div>
+                                    </div>
                         </div>
-                    </div>
-                    
-                    <p class="says"><span>{{item.tTitle}}</span></p>
-                    <div class="dateArea">
-                        <p class="date"></p>
-                        <span>{{item.tTime}}</span>
-                    </div>
+                        <p class="says"><span>{{item.tTitle}}</span></p>
+                        <div class="dateArea">
+                            <p class="date"></p>
+                            <span>{{item.tTime}}</span>
+                        </div>
+                    </router-link>
                     <div class="foot">
                         <div class="footLeft">
                             <img :src=item.userOne alt="" class="userOne">
@@ -118,26 +115,21 @@ export default {
         }
   },
   methods: {
-    handleToggle(){
-      this.flag = !this.flag;
-    },
-    handleClose(data){
-        this.flag = data;
-    }
-
+        handleToggle(){
+          this.flag = !this.flag;
+        },
+        handleClose(data){
+            this.flag = data;
+        }
     }
 }
 </script>
 
 <style lang="scss" scoped>
-       .travelHome{
+        .travelHome{
            width: 100%;
            height: 100%;
-           .content{
-               width: 100%;
-               height: 100%;
-               height: max-content;
-           }
+          
            .head{
                 width: 100%;
                 height: 0.88rem;
@@ -165,185 +157,188 @@ export default {
                     margin-top: 0.2rem;
                 }
            }
-           .banner{
+            .content{
                width: 100%;
-                height:100%;
-                margin-top: 0.5rem;
-                &:nth-of-type(1){
-                    margin-top: 0.9rem;
-                }
-               .user{
-                   width: 100%;
-                   height: 0.88rem;
-                   .userPhoto{
-                    width: 0.88rem;
-                    height: 0.88rem;
-                    margin-left: 0.35rem;
-                    float: left;
-                    img{
-                        width: 0.88rem;
-                        height: 0.88rem;
-                        border-radius: 50%;
+               height: max-content;
+               .banner{
+                    width: 100%;
+                    height:100%;
+                    margin-top: 0.5rem;
+                    &:nth-of-type(1){
+                        margin-top: 0.9rem;
                     }
-                  }
-                  .userName{
-                    width:1.36rm;
-                    height:0.28rem;
-                    font-size:0.28rem;
-                    font-family:PingFang-SC-Regular;
-                    font-weight:400;
-                    color:rgba(0,0,0,1);
-                    margin-left: 1.42rem;
-                  }
-                  .userAutograph{
-                    
-                    height:0.24rem;
-                    font-size:0.24rem;
-                    font-family:PingFang-SC-Regular;
-                    font-weight:400;
-                    color:rgba(170,170,170,1);
-                    margin-top: 0.13rem;
-                    margin-left:1.42rem;
-                  }   
-               }
-           }
-           .bannerImg{
-               width: 100%;
-               height: 2.45rem;
-               margin-top: 0.2rem;
-               margin-left: 0.2rem;
-               display: flex;
-               .swiper-slide{
-                   width: 3.91rem;
-                   height: 2.45rem;
-                   margin-right: 0.25rem;
-               }
-               .hk{
-                   width: 3.91rem;
-                   height: 2.45rem;
-               }
-                .firstImg{
-                   width: 100%; 
-                   height:100%;
-               }
-           }
-           .says{
-                width:4.48rem;
-                height:0.33rem;
-                font-size:0.32rem;
-                font-family:PingFang-SC-Bold;
-                font-weight:bold;
-                color:rgba(0,0,0,1);
-                margin-top: 0.31rem;
-                margin-left: 0.32rem;
-           }
-           .dateArea{
-               margin-left: 0.32rem;
-               margin-top: 0.14rem;
-               p{
-                   display: inline-block;
-               }
-               .date{
-                    width: 0.14rem;
-                    height: 0.14rem;
-                    border-radius: 50%;
-                    background:rgba(170,170,170,1);
-                }
-                span{
-                   width: 1.42rem;
-                   height: 0.19rem;
-               }
-           }
-           .foot{
-               width: 7.17rem;
-               height: 0.48rem;
-               line-height: 0.48rem;
-               margin: 0 auto;
-               margin-left: 0.4rem;
-               margin-top: 0.35rem;
-               .footLeft{
-                   width: 3rem;
-                   height: 0.48rem;
-                   margin-right: 0;
-                   display: inline-block;
-                   p{
-                       display: inline-block;
-                   }
-                   img{
-                       width: 0.48rem;
-                       height: 0.48rem;
-                       border-radius: 50%;
-                       float: left;
-                       margin-left: -0.15rem;
-                   }
-                   .date2{
-                       float: left;
-                       width:0.14rem;
-                       height:0.14rem;
-                       margin-top: 0.17rem;
-                       margin-left: 0.3rem;
-                       background:rgba(170,170,170,1);
-                       border-radius:50%;
-                   }
-                   .viewCount{
-                       float: left;
-                       width:1.3rem;
-                       height:0.24rem;
-                       font-size:0.24rem;
-                       font-family:PingFang-SC-Regular;
-                       margin-left: 0.2rem;
-                       font-weight:400;
-                       color:rgba(170,170,170,1);
-                   }
-               }
-               .footRight{
-                    width: 4rem;
-                    height: 0.48rem;
-                    // margin:0 0 0  0.2rem;
-                    float: right;
-                    img{
-                        float: left;
-                        width: 0.44rem;
-                        height: 0.44rem;
-                        margin-left: 0.3rem;
+                    .user{
+                       width: 100%;
+                       height: 0.88rem;
+                        .userPhoto{
+                            width: 0.88rem;
+                            height: 0.88rem;
+                            margin-left: 0.35rem;
+                            float: left;
+                            img{
+                                width: 0.88rem;
+                                height: 0.88rem;
+                                border-radius: 50%;
+                            }
+                        }
+                        .userName{
+                          width:1.36rm;
+                          height:0.28rem;
+                          font-size:0.28rem;
+                          font-family:PingFang-SC-Regular;
+                          font-weight:400;
+                          color:rgba(0,0,0,1);
+                          margin-left: 1.42rem;
+                        }
+                        .userAutograph{
+                        
+                          height:0.24rem;
+                          font-size:0.24rem;
+                          font-family:PingFang-SC-Regular;
+                          font-weight:400;
+                          color:rgba(170,170,170,1);
+                          margin-top: 0.13rem;
+                          margin-left:1.42rem;
+                        }   
                     }
-                    span{
-                        float: left;
-                    }      
+                    .bannerImg{
+                        width: 100%;
+                        height: 2.45rem;
+                        margin-top: 0.2rem;
+                        margin-left: 0.2rem;
+                        display: flex;
+                        .swiper-slide{
+                            width: 3.91rem;
+                            height: 2.45rem;
+                            margin-right: 0.25rem;
+                        }
+                        .hk{
+                            width: 3.91rem;
+                            height: 2.45rem;
+                        }
+                         .firstImg{
+                            width: 100%; 
+                            height:100%;
+                        }
+                    }
+                    .says{
+                        width:4.48rem;
+                        height:0.33rem;
+                        font-size:0.32rem;
+                        font-family:PingFang-SC-Bold;
+                        font-weight:bold;
+                        color:rgba(0,0,0,1);
+                        margin-top: 0.31rem;
+                        margin-left: 0.32rem;
+                    }
+                    .dateArea{
+                        margin-left: 0.32rem;
+                        margin-top: 0.14rem;
+                        p{
+                            display: inline-block;
+                        }
+                        .date{
+                            width: 0.14rem;
+                            height: 0.14rem;
+                            border-radius: 50%;
+                            background:rgba(170,170,170,1);
+                        }
+                        span{
+                           width: 1.42rem;
+                           height: 0.19rem;
+                        }
+                    }
+                    .foot{
+                        width: 7.17rem;
+                        height: 0.48rem;
+                        line-height: 0.48rem;
+                        margin: 0 auto;
+                        margin-left: 0.4rem;
+                        margin-top: 0.35rem;
+                        .footLeft{
+                            width: 3rem;
+                            height: 0.48rem;
+                            margin-right: 0;
+                            display: inline-block;
+                            p{
+                                display: inline-block;
+                            }
+                            img{
+                                width: 0.48rem;
+                                height: 0.48rem;
+                                border-radius: 50%;
+                                float: left;
+                                margin-left: -0.15rem;
+                            }
+                            .date2{
+                                float: left;
+                                width:0.14rem;
+                                height:0.14rem;
+                                margin-top: 0.17rem;
+                                margin-left: 0.3rem;
+                                background:rgba(170,170,170,1);
+                                border-radius:50%;
+                            }
+                            .viewCount{
+                                float: left;
+                                width:1.3rem;
+                                height:0.24rem;
+                                font-size:0.24rem;
+                                font-family:PingFang-SC-Regular;
+                                margin-left: 0.2rem;
+                                font-weight:400;
+                                color:rgba(170,170,170,1);
+                            }
+                        }
+                        .footRight{
+                            width: 4rem;
+                            height: 0.48rem;
+                            // margin:0 0 0  0.2rem;
+                            float: right;
+                            img{
+                                float: left;
+                                width: 0.44rem;
+                                height: 0.44rem;
+                                margin-left: 0.3rem;
+                            }
+                            span{
+                                float: left;
+                            }      
+                        }
+                    }
                }
-           }
-} 
-       .outside,.wrapper{
-            width: 100%;
-            height: 100%;
-}
-.slide{
-    position: fixed;
-    bottom:0;
-    left:0;
-    z-index: 999;
-}
- .slide-enter,.slide-leave-to {
-    bottom: -3.66rem;
-    left: 0;
-    z-index: 999;
-}
-.slide-enter-active,.slide-leave-active {
-    transition: all 500ms;
-}      
-.fade{
-    position: fixed;
-    top:0;
-    bottom: 3.66rem;
-    left:0;
-    z-index: 999;
-    opacity: 1;
-}
-.fade-enter,.fade-leave-to{
-  opacity: 0;
-}
-.fade-enter-active,.fade-leave-active{
-    transition: all 500ms;
-    
-}
+            } 
+            .outside,.wrapper{
+                width: 100%;
+                height: 100%;
+            }
+            .slide{
+                position: fixed;
+                bottom:0;
+                left:0;
+                z-index: 999;
+            }
+            .slide-enter,.slide-leave-to {
+                bottom: -3.66rem;
+                left: 0;
+                z-index: 999;
+            }
+            .slide-enter-active,.slide-leave-active {
+                transition: all 500ms;
+            }      
+            .fade{
+                position: fixed;
+                top:0;
+                bottom: 3.66rem;
+                left:0;
+                z-index: 999;
+                opacity: 1;
+            }
+            .fade-enter,.fade-leave-to{
+                opacity: 0;
+            }
+            .fade-enter-active,.fade-leave-active{
+                transition: all 500ms;
+            }
+        }
 </style>

@@ -9,6 +9,6 @@ export default {
     },
     comtMutations(state,params){
         state.comment=params;
-        console.log(params)
+    //     console.log(params)
     }
 }

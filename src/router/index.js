@@ -18,7 +18,6 @@ import parsonalpage from "../components/my/nickName/parsonPage/parsonalPage"
 
 import parsoninfo from "../components/my/nickName/parsonPage/parsonInfo.vue"
 
-import quarterbell from "../components/my/nickName/quarterBell"
 import attention from "../components/my/attention"
 import fans from "../components/my/fans"
 import Login from "../components/login"
@@ -235,15 +234,15 @@ const router =  new Router({
       },
     },
 //quarterbell
-    {
-      path: '/my/quarterbell',
-      name: 'quarterbell',
-      component: quarterbell,
-         meta : {
-        //table栏的显示
-        flag : false
-      },
-    },
+    // {
+    //   path: '/my/quarterbell',
+    //   name: 'quarterbell',
+    //   component: quarterbell,
+    //      meta : {
+    //     //table栏的显示
+    //     flag : false
+    //   },
+    // },
     {
       path:'/my/parsoninfo',
       name:'/parsoninfo',
