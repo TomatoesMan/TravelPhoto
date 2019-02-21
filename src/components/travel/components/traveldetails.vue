@@ -65,8 +65,11 @@ import Comment from "./comment.vue"
 
 export default {
     created() {
-        this.$store.dispatch("travel/detailsActions")
+        let userId = this.$route.params.userId;
+        this.$store.dispatch("travel/detailsActions",userId)
         this.$store.dispatch("travel/comtActions")
+        // this.$on("handleSend",(index)=>{index:index})
+        // console.log(index)
     },
     computed:{
           ...Vuex.mapState({

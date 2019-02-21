@@ -17,7 +17,7 @@
                             <dd class="userAutograph"><span>{{item.userInfo}}</span></dd>
                         </router-link>
                     </dl>
-                    <router-link to="/traveldetails">
+                    <router-link :to="'/traveldetails/'+index">
                         <div class="bannerImg">
                                     <div class="swiper-container global-promotion">
                                     <div class="swiper-wrapper">
@@ -74,15 +74,18 @@ import Bscroll from "better-scroll";
 import Swiper from "swiper";
 import Hidden from "./hidden.vue";
 import Mask from "./mask.vue";
+
 export default {
     
      created() {
         this.$store.dispatch("travel/listActions")
+        // console.log(this.observer)
     },
     computed:{
           ...Vuex.mapState({
               list:state=>state.travel.list
           })
+          
     },
     mounted(){
        if(!this.scroll){
@@ -120,6 +123,10 @@ export default {
         },
         handleClose(data){
             this.flag = data;
+        },
+        handleSend(index){
+            this.$emit("handleSend",index)
+            console.log(index)
         }
     }
 }
@@ -316,7 +323,7 @@ export default {
                 position: fixed;
                 bottom:0;
                 left:0;
-                z-index: 999;
+                z-index: 990;
             }
             .slide-enter,.slide-leave-to {
                 bottom: -3.66rem;
@@ -331,8 +338,8 @@ export default {
                 top:0;
                 bottom: 3.66rem;
                 left:0;
-                z-index: 999;
-                opacity: 1;
+                z-index: 666;
+                opacity: 0.5;
             }
             .fade-enter,.fade-leave-to{
                 opacity: 0;
@@ -340,5 +347,5 @@ export default {
             .fade-enter-active,.fade-leave-active{
                 transition: all 500ms;
             }
-        }
+    }
 </style>

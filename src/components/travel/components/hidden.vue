@@ -22,7 +22,6 @@
         <div class="close">
             <img src="../../../../static/travel-img/close.png" alt="" @click="handleClose">
         </div>
-        
     </div>
 </template>
 <script>

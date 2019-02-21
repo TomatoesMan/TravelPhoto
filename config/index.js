@@ -14,6 +14,20 @@ module.exports = {
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
+      // "/api" : {
+      //   target : "https://www.easy-mock.com",
+      //   changeOrigin : true,
+      //   pathRewrite : {
+      //     "^/api" : ""
+      //   }
+      // },
+      // "/apid" : {
+      //   target : "http://www.tuling123.com",
+      //   changeOrigin : true,
+      //   pathRewrite : {
+      //     "^/apid" : ""
+      //   }
+      // }
       "/api" : {
         target : "https://www.easy-mock.com",
         changeOrigin : true,
@@ -21,13 +35,6 @@ module.exports = {
           "^/api" : ""
         }
       },
-      "/apid" : {
-        target : "http://www.tuling123.com",
-        changeOrigin : true,
-        pathRewrite : {
-          "^/apid" : ""
-        }
-      }
     },
 
     // Various Dev Server settings

@@ -114,7 +114,7 @@ const router =  new Router({
       },
     },
       {
-        path: '/traveldetails',
+        path: '/traveldetails/:userId',
         name: 'traveldetails',
         component: travelDetails,
         meta : {
