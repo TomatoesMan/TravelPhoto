@@ -22,7 +22,7 @@
         <div>
           <input id="verificationCode" v-model="code" type="text" placeholder="输入验证码">
         </div>
-        <button id="gainCode">获取验证码</button>
+        <button id="gainCode" @click="hendleCode()">获取验证码</button>
       </div>
       <button id="registerIng" @click="hendle()">注册</button>
     </div>
@@ -33,6 +33,7 @@
 import Vue from "vue";
 import axios from "axios";
 import { Toast } from "mint-ui";
+import qs from "qs";
 export default {
   data() {
     return {
@@ -51,6 +52,32 @@ export default {
     //  this.hendle();
   },
   methods: {
+    //获取验证码
+    hendleCode() {
+      axios
+        .post("/apiz/user/verificationCode", {
+          userName: this.userName
+        })
+        .then(data => {
+          //发送成功  判断验证码
+           if (msg == 1) {
+            axios
+              .post("/apiz/user/checkVerificationCode", {
+                verificationCode: this.code
+              })
+              .then(data => {
+                if (msg == true) {
+                  //flagcode=true;
+                } else {
+                  // flagcode=false
+                }
+                // console.log(this.code)
+                //console.log(data);
+              });
+          }
+        });
+    },
+
     hendle() {
       //验证手机号
       let flag = null;
@@ -66,8 +93,6 @@ export default {
         flag = false;
       } else {
         flag = true;
-        //  console.log(flag);
-        // flag = true ? "" : "colorTel";
       }
 
       //验证密码
@@ -80,11 +105,8 @@ export default {
         this.spanpwd = "密码不能少于六位";
         this.userPassword = "";
         flagpwd = false;
-        // console.log(this.spanpwd);
       } else {
-        // console.log(this.userPassword);
         flagpwd = true;
-        // console.log(flagpwd);
       }
 
       //验证确认密码
@@ -95,50 +117,51 @@ export default {
         flagmm = false;
       } else {
         flagmm = true;
-        // console.log(flagmm);
       }
+
+      //先发送验证码
 
       //验证是否提交
       if (flag && flagpwd && flagmm === true) {
-        //表示验证成功   开始传递数据
-        // alert("ok");
+        //表示验证成功   开始传递数据   先查询该用户是否存在
+        axios
+          .post("/apiz/user/checkuserName", {
+            userName: this.userName
+          })
+          .then(data => {
+            console.log(data);
+            if (data.msg == 1) {
+              axios
+                .post("/apiz/user/register", {
+                  userName: this.userName,
+                  userPassword: this.userPassword
+                })
+                .then(data => {
+                  console.log(data);
+                  if (data.msg == "success") {
+                    Toast({
+                      message: "注册成功",
+                      duration: 500
+                    });
+                    this.$router.push("login");
+                  } else {
+                    Toast({
+                      message: "注册失败",
+                      duration: 500
+                    });
+                    console.log("no");
+                  }
+                });
+            } else {
+            }
+          });
+
+        //存入数据
+      } else {
         Toast({
-          message: "注册成功",
+          message: "请全部填写",
           duration: 500
         });
-        //存入数据
-
-        //jsonserver 模拟
-        axios({
-          method: "get",
-          //判断用户名是否存在 先查寻
-          url: "http://localhost:3000/data?username=" + this.userName
-        }).then(data => {
-          //长度为0 说明改用户不存在    直接添加数据
-          if (data.length == 0) {
-            axios({
-              method: "post",
-              url: "http://localhost:3000/data",
-              data: {
-                username: this.userName,
-                password: this.userPassword
-              }
-            }).then(data => {
-              //跳转到登录页面
-              this.$router.push("login");
-            });
-          } else {
-            alert("该用户已存在");
-            Toast({
-              message: "该用户已存在",
-              duration: 500
-            });
-          }
-        });
-
-        //ajax
-      } else {
-        //alert("no");
       }
     }
   }
