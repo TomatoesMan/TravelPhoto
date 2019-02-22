@@ -15,7 +15,7 @@ import waiting from "../components/my/waiting"
 import payed from "../components/my/payed"
 import review from "../components/my/review"
 import parsonalpage from "../components/my/nickName/parsonPage/parsonalPage"
-
+import quarterbell from "../components/my/nickName/quarterBell/index.vue"
 import parsoninfo from "../components/my/nickName/parsonPage/parsonInfo.vue"
 
 import attention from "../components/my/attention"
@@ -234,15 +234,15 @@ const router =  new Router({
       },
     },
 //quarterbell
-    // {
-    //   path: '/my/quarterbell',
-    //   name: 'quarterbell',
-    //   component: quarterbell,
-    //      meta : {
-    //     //table栏的显示
-    //     flag : false
-    //   },
-    // },
+    {
+      path: '/my/quarterbell',
+      name: 'quarterbell',
+      component: quarterbell,
+         meta:{
+        //table栏的显示
+        flag : false
+      }
+    },
     {
       path:'/my/parsoninfo',
       name:'/parsoninfo',

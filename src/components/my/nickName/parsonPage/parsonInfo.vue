@@ -56,7 +56,7 @@ alert();
           </div>
         </div>
 
-        <!--      成功     图片未显示   
+        <!--      成功     图片未显示
           <label @click="handleDiv()">
           <div @click="handleClick()">头像</div>
           <input type="file" v-show="isShow" name="img" multiple>
@@ -88,7 +88,7 @@ export default {
       this.handleDiv();
     },
     handleDiv() {
-      alert();
+      //alert();
     },
     //    handSuccess(){
     //     console.log(this.userName);

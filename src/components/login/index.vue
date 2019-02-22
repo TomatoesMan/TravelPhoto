@@ -54,7 +54,7 @@ export default {
           userName: this.userName
         }
       }).then(data => {
-        console.log(data);
+        //console.log(data);
         if (data.msg == 1) {
           //说明该用户不存在   登录失败
           this.spanTel = "该用户不存在";
@@ -78,7 +78,7 @@ export default {
                 //跳转到首页
                 this.$router.push("home");
               }
-              console.log(data);
+              //console.log(data);
             });
         }
       });

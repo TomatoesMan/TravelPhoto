@@ -129,7 +129,7 @@ export default {
             userName: this.userName
           })
           .then(data => {
-            console.log(data);
+            //console.log(data);
             if (data.msg == 1) {
               axios
                 .post("/apiz/user/register", {
@@ -137,7 +137,7 @@ export default {
                   userPassword: this.userPassword
                 })
                 .then(data => {
-                  console.log(data);
+                  //console.log(data);
                   if (data.msg == "success") {
                     Toast({
                       message: "注册成功",
@@ -149,7 +149,7 @@ export default {
                       message: "注册失败",
                       duration: 500
                     });
-                    console.log("no");
+                    //console.log("no");
                   }
                 });
             } else {

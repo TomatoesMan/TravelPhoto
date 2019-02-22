@@ -103,12 +103,12 @@ export default {
         this.spanPass = "密码不能少于六位";
         this.userPassword = "";
         flagpwds = false;
-        console.log(this.spanPass);
+        //console.log(this.spanPass);
       } else {
-        console.log(this.userPassword);
+        //console.log(this.userPassword);
         flagpwds = true;
         // flag = true;
-        console.log(flagpwds);
+        //console.log(flagpwds);
       }
 
       //验证确认密码
@@ -120,7 +120,7 @@ export default {
       } else if (this.qpwds == this.userPassword) {
         flagqpwds = true;
         // flag = true;
-        console.log(flagqpwds);
+        //console.log(flagqpwds);
       }
 
       if (flag && flagpwds && flagqpwds) {
@@ -131,7 +131,7 @@ export default {
             userName: this.userName
           })
           .then(data => {
-            console.log(data);
+            //console.log(data);
             if (data.msg == 0) {
               axios
                 .post("/apiz/user/resetPassword", {
