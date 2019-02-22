@@ -21,7 +21,7 @@ import parsoninfo from "../components/my/nickName/parsonPage/parsonInfo.vue"
 import attention from "../components/my/attention"
 import fans from "../components/my/fans"
 import Login from "../components/login"
-//  import Register from  "../components/login/components/register.vue"
+
 import Register from  "../components/login/components/register.vue"
 
 
@@ -282,7 +282,7 @@ const router =  new Router({
       }
     },
 		{
-			path:'/paylist/:array',
+			path:'/paylist',
 			name:'paylist',
 			component:PayList,
 			meta : {

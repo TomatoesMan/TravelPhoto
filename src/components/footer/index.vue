@@ -1,10 +1,32 @@
 <template>
     <div id="footer" v-show="flag">
         <ul >
-            <li v-for="( item, index ) in list" :key="index">
-                <router-link :to="{ name : item.name }">
-                    <i class="iconfont" v-html="item.icon"></i>
-                    <span>{{item.title}}</span>
+            <li @click="handle(1)">
+                <router-link :to="{ name : 'home' }">
+                    <i class="iconfont" v-show="flag1">&#xe60b;</i>
+                    <i class="iconfont" v-show="!flag1">&#xe6a5;</i>
+                    <span>首页</span>
+                </router-link>
+            </li>
+            <li @click="handle(2)">
+                <router-link :to="{ name : 'travel' }">
+                    <i class="iconfont" v-show="flag2">&#xe8ad;</i>
+                    <i class="iconfont" v-show="!flag2">&#xe8ac;</i>
+                    <span>游记</span>
+                </router-link>
+            </li>
+            <li @click="handle(3)">
+                <router-link :to="{ name : 'scart' }">
+                    <i class="iconfont" v-show="flag3">&#xe611;</i>
+                    <i class="iconfont" v-show="!flag3">&#xe606;</i>
+                    <span>购物车</span>
+                </router-link>
+            </li>
+            <li @click="handle(4)">
+                <router-link :to="{ name : 'my' }">
+                    <i class="iconfont" v-show="flag4">&#xe662;</i>
+                    <i class="iconfont" v-show="!flag4">&#xe687;</i>
+                    <span>我的</span>
                 </router-link>
             </li>
         </ul>
@@ -15,20 +37,44 @@
         data () {
             return {
                 list : [
-                    { name : "home", title : "首页", icon : "&#xe629;" },
-                    { name : "travel", title : "游记", icon : "&#xe8ac;" },
-                    { name : "scart", title : "购物车", icon : "&#xe620;" },
-                    { name : "my", title : "我的", icon : "&#xe606;" },
+                    { name : "home", title : "首页", icon : "&#xe60b;" },
+                    { name : "travel", title : "游记", icon : "&#xe8ad;" },
+                    { name : "scart", title : "购物车", icon : "&#xe611;" },
+                    { name : "my", title : "我的", icon : "&#xe662;" },
                 ],
-                flag:true
+                flag:true,
+                flag1: false,
+                flag2: true,
+                flag3: true,
+                flag4: true,
             }
         },
         beforeRouteEnter(to,from,next){
             console.log(to);
-        //     let flag = to.meta.flag;
-        //     this.flag = flag;
-        //     next();
-        //     console.log(this);
+        },
+        methods: {
+            handle(index){
+                switch(index){
+                    case 1:
+                        this.flag1 = false;
+                        this.flag2 = this.flag3 = this.flag4 = true;
+                    break;
+                    case 2:
+                       this.flag2 = false;
+                       this.flag1 = this.flag3 = this.flag4 = true;
+                    break;
+                    case 3:
+                        this.flag3 = false;
+                        this.flag1 = this.flag2 = this.flag4 = true;
+                    break;
+                    case 4:
+                        this.flag4 = false;
+                        this.flag1 = this.flag2 = this.flag3 = true
+                    break;
+                default:break;
+                
+                }
+            }
         }
     }
 </script>
@@ -65,6 +111,9 @@
         font-size : 0.2rem;
     }
     #footer>ul>li>.router-link-active span{
+        color : rgba(65,116,242,1);
+    }
+    #footer>ul>li>.router-link-active i {
         color : rgba(65,116,242,1);
     }
 </style>

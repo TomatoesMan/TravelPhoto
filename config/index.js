@@ -11,6 +11,8 @@ module.exports = {
     //https://www.easy-mock.com     /mock/5c3703307bfaf1250bff132b/attention/api  (关注)
     //https://www.easy-mock.com     /mock/5c3703307bfaf1250bff132b/attention/user/viewFans/1    (粉丝)
     //https://www.easy-mock.com      /mock/5c3703307bfaf1250bff132b/attention/wait
+    //http://10.9.31.243:8080/shop/order?userId=1
+    //
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
