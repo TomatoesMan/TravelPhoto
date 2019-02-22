@@ -76,7 +76,7 @@ parsonpage :state =>state.parson_zj.parsonpage,
 
   },
   created() {
-    console.log("ok");
+    //console.log("ok");
 
     // this.hendlePar();
     // this.hendleSon();
@@ -102,7 +102,7 @@ this.hendlePage();
       (this.scroll = new BScroll(this.$refs.sonWrapper, {
         scrollX: true
       }));
-    console.log(this.scroll);
+    //console.log(this.scroll);
     // }
   }
 
