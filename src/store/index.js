@@ -28,12 +28,8 @@ const store  = new Vuex.Store({
         travel,
         hdetails,
         my,
-<<<<<<< HEAD
-        fans
-=======
         fans,
         wait,
->>>>>>> kai
     }
 })
 

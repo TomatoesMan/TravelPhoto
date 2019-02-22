@@ -150,9 +150,9 @@
 		background: #fff;
 	}
 	.foot_pay p{
-		width: 2rem;
+		width: 2.5rem;
 		height: .31rem;
-		margin-left: 3rem;
+		margin-left: 2.5rem;
 		font-size: .31rem;
 		margin-bottom: .41rem;
 	}

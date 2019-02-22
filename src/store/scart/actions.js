@@ -11,7 +11,6 @@ export default{
 				item.flag = false
 			})
 			commit("getData",data.list.data)
-			//console.log(data)
 		})
 	},
 	handleDel({commit},params){
