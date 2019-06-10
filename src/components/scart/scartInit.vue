@@ -88,7 +88,7 @@
 			}),
 			abc(){
 				if(this.result.ary.length>0){
-					console.log(1)
+					//console.log(1)
 					this.show = false
 				}else{
 					this.show=true
@@ -225,7 +225,7 @@
 		align-items: center;
 	}
 	.footer_d>p{
-		width: 1.96rem;
+		width: 2.5rem;
 		height: .32rem;
 		font-size: .32rem;
 		margin-left: .2rem;
