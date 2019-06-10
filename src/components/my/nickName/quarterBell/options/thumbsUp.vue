@@ -3,11 +3,11 @@
     <ul id="honor">
        <li v-for="(item,index) in thumbsup" :key="index">
         <div id="heiTop">
-          <div id="hisHead">
-          <img :src="item.userPhoto">
+          <div id="hisHead" class="headImg">
+          <img style="width:100%" :src="item.userPhoto">
           </div>
           <h6>{{item.userName}}</h6>
-          <span>攒了你</span>
+          <span>赞了你</span>
           <div id="goods">
             <img src="../../../../../../static/image/icon_dz@2x.png">
           </div>
@@ -64,14 +64,18 @@ hendleUp:"parson_zj/hendleUp"
       display: flex;
       align-items: center;
       justify-content: flex-start;
+      
       #hisHead {
-        width: .88rem;
+        width: .88rem !important;
         height: .88rem;
            border-radius: 50%;
         img{
 
 border-radius: 50%;
         }
+      }
+      .headImg{
+        width: 100% !important;
       }
       h6 {
         margin-left: 0.4rem;

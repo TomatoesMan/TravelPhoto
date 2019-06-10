@@ -5,7 +5,7 @@
         <li v-for="(item,index) in assessList" :key="index">
           <div id="assUp">
             <div id="userPhoto">
-              <img :src="item.userPhoto">
+              <img style="width:100%" :src="item.userPhoto">
             </div>
             <h6>{{item.userName}}</h6>
           </div>
@@ -44,6 +44,9 @@ export default {
 #bellAssess {
   width: 100%;
   height: 100%;
+  image{
+    width: 100%;
+  }
 
   // display: flex;
   #bellBottom {

@@ -13,6 +13,7 @@ export default {
         state.shareFlag = !state.shareFlag;
     },
     handlePersonalTailor(state,params){
+        console.log(params)
         state.p_photographer = params.photographer;
         state.p_ScenicSpot = params.ScenicSpot;
         state.p_hotel = params.hotel;

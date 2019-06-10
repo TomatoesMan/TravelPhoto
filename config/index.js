@@ -28,6 +28,13 @@ module.exports = {
           "^/apid" : ""
         }
       }
+      // "/apip":{
+      //   target:"http://123.206.9.190:8080",
+      //   changeOrigin:true,
+      //   pathRewrite:{
+      //     "^/apip":""
+      //   }
+      // }
     },
 
     // Various Dev Server settings

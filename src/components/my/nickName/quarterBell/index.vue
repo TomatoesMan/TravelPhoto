@@ -106,6 +106,9 @@ background: #f3f3f3;
     flex: 1;
     overflow: auto;
   }
+  #userPhoto img{
+    width: 100%;
+  }
 }
 </style>
 

@@ -14,11 +14,12 @@ export default {
     handlePersonalTailor({commit,state}){
         axios({
             method:"post",
+            // url:"/api/PersonalTailor/photographer"
             url:"/api/mock/5c3465257db0f179db20290f/travel/PersonalTailor"
         })
         .then((data)=>{
             commit("handlePersonalTailor",data.data);
-            // console.log(data.data)
+            // console.log(data)
         })
     }
 }

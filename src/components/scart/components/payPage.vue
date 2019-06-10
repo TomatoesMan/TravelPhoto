@@ -41,7 +41,7 @@
 		methods: {
 			handleback() {
 				MessageBox.confirm('确定要放弃付款吗?').then(action => {
-				  this.$router.back()
+				  this.$router.push("/scart")
 				});
 			},
 			handleChose(value){
@@ -164,11 +164,15 @@
 	}
     .ewm>div{
         display: inline-block;
-        width: 3rem;
+        width: 5rem;
         height: 3rem;
         position: absolute;
         left: 50%;top: 50%;
         margin-left: -2.3rem;
         margin-top: -2.3rem;
+		
     }
+	.ewm>div>img{
+		width: 100%;
+	}
 </style>

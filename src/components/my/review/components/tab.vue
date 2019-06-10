@@ -1,7 +1,7 @@
 <template>
 	<div class="tab">
 		<div class="taba">
-			<img src="">
+			<img src="/static/img/tupian_chuxingxhong.ebdf4cb.png">
 		</div>
 		<p>没钱出去旅拍，评论啥。</p>
 	</div>

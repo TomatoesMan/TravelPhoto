@@ -1,6 +1,6 @@
 <template>
 	<div id="myTable">
-	    	<nickName-com/>
+	    <nickName-com/>
 			<statusBar-com/>
 			<setting-com/>
 			<collect-com/>

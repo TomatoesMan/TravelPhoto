@@ -3,13 +3,13 @@
     <div class="swiper-container content" ref="wrapper">
       <div class="swiper-wrapper">
         <div class="swiper-slide">
-          <img src="../../../static/guidance/ydy_1@2x.png">
+          <img class="guidance-image" src="../../../static/guidance/ydy_1@2x.png">
         </div>
         <div class="swiper-slide">
-          <img src="../../../static/guidance/图层 4@2x.png">
+          <img class="guidance-image" src="../../../static/guidance/图层 4@2x.png">
         </div>
         <div class="swiper-slide">
-          <img src="../../../static/guidance/图层 2@2x.png">
+          <img class="guidance-image" src="../../../static/guidance/图层 2@2x.png">
           <router-link to="/home" class="open"></router-link>
         </div>
       </div>
@@ -42,6 +42,11 @@ export default {
 }
 #guidance {
   .content {
+    .swiper-slide{
+       .guidance-image{
+        width:100% !important;
+      }
+    }
     .pagination {
       span{
         background: red;

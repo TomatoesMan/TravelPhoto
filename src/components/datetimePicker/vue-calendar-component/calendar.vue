@@ -218,9 +218,9 @@ export default {
   },
   methods: {
     handleConfirm(){
-      console.log(this.historyChose);
+    
       let a = this.historyChose
-      this.$router.push({path:"/paylist",params:{a}})
+      this.$router.push({path:"/paylist"})
     },
     intStart() {
       timeUtil.sundayStart = this.sundayStart;

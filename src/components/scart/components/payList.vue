@@ -15,7 +15,7 @@
 					</div>
 				</div>
 				<div class="main_pay">
-					<p>日期:2018年12月7日至12月14日</p>
+					<p>日期:2019年6月1日至6月7日</p>
 					<span>留言:</span>
 					<textarea placeholder="选填:填写内容">
 					</textarea>

@@ -14,7 +14,7 @@ export default{
     listActions({commit}){
         axios({
            method:"post",
-           url:"/api/mock/5c346737fad511025643eecf/example/travel/list"
+           url:"/api/mock/5c39368a27e755129a330e33/travel/travel/list"
        }).then((data)=>{
            commit("listMutations",data.data)
         //    console.log(data)

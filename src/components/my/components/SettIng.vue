@@ -16,7 +16,7 @@ export default {};
 
 
 
-<style>
+<style scoped>
 #setting {
   width: 100%;
   display: flex;
@@ -39,7 +39,6 @@ export default {};
   margin-left: 0.44rem;
   margin-top: 0.28rem;
   font-size: 0.32rem;
-  font-size: 32px;
   font-family: PingFang-SC-Regular;
   font-weight: 400;
   color: rgba(0, 0, 0, 1);

@@ -46,11 +46,14 @@
                 合计 ：
                 <span>{{ result | price}}</span>
             </div>
-            <div class="scart">
-                加入购物车
-            </div>
+            <router-link to="/scart">
+                <div class="scart">
+                    加入购物车
+                </div>
+            </router-link>
+            
             <div class="reserve">
-                立即预定
+                返回
             </div>
         </div>
     </div>
